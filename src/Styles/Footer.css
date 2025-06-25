@@ -26,3 +26,9 @@
 .footer .carousel-inner {
     min-height: 120px;
 }
+.footer .carousel-control-prev-icon{
+    margin-top: 150px;
+}
+.footer .carousel-control-next-icon{
+    margin-top: 150px;
+}

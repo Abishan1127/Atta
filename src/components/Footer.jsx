@@ -19,11 +19,11 @@ function Footer() {
                             <div className="carousel-inner bg-dark p-3 rounded">
                                 <div className="carousel-item active">
                                     <p className="mb-1"><i className="bi bi-calendar-event"></i> September 11, 2022</p>
-                                    <p className="mb-0">New year celebration by the charm pleasure of the moment and trouble are bound to ensue…</p>
+                                    <p className="mb-5 lh-lg">New year celebration by the charm pleasure of the moment and trouble are bound to pleasure of the moment and trouble are pleasure of the moment and trouble are ensue…</p>
                                 </div>
                                 <div className="carousel-item">
                                     <p className="mb-1"><i className="bi bi-calendar-event"></i> September 12, 2022</p>
-                                    <p className="mb-0">Outdoor concert series continues with local jazz bands…</p>
+                                    <p className="mb-5 lh-lg" >Outdoor concert series continues with local jazz pleasure of the moment and trouble are pleasure of the moment and trouble arepleasure of the moment and trouble arebands…</p>
                                 </div>
                             </div>
                             <button className="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
@@ -36,11 +36,11 @@ function Footer() {
                     </div>
 
                     {/* Column 2: Useful Links */}
-                    <div className="col-lg-4">
-                        <h5 className="fw-bold mb-3">Useful Links</h5>
+                    <div className="col-lg-4 ">
+                        <h5 className="fw-bold mb-3 mt-3 ">Useful Links</h5>
                         <div className="row">
                             <div className="col-6">
-                                <ul className="list-unstyled footer-links">
+                                <ul className="list-unstyled footer-links lh-lg"> 
                                     <li><a href="#">All Departments</a></li>
                                     <li><a href="#">Health & Medical</a></li>
                                     <li><a href="#">Housing & Land</a></li>
@@ -49,7 +49,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div className="col-6">
-                                <ul className="list-unstyled footer-links">
+                                <ul className="list-unstyled footer-links lh-lg">
                                     <li><a href="#">About Us</a></li>
                                     <li><a href="#">Our Team</a></li>
                                     <li><a href="#">Our FAQ’s</a></li>
@@ -62,7 +62,7 @@ function Footer() {
 
                     {/* Column 3: Recent News & Subscribe */}
                     <div className="col-lg-4">
-                        <h5 className="fw-bold mb-3">Recent News</h5>
+                        <h5 className="fw-bold mb-3 mt-2 lh-lg">Recent News</h5>
                         <div className="d-flex mb-3">
                             <div className="bg-danger text-white text-center px-2 me-3">
                                 <div className="fw-bold fs-5">11</div>
@@ -97,7 +97,7 @@ function Footer() {
             </div>
 
             {/* Bottom Text */}
-            <div className="text-center py-3 mt-4 border-top border-secondary">
+            <div className="text-center py-2 border-top border-secondary">
                 <small>© 2022 By <span className="text-danger">Whitehall City Govt.</span> All Rights Reserved.</small>
             </div>
         </footer>

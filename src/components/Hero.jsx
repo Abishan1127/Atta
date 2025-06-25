@@ -21,7 +21,7 @@ function Hero() {
                         >
                             <div className="overlay"></div>
                             <div className="hero-content animate-slide-up">
-                                <h1 className="display-5 fw-bold ">My City</h1>
+                                <h1 className="display-1 fw-bold ">My City</h1>
                                 <h2 className="fs-2 mb-3">My Responsibility</h2>
                                 <p className="mb-4 px-3 px-md-0">Righteous indignation and dislike men who are so beguiled & demoralized.</p>
                                 <CustomButton label="Read More" bgColor="#dc3545" />

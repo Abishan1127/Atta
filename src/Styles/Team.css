@@ -1,0 +1,43 @@
+.divider {
+  width: 60px;
+  height: 3px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+/* Carousel container */
+.team-carousel-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Horizontal scroll row */
+.team-carousel {
+  display: flex;
+  gap: 1rem;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.team-card {
+  flex: 0 0 250px;
+  min-width: 250px;
+  max-width: 250px;
+}
+
+/* Auto-scroll animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive tweak for mobile */
+@media (max-width: 576px) {
+  .team-card {
+    flex: 0 0 80%;
+  }
+}
