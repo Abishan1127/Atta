@@ -5,6 +5,7 @@
     background-position: center;
     overflow: hidden;
     transition: transform 5s ease;
+    
 }
 
 .carousel-item.active .hero-slide {
@@ -43,8 +44,8 @@
 
 /* Controls box at bottom */
 .custom-arrow {
-  width: 45px;
-  height: 45px;
+  width: 65px;
+  height: 65px;
   background-color: transparent;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -62,10 +63,6 @@
 }
 
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(1) !important;
-}
 
 
 

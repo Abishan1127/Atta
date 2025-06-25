@@ -22,8 +22,8 @@ function Header() {
     return (
         <>
             {/* Top Header */}
-            <div className="text-white">
-                <div className="container bg-danger d-lg-flex justify-content-lg-between align-items-lg-center py-3">
+            <header >
+                   <div className="container bg-danger d-lg-flex justify-content-lg-between align-items-lg-center py-3 text-white">
                     {/* Left Side */}
                     <div>
                         <span className="ms-5">
@@ -49,14 +49,14 @@ function Header() {
                         <SocialIcon href="#" icon={FaTwitter} />
                     </div>
                 </div>
-            </div>
+            
 
             {/* Navbar */}
             <nav className="navbar navbar-expand-lg bg-white border-bottom py-4">
                 <div className="container">
                     {/* Logo */}
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
-                        <img src={logo} alt="logo" style={{ height: '40px' }} className="me-2" />
+                        <img src={logo} alt="logo" style={{ height: '60px' }} className="me-2" />
                     </a>
 
                     {/* Toggle Button for Mobile */}
@@ -112,6 +112,7 @@ function Header() {
                     </div>
                 </div>
             </div>
+            </header>
         </>
     );
 }
