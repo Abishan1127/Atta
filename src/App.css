@@ -1,0 +1,38 @@
+/* App.css */
+
+.custom-social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    background-color: #0000001A !important;
+    color:white  !important;
+
+}
+
+.custom-social-icon:hover {
+    background-color: white !important;
+    color:red  !important;
+}
+.custom-header-links:hover{
+    color: red !important;
+    text-underline-offset: 1px !important;
+}
+.custom-nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s;
+}
+
+.custom-nav-link:hover {
+  color: #dc3545; /* Bootstrap's danger/red color */
+  text-decoration: none;
+}
+.hero-slide {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+
