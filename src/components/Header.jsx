@@ -72,7 +72,7 @@ function Header() {
                             {/* Desktop Nav */}
                             <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-block">
                                 <ul className="navbar-nav mb-2 mb-lg-0 gap-4">
-                                    <li className="nav-item"><a className="nav-link" href="#hero">Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#service">Service</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
                                     <li className="nav-item"><a className="nav-link" href="#news">News</a></li>
@@ -91,7 +91,7 @@ function Header() {
                         </div>
                         <div className="offcanvas-body">
                             <ul className="navbar-nav text-uppercase fw-semibold">
-                                <li className="nav-item"><a className="custom-nav-link" href="#hero">Home</a></li>
+                                <li className="nav-item"><a className="custom-nav-link" href="#home">Home</a></li>
                                 <li className="nav-item"><a className="custom-nav-link" href="#service">Service</a></li>
                                 <li className="nav-item"><a className="custom-nav-link" href="#team">Team</a></li>
                                 <li className="nav-item"><a className="custom-nav-link" href="#news">News</a></li>
