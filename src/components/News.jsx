@@ -40,16 +40,16 @@ const NewsComponent = () => {
         {newsData.map((item, index) => (
           <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
             <div className="position-relative overflow-hidden rounded-4 shadow-sm news-card">
-              {/* Background image */}
+              {/* Background- image */}
               <img src={item.image} alt="news" className="news-img img-fluid w-100" />
 
 
-              {/* Top-right badge */}
+              {/* Top--right badge */}
               <span className="badge bg-danger position-absolute top-0 end-0 m-2  py-1 rounded-2 z-2">
                 ★ Announcement
               </span>
 
-              {/* Bottom overlay content */}
+              {/* Bottom overlay -content */}
               <div className="news-overlay position-absolute bottom-0 start-0 end-0 text-white p-3 z-2">
                 <div className="d-flex align-items-center mb-2">
                   <div className="bg-danger text-white text-center px-2 py-1 rounded me-2">
