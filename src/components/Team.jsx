@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../assets/Styles/Style.css';
 import { FaEnvelope, FaPhoneAlt, FaShareAlt } from 'react-icons/fa';
 
 import member1 from '../assets/images/member1.jpg';

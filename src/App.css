@@ -1,4 +1,14 @@
 /* App.css */
+ :root{
+     font-family: "DM Sans", sans-serif;
+ }
+ .subheading{
+    font-family: "Merriweather", serif;
+ }
+ html {
+  scroll-behavior: smooth;
+}
+
 
 .custom-social-icon {
     width: 30px;

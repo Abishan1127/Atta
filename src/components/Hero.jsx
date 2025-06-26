@@ -3,12 +3,13 @@ import CustomButton from './CustomButton';
 import hero1 from '../assets/images/hero1.jpg';
 import hero2 from '../assets/images/hero2.jpg';
 import hero3 from '../assets/images/hero3.jpg';
-import '../Styles/Hero.css'; // link custom styles
+import '../assets/Styles/Style.css';
 
 function Hero() {
     const slides = [hero1, hero2, hero3];
 
     return (
+        <div className="container-fluid p-0 z-index-1 hero-wrapper">
         <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
                 {slides.map((image, index) => (
@@ -49,6 +50,7 @@ function Hero() {
                 <span className="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
 
+        </div>
         </div>
     );
 }
