@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomButton from '../components/CustomButton';
+import NewsComponent from '../components/News';
 import '../assets/Styles/Style.css';
 import { FaEnvelope, FaPhoneAlt, FaShareAlt } from 'react-icons/fa';
 
@@ -104,6 +105,9 @@ function Home() {
             ))}
           </div>
         </div>
+      </div>
+      <div className="news-section py-5 bg-white" id="news" >
+        <NewsComponent/>
       </div>
     </>
   );

@@ -38,17 +38,17 @@ function Header() {
                         </div>
 
                         {/* Right Side */}
-                        <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center">
+                        <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center ">
 
                             <a href="#about" className="header-link me-4">About Us</a>
                             <a href="#faq" className="header-link me-4">FAQ’s</a>
-                            <a href="#contact" className="header-link me-4">Contact</a>
+                            <a href="#contact" className="header-link pe-4 border-end">Contact</a>
 
 
 
                             {/* Social Icons */}
 
-                            <SocialIcon href="#" icon={FaFacebookF} />
+                            <SocialIcon href="#" icon={FaFacebookF}/>
                             <SocialIcon href="#" icon={FaGoogle} />
                             <SocialIcon href="#" icon={FaInstagram} />
                             <SocialIcon href="#" icon={FaTwitter} />
