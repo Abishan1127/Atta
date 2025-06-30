@@ -1,6 +1,8 @@
 import React from 'react';
 import CustomButton from '../components/CustomButton';
 import NewsComponent from '../components/News';
+import DownloadSection from '../components/Downloads';
+import Contact from '../components/Contact';
 import '../assets/Styles/Style.css';
 import { FaEnvelope, FaPhoneAlt, FaShareAlt } from 'react-icons/fa';
 
@@ -21,6 +23,14 @@ const teamMembers = [
   { name: 'Marian Lenoras', title: 'Speaker', image: member3 },
   { name: 'Bertram Irvin', title: 'Speaker', image: member4 },
   { name: 'Nathan Cruz', title: 'Coordinator', image: member5 },
+];
+
+const files = [
+  { name: "Tax_Paid_Challan", description: "Download the Challan Details file", link: "/downloads/tax_paid_challan.pdf" },
+  { name: "Tender_Schedules", description: "Download Your List at Free of Cost", link: "/downloads/tender_schedules.pdf" },
+  { name: "Current_Job_Vacancies", description: "We Offer Inner City Career Opportunities", link: "/downloads/job_vacancies.pdf" },
+  { name: "Extra_File_1", description: "Scroll example file", link: "/downloads/extra1.pdf" },
+  { name: "Extra_File_2", description: "Scroll example file", link: "/downloads/extra2.pdf" }
 ];
 
 function Home() {
@@ -71,8 +81,7 @@ function Home() {
       </div>
 
       {/* Team Section */}
-     <div className="team-section py-5 bg-white" id="team">
-
+      <div className="team-section py-5 bg-white" id="team">
         <div className="container-fluid text-center">
           <h6 className="text-danger fw-bold mb-2">
             <span className="me-1">★</span> WHITEHALL TEAM <span className="ms-1">★</span>
@@ -106,8 +115,20 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="news-section py-5 bg-white" id="news" >
-        <NewsComponent/>
+
+      {/* Downloads Section */}
+      <div className="downloads-section py-5 bg-white" id="downloads">
+        <DownloadSection files={files} />
+      </div>
+
+      {/* News Section */}
+      <div className="news-section py-5 bg-white" id="news">
+        <NewsComponent />
+      </div>
+
+      {/* Contact Section */}
+      <div className="news-section py-5 bg-white" id="contact">
+        <Contact />
       </div>
     </>
   );

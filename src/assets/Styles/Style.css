@@ -146,6 +146,29 @@
 .news-card:hover .news-img {
   transform: scale(1.1);
 }
+.contact-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.contact-card:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-5px);
+}
+.downloads-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.downloads-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.downloads-scroll::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+.download-cards{
+  margin-top: 180px;
+}
+
+
 
 
 

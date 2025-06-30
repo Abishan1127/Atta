@@ -8,7 +8,7 @@ import {
     FaInstagram,
     FaTwitter
 } from 'react-icons/fa';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo1.png';
 
 const SocialIcon = ({ href, icon: Icon }) => (
     <a
@@ -23,7 +23,7 @@ function Header() {
     return (
         <>
             {/* Top Header */}
-            <div className="container-fluid bg-transparent position-relative">
+            <div className="bg-transparent position-relative">
                 <header>
                     <div className="container bg-danger d-lg-flex py-3 text-white justify-content-between">
                         {/* Left Side */}
@@ -48,7 +48,7 @@ function Header() {
 
                             {/* Social Icons */}
 
-                            <SocialIcon href="#" icon={FaFacebookF}/>
+                            <SocialIcon href="#" icon={FaFacebookF} />
                             <SocialIcon href="#" icon={FaGoogle} />
                             <SocialIcon href="#" icon={FaInstagram} />
                             <SocialIcon href="#" icon={FaTwitter} />
@@ -72,16 +72,17 @@ function Header() {
                             {/* Desktop Nav */}
                             <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-block">
                                 <ul className="navbar-nav mb-2 mb-lg-0 gap-4">
-                                    <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#service">Service</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#news">News</a></li>
-                                    <li className="nav-item"><a className="nav-link" href="#testimonial">Testimonial</a></li>
-                                    <li className="nav-item"><a className="nav-link me-5" href="#contact">Contact Us</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#" data-target="news">News</a></li>
+                                    <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li>
+                                    <li className="nav-item"><a className="nav-link me-5" href="#" data-target="contact">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
+
 
                     {/* Mobile Offcanvas Menu */}
                     <div className="offcanvas offcanvas-start text-white" tabIndex="-1" id="mobileMenu" style={{ backgroundColor: '#0c0b16' }}>
