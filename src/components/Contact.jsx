@@ -52,6 +52,7 @@ const Contact = () => {
                 <span className="me-1">★</span> make connecting <span className="ms-1">★</span>
             </h6>
             <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
+             <div className="divider mx-auto mb-4"></div>
 
             <div className="row mb-5">
                 <div className="col-md-4 mb-3">
