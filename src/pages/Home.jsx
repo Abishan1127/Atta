@@ -37,7 +37,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="container-fluid p-0 z-index-1 hero-wrapper" id="home">
+      <div className="container-fluid p-0 z-index-1 hero-wrapper position-relative" id="home">
         <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
           <div className="carousel-inner">
             {slides.map((image, index) => (
