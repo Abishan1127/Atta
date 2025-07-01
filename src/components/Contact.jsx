@@ -98,7 +98,7 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Form  */}
+            {/* Formsss  */}
             <div className='position-relative ' style={{ top: '150px' }}>
                 <div className="container my-5 bg-white">
 
