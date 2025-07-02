@@ -10,12 +10,12 @@ const slides = [
     },
     {
         icon: "bi-building",
-        smallText: "Discover the Modern Architecture",
+        smallText: "Thinking of Living in San Antonio City?",
         bigText: "Everyone should Live in Smart City at Least Once"
     },
     {
         icon: "bi-tree-fill",
-        smallText: "Reconnect with Nature",
+        smallText: "Thinking of Living in San Antonio City?",
         bigText: "Everyone should Live in Smart City at Least Once"
     }
 ];
@@ -60,18 +60,18 @@ export default function DownloadSection() {
 
                 {/* LEFT SIDE */}
                 <div className="col-md-6 slide-container">
-                    <div className="overlay">
+                    <div className="overlay d-flex align-items-center justify-content-center border border-white">
                         <div className="content-box slide-transition" key={current}>
                             <h4>
-                                <i className={`bi ${slides[current].icon}`}></i>
+                                {/* <i className={`bi ${slides[current].icon}`}></i> */}
                                 {slides[current].smallText.split(' ').slice(0,3).join(' ')} <br/>
                                 {slides[current].smallText.split(' ').slice(3).join(' ')}
                             </h4>
-                            <h2>
+                            <h2 className="mt-5">
                                 {splitBigText(slides[current].bigText)}
                             </h2>
                             <div className="btn-box mt-3">
-                                <a href="#" className="btn btn-light p-3">Read More</a>
+                                <a href="#" className="btn btn-light p-3 mt-5">Read More</a>
                             </div>
                         </div>
                         <div className="arrow-controls">

@@ -12,8 +12,8 @@ function Footer() {
                 <div className="row gy-4">
                     {/* Column 1: Logo & About */}
                     <div className="col-lg-4">
-                        <img src={logo2} alt="logo" className="mb-3" height={80} width={300} />
-                        <p className="mt-3">
+                        <img src={logo2} alt="logo" className="mb-3" height={60} width={300} />
+                        <p className="mt-1">
                             Righteous indignation and dislike men who <br /> are so beguiled and demoralized by the <br /> charm of pleasure of the moment so blinded.
                         </p>
 
