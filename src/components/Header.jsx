@@ -57,7 +57,7 @@ function Header() {
                     </div>
 
                     {/* Navbar */}
-                    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3">
+                    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 position-sticky">
                         <div className="container">
                             {/* Logo */}
                             <a className="navbar-brand fw-bold d-flex align-items-center ms-5 ps-5" href="#">

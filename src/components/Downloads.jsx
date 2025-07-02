@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/Styles/Style.css';
-import bg2 from '../assets/images/bg2.jpg';
 import Icon from '../assets/images/icon-1.png';
-import Bgimage from '../assets/images/download-bg.jpg';
 
 const slides = [
     {
@@ -13,12 +11,12 @@ const slides = [
     {
         icon: "bi-building",
         smallText: "Discover the Modern Architecture",
-        bigText: "Experience Beautiful Skylines and Landmarks"
+        bigText: "Everyone should Live in Smart City at Least Once"
     },
     {
         icon: "bi-tree-fill",
         smallText: "Reconnect with Nature",
-        bigText: "Enjoy Parks and Green Spaces in the City"
+        bigText: "Everyone should Live in Smart City at Least Once"
     }
 ];
 
@@ -57,38 +55,37 @@ export default function DownloadSection() {
     };
 
     return (
-        <div className="container-fluid ps-0" style={{ backgroundImage: `url(${Bgimage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div className="row">
+        <div className="download-section">
+            <div className="row no-gutters">
 
-                {/* LEFT: Slide Section */}
-                <div className="col-md-6" style={{ backgroundImage: `url(${bg2})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '500px' }}>
-                    <div className="m-3 border border-white p-4" style={{ background: 'rgba(255,255,255,0.1)' }}>
-                        <div className="content-box">
-                            <h4 className="text-white">
-                                <i className={`bi ${slides[current].icon} me-2`}></i>
-                                {slides[current].smallText.split(' ').slice(0, 3).join(' ')} <br />
+                {/* LEFT SIDE */}
+                <div className="col-md-6 slide-container">
+                    <div className="overlay">
+                        <div className="content-box slide-transition" key={current}>
+                            <h4>
+                                <i className={`bi ${slides[current].icon}`}></i>
+                                {slides[current].smallText.split(' ').slice(0,3).join(' ')} <br/>
                                 {slides[current].smallText.split(' ').slice(3).join(' ')}
                             </h4>
-                            <h2 className="fw-bold text-white mb-4">
+                            <h2>
                                 {splitBigText(slides[current].bigText)}
                             </h2>
-                            <div className="btn-box mb-3">
+                            <div className="btn-box mt-3">
                                 <a href="#" className="btn btn-light p-3">Read More</a>
                             </div>
-                            <div className="d-flex">
-                                <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}>
-                                    <i className="bi bi-chevron-left"></i>
-                                </button>
-                                <button className="btn btn-outline-light p-3" onClick={nextSlide}>
-                                    <i className="bi bi-chevron-right"></i>
-                                </button>
-                            </div>
                         </div>
-
+                        <div className="arrow-controls">
+                            <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}>
+                                <i className="bi bi-chevron-left"></i>
+                            </button>
+                            <button className="btn btn-outline-light p-3" onClick={nextSlide}>
+                                <i className="bi bi-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                {/* RIGHT: Download Card Section */}
+                {/* RIGHT SIDE */}
                 <div className="col-md-6 p-5">
                     <div className="card h-100 shadow-sm border-0">
                         <div className="card-body downloads-scroll">

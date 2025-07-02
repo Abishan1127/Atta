@@ -3,6 +3,7 @@ import CustomButton from '../components/CustomButton';
 import NewsComponent from '../components/News';
 import DownloadSection from '../components/Downloads';
 import Contact from '../components/Contact';
+import VideoAccordion from '../components/Video';
 import '../assets/Styles/Style.css';
 import { FaEnvelope, FaPhoneAlt, FaShareAlt } from 'react-icons/fa';
 
@@ -120,6 +121,10 @@ function Home() {
       <div className="downloads-section py-5 bg-white" id="downloads">
         <DownloadSection files={files} />
       </div>
+      <div className="VideoAccordion-section py-5 bg-white" id="VideoAccordion">
+        <VideoAccordion />
+      </div>
+     
 
       {/* News Section */}
       <div className="news-section py-5 bg-white" id="news">
