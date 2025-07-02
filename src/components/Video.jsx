@@ -23,20 +23,50 @@ const VideoAccordion = () => {
                 { name: "Medina River", active: false },
                 { name: "Denman Estate Park", active: true },
                 { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false }, { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
                 { name: "Bracken Bat Flight", active: false }
             ]
         },
         {
             title: "Towns & Cities",
-            content: []
+            content: [
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false },
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false }
+            ]
         },
         {
             title: "Arts & Culture Areas",
-            content: []
+            content: [
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false },
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false }
+            ]
         },
         {
             title: "Beach Areas",
-            content: []
+            content: [
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false },
+                { name: "Medina River", active: false },
+                { name: "Denman Estate Park", active: true },
+                { name: "Acequia Park", active: false },
+                { name: "Bracken Bat Flight", active: false }
+            ]
         }
     ];
 
@@ -65,11 +95,12 @@ const VideoAccordion = () => {
                 </div>
 
                 {/* Right Accordion Section */}
-                <div className="col-md-4 text-start">
+                <div className="col-md-4 text-start"
+                style={{ fontSize: "20px" }}>
                     {accordionData.map((section) => (
                         <div key={section.title}>
                             <div
-                                className="d-flex justify-content-between align-items-center py-3 border-bottom"
+                                className="d-flex justify-content-between align-items-center py-4 border-bottom"
                                 style={{ cursor: "pointer" }}
                                 onClick={() => setActiveSection(section.title)}
                             >
@@ -82,19 +113,22 @@ const VideoAccordion = () => {
                             </div>
                             {activeSection === section.title && section.content.length > 0 && (
                                 <div className="py-2">
-                                    <div className="fw-bold mb-2" style={{ fontSize: "14px" }}>
+                                    <div className="fw-bold mb-2" >
                                         Must Visited Parks & Natural Areas;
                                     </div>
-                                    {section.content.map((item) => (
-                                        <div key={item.name} className="d-flex align-items-center mb-2">
-                                            <FaCheckCircle color={item.active ? "#d31c1c" : "#ccc"} className="me-2" />
-                                            <span style={{ color: item.active ? "#444" : "#777", fontSize: "15px" }}>
-                                                {item.name}
-                                            </span>
-                                        </div>
-                                    ))}
+                                    <div style={{ maxHeight: "160px", overflowY: "auto" }}>
+                                        {section.content.map((item) => (
+                                            <div key={item.name} className="d-flex align-items-center mb-2">
+                                                <FaCheckCircle color={item.active ? "#d31c1c" : "#ccc"} className="me-2" />
+                                                <span style={{ color: item.active ? "#444" : "#777" }}>
+                                                    {item.name}
+                                                </span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             )}
+
                         </div>
                     ))}
                 </div>

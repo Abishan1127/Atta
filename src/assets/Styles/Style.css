@@ -265,6 +265,13 @@
 .play-overlay:hover {
   opacity: 1;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.4);
+  border-radius: 3px;
+}
 
 
 /* fade + slide from right */
