@@ -23,10 +23,10 @@ const slides = [
 const files = [
     { title: "Tax_Paid_Challan", description: "Download the Challan Details file" },
     { title: "Tender_Schedules", description: "Download Your List at Free of Cost" },
-    { title: "Current_Job_Vacancies", description: "We Offer Inner City Career Opportunities" },
+    { title: "New_License_Forms", description: "We Offer Inner City Career Opportunities" },
     { title: "New_License_Forms", description: "Latest License Applications for Citizens" },
     { title: "Annual_Budget_Report", description: "Detailed City Budget for Fiscal Year" },
-    { title: "Waste_Management_Schedule", description: "View the Updated Collection Routes" },
+    { title: "New_License_Forms", description: "View the Updated Collection Routes" },
 ];
 
 export default function DownloadSection() {
@@ -58,7 +58,7 @@ export default function DownloadSection() {
         <div className="download-section">
             <div className="row no-gutters">
 
-                {/* LEFT SIDE */}
+                {/* LEFTSIDE */}
                 <div className="col-md-6 slide-container">
                     <div className="overlay d-flex align-items-center justify-content-center border border-white">
                         <div className="content-box slide-transition" key={current}>
@@ -85,7 +85,7 @@ export default function DownloadSection() {
                     </div>
                 </div>
 
-                {/* RIGHT SIDE */}
+                {/* RIGHTSIDE */}
                 <div className="col-md-6 p-5">
                     <div className="card h-100 shadow-sm border-0">
                         <div className="card-body downloads-scroll">
