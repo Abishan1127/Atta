@@ -362,6 +362,19 @@
   background-color: rgba(150, 150, 150, 0.4);
   border-radius: 3px;
 }
+.hover-card .extra-contact {
+    display: none;
+}
+
+.hover-card:hover .icon {
+    display: none;
+}
+
+.hover-card:hover .extra-contact {
+    display: block;
+}
+
+
 
 
 
