@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../assets/Styles/Style.css';
+import Formbg from '../assets/images/formbg.png'
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -67,7 +68,7 @@ const Contact = () => {
                 <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
                 <div className="divider mx-auto mb-4"></div>
 
-                <div className="row mb-5 mt-5">
+                <div className="row  mt-5">
                     <div className="col-md-4 mb-3">
                         <div className="card contact-card h-100 p-3 shadow-sm">
                             <div className="mb-2 ms-3">
@@ -99,8 +100,9 @@ const Contact = () => {
             </div>
 
             {/* Formsss  */}
-            <div className='position-relative ' style={{ top: '150px' }}>
-                <div className="container my-5 bg-white">
+            <div className='position-relative pb-5 ' style={{ top: '150px' }}>
+                <div className="container p-4" 
+                style={{ backgroundImage: `url(${Formbg})` }}>
 
 
                     <form onSubmit={handleSubmit}>
