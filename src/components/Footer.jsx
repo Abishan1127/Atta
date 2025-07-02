@@ -57,7 +57,7 @@ function Footer() {
                         <h5 className="fw-bold mb-3 mt-3 text-white">Useful Links</h5>
                         <div className="row">
                             <div className="col-6">
-                                <ul className="list-unstyled footer-links lh-lg mt-5 ">
+                                <ul className="list-unstyled footer-links lh-base mt-3 ">
                                     <li><a href="#">All Departments</a></li>
                                     <li><a href="#">Health & Medical</a></li>
                                     <li><a href="#">Housing & Land</a></li>
@@ -68,7 +68,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div className="col-6">
-                                <ul className="list-unstyled footer-links lh-lg mt-5">
+                                <ul className="list-unstyled footer-links lh-base mt-3">
                                     <li><a href="#">About Us</a></li>
                                     <li><a href="#">Our Team</a></li>
                                     <li><a href="#">Services</a></li>
@@ -83,8 +83,8 @@ function Footer() {
                     {/* Column 3: Recent News & Subscribe */}
                     <div className="col-lg-4">
                         <h5 className="fw-bold mb-3 mt-2 lh-lg text-white">Recent News</h5>
-                        <div className="d-flex mb-3 mt-5 pt-3">
-                            <div className="bg-danger text-white text-center px-2 me-3 rounded">
+                        <div className="d-flex mb-3 mt-3 pt-3">
+                            <div className="bg-danger text-white text-center px-3 me-3 rounded">
                                 <div className="fw-bold fs-5 mt-2">11</div>
                                 <div className="small">SEP’22</div>
                             </div>
@@ -94,7 +94,7 @@ function Footer() {
                             </div>
                         </div>
                         <div className="d-flex mb-4 mt-4">
-                            <div className="bg-danger text-white text-center px-2 me-3 rounded">
+                            <div className="bg-danger text-white text-center px-3 me-3 rounded">
                                 <div className="fw-bold fs-5 mt-2">11</div>
                                 <div className="small">SEP’22</div>
                             </div>

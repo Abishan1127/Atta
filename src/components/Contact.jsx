@@ -3,60 +3,77 @@ import '../assets/Styles/Style.css';
 import Formbg from '../assets/images/formbg.png'
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        category: 'Traffic & Transport',
-        message: ''
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    category: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validateField = (name, value) => {
+    let error = "";
+
+    switch (name) {
+      case "name":
+        error = /^[A-Za-z\s]+$/.test(value)
+          ? ""
+          : "Only alphabets allowed.";
+        break;
+
+      case "email":
+        error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+          ? ""
+          : "Invalid email format.";
+        break;
+
+      case "message":
+        error = value.trim() ? "" : "Message cannot be empty.";
+        break;
+
+      case "category":
+        error = value ? "" : "Please select a category.";
+        break;
+
+      default:
+        break;
+    }
+
+    return error;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Live validation on change
+    setErrors({ ...errors, [name]: validateField(name, value) });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = {};
+    Object.entries(formData).forEach(([key, value]) => {
+      const error = validateField(key, value);
+      if (error) {
+        validationErrors[key] = error;
+      }
     });
 
-    const [errors, setErrors] = useState({});
+    setErrors(validationErrors);
 
-    const validateEmail = (email) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    };
-
-    const validateName = (name) => {
-        return /^[A-Za-z\s]+$/.test(name);
-    };
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let validationErrors = {};
-
-        if (!formData.name.trim()) {
-            validationErrors.name = "Name is required.";
-        } else if (!validateName(formData.name)) {
-            validationErrors.name = "Name cannot contain numbers or special characters.";
-        }
-
-        if (!formData.email.trim()) {
-            validationErrors.email = "Email is required.";
-        } else if (!validateEmail(formData.email)) {
-            validationErrors.email = "Email cannot contain only letters.";
-        }
-
-        if (!formData.message.trim()) {
-            validationErrors.message = "Message is required.";
-        }
-
-        setErrors(validationErrors);
-
-        if (Object.keys(validationErrors).length === 0) {
-            alert("Form submitted successfully!");
-            // Optionally reset form
-            setFormData({
-                name: '',
-                email: '',
-                category: 'Traffic & Transport',
-                message: ''
-            });
-        }
-    };
+    if (Object.keys(validationErrors).length === 0) {
+      alert("Form submitted successfully!");
+      setFormData({
+        name: '',
+        email: '',
+        category: '',
+        message: ''
+      });
+    }
+  };
 
     return (
         <>
