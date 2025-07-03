@@ -13,35 +13,38 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
 
   const validateField = (name, value) => {
-    let error = "";
+  let error = "";
 
-    switch (name) {
-      case "name":
-        error = /^[A-Za-z\s]+$/.test(value)
-          ? ""
-          : "Only alphabets allowed.";
-        break;
-
-      case "email":
-        error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
-          ? ""
-          : "Invalid email format.";
-        break;
-
-      case "message":
-        error = value.trim() ? "" : "Message cannot be empty.";
-        break;
-
-      case "category":
-        error = value ? "" : "Please select a category.";
-        break;
-
-      default:
-        break;
-    }
-
+  // Generic required check
+  if (!value.trim()) {
+    error = "This field is required.";
     return error;
-  };
+  }
+
+  switch (name) {
+    case "name":
+      error = /^[A-Za-z\s]+$/.test(value)
+        ? ""
+        : "Only alphabets allowed.";
+      break;
+
+    case "email":
+      error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+        ? ""
+        : "Invalid email format.";
+      break;
+
+    case "message":
+      error = value.length >= 10 ? "" : "Minimum 10 characters required.";
+      break;
+
+    default:
+      break;
+  }
+
+  return error;
+};
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
