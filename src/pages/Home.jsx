@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 import CustomButton from '../components/CustomButton';
 import Contact from '../components/Contact';
+import TeamCard from '../components/TeamCard';
+import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
-import { FaEnvelope, FaPhoneAlt, FaShareAlt, FaPlayCircle, FaPlus, FaMinus, FaCheckCircle, FaUser, FaComment } from 'react-icons/fa';
-import {slides,teamMembers,downloadSlides,files,accordionData,newsData,iconImage} from '../constants/data';
+import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle, FaUser, FaComment } from 'react-icons/fa';
+import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage } from '../constants/data';
 
 function Home() {
   const [current, setCurrent] = useState(0);
@@ -78,20 +80,7 @@ function Home() {
           <div className="row justify-content-center g-4 pt-3">
             {teamMembers.map((member, idx) => (
               <div key={idx} className="col-12 col-sm-6 col-md-4 col-lg-2">
-                <div className="card h-100 shadow-sm rounded-4 overflow-hidden">
-                  <img src={member.image} alt={member.name} className="card-img-top img-fluid" />
-                  <div className="card-body text-center">
-                    <h5 className="card-title fw-bold mb-1">{member.name}</h5>
-                    <p className="text-danger mb-3">{member.title}</p>
-                    <div className="d-flex justify-content-center gap-2">
-                      <button className="btn btn-light d-flex align-items-center gap-1">
-                        <FaEnvelope /> Email
-                      </button>
-                      <button className="btn btn-light"><FaPhoneAlt /></button>
-                      <button className="btn btn-light"><FaShareAlt /></button>
-                    </div>
-                  </div>
-                </div>
+                <TeamCard member={member} />
               </div>
             ))}
           </div>
@@ -194,7 +183,7 @@ function Home() {
         </Modal>
       </div>
 
-      {/* News and Contact */}
+      {/* News */}
       <div className="container py-5 text-center" id="news">
         <h6 className="text-danger fw-bold mb-2">
           <span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span>
@@ -205,32 +194,12 @@ function Home() {
         <div className="row justify-content-center">
           {newsData.map((item, index) => (
             <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
-              <div className="card bg-dark text-white rounded shadow-sm mt-5 border-0 image-container position-relative overflow-hidden">
-                <img src={item.image} alt="news" className="card-img img-fluid rounded" />
-
-                <div className="card-body overlay-gradient position-absolute bottom-0 start-0 end-0 p-4 h-100 d-flex flex-column justify-content-end overflow-visible">
-                  <span className="overlay-badge bg-danger text-white fw-bold rounded-2 position-absolute p-2">
-                    ★ Announcement
-                  </span>
-                  <div className="d-flex align-items-center mb-3">
-                    <div className="bg-danger text-white text-center px-3 py-2 rounded-2">
-                      <div className="fw-bold h4 mb-0">{item.date}</div>
-                      <small>{item.month}</small>
-                    </div>
-                  </div>
-                  <h5 className="card-title fw-bold text-start">{item.title}</h5>
-                  <div className="border-bottom border-danger w-25 my-3 border-4"></div>
-                  <div className="d-flex gap-4 text-white-50">
-                    <div><FaUser className="me-1" /> admin</div>
-                    <div><FaComment className="me-1" /> {item.comments} Comments</div>
-                  </div>
-                </div>
-              </div>
+              <NewsCard item={item} />
             </div>
           ))}
         </div>
       </div>
-
+      {/* Contact Section */}
       <div className="news-section py-5 bg-white" id="contact"><Contact /></div>
     </>
   );
