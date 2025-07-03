@@ -134,7 +134,7 @@ function Home() {
         </div>
 
         {/* Inline Video Accordion */}
-        <div className="container my-4 text-center shadow" id="VideoAccordion">
+        <div className="container my-4 text-center" id="VideoAccordion">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
           <div className="divider mx-auto mb-4"></div>
@@ -155,7 +155,7 @@ function Home() {
 
 
             </div>
-            <div className="col-md-4 text-start accordion-custom px-4">
+            <div className="col-md-4 text-start accordion-custom px-4 shadow">
               {accordionData.map((section) => (
                 <div key={section.title} className="accordion-section">
                   <div className="accordion-header" onClick={() => setActiveSection(section.title)}>
