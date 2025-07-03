@@ -13,8 +13,8 @@ const TeamCard = ({ member }) => {
             <button className="btn btn-light d-flex align-items-center gap-1 text-muted">
               <FaEnvelope /> Email
             </button>
-            <button className="btn btn-light"><FaPhoneAlt /></button>
-            <button className="btn btn-light"><FaShareAlt /></button>
+            <button className="btn btn-light text-muted"><FaPhoneAlt /></button>
+            <button className="btn btn-light text-muted"><FaShareAlt /></button>
           </div>
         </div>
       </div>
