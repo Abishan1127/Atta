@@ -365,6 +365,13 @@
 .hover-card:hover .extra-contact {
     display: block;
 }
+.team-cardbody{
+  margin-top: -50px;
+  z-index: 2;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 
