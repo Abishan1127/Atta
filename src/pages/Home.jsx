@@ -37,7 +37,8 @@ function Home() {
 
   return (
     <>
-    <div className='container-fluid p-0'>
+    <div className='container-fluid p-0'
+    >
       {/* Hero Section */}
       <div className="p-0 z-index-1 hero-wrapper position-relative" >
         <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
