@@ -8,7 +8,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 function Footer() {
     return (
         <footer className="footer pt-5">
-            <div className="container py-5">
+            <div className="container py-5 mt-5">
                 <div className="row gy-4">
                     {/* Column 1: Logo & About */}
                     <div className="col-lg-4">

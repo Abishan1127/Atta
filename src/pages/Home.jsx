@@ -37,8 +37,9 @@ function Home() {
 
   return (
     <>
+    <div className='container-fluid p-0'>
       {/* Hero Section */}
-      <div className="container-fluid p-0 z-index-1 hero-wrapper position-relative" >
+      <div className="p-0 z-index-1 hero-wrapper position-relative" >
         <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
           <div className="carousel-inner">
             {slides.map((image, index) => (
@@ -90,7 +91,7 @@ function Home() {
       {/* Download Section */}
       <div className="downloads-section py-5 bg-white" id="downloads">
         <div className="download-section">
-          <div className="row no-gutters">
+          <div className="col-md-12 row no-gutters">
             <div className="col-md-6 slide-container">
               <div className="overlay d-flex align-items-center justify-content-center border border-white">
                 <div className="content-box slide-transition" key={current}>
@@ -201,6 +202,7 @@ function Home() {
       </div>
       {/* Contact Section */}
       <div className="news-section py-5 bg-white" id="contact"><Contact /></div>
+      </div>
     </>
   );
 }

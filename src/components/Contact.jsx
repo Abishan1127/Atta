@@ -127,12 +127,12 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+     
 
 
       {/* Formsss  */}
-      <div className='position-relative pb-5 ' style={{ top: '150px' }}>
-        <div className="container p-4"
+      <div className='position-relative pb-5 ' style={{ top: '220px' }}>
+        <div className=" p-4"
           style={{ backgroundImage: `url(${Formbg})` }}>
 
 
@@ -198,6 +198,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
+       </div>
     </>
   );
 };
