@@ -80,7 +80,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container my-5">
+      <div className="container mt-5">
         <h6 className="text-danger fw-bold mb-2 text-center">
           <span className="me-1">★</span> Make Connecting <span className="ms-1">★</span>
         </h6>
@@ -88,7 +88,7 @@ const Contact = () => {
         <div className="divider mx-auto mb-4"></div>
 
         <div className="row mt-5">
-          <div className="col-md-4 mb-3">
+          <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-envelope-fill fs-2 text-danger"></i>
@@ -101,7 +101,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="col-md-4 mb-3">
+          <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-telephone-fill fs-2 text-danger"></i>
@@ -114,7 +114,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="col-md-4 mb-3">
+          <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-share-fill fs-2 text-danger"></i>
@@ -131,8 +131,8 @@ const Contact = () => {
 
 
       {/* Formsss  */}
-      <div className='position-relative pb-5 ' style={{ top: '220px' }}>
-        <div className=" p-4"
+      <div className='position-relative pb-5 shadow-lg ' style={{ top: '150px' }}>
+        <div className=" p-5"
           style={{ backgroundImage: `url(${Formbg})` }}>
 
 

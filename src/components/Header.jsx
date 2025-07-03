@@ -25,7 +25,7 @@ function Header() {
             {/* Top Header */}
             <div className="bg-transparent position-relative">
                 <header>
-                    <div className="container bg-danger d-lg-flex py-3 text-white justify-content-between">
+                    <div className="container bg-danger d-lg-flex py-3 text-white justify-content-between ">
                         {/* Left Side */}
 
                         <div className='align-items-center justify-content-start'>
@@ -57,7 +57,7 @@ function Header() {
                     </div>
 
                     {/* Navbar */}
-                    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 position-sticky">
+                    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 ">
                         <div className="container">
                             {/* Logo */}
                             <a className="navbar-brand fw-bold d-flex align-items-center ms-5 ps-5" href="#">
