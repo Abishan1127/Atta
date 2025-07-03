@@ -4,140 +4,7 @@ import CustomButton from '../components/CustomButton';
 import Contact from '../components/Contact';
 import '../assets/Styles/Style.css';
 import { FaEnvelope, FaPhoneAlt, FaShareAlt, FaPlayCircle, FaPlus, FaMinus, FaCheckCircle, FaUser, FaComment } from 'react-icons/fa';
-
-
-
-import hero1 from '../assets/images/hero1.jpg';
-import hero2 from '../assets/images/hero2.jpg';
-import hero3 from '../assets/images/hero3.jpg';
-
-import member1 from '../assets/images/member1.jpg';
-import member2 from '../assets/images/member2.jpg';
-import member3 from '../assets/images/member3.jpg';
-import member4 from '../assets/images/member4.jpg';
-import member5 from '../assets/images/member5.jpg';
-
-import news1 from '../assets/images/news1.jpg';
-import news2 from '../assets/images/news2.jpg';
-import news3 from '../assets/images/news3.jpg';
-
-
-import Icon from '../assets/images/icon-1.png';
-
-const slides = [hero1, hero2, hero3];
-const teamMembers = [
-  { name: 'Elvina Julies', title: 'Actuary', image: member1 },
-  { name: 'Hermans Gordon', title: 'Director', image: member2 },
-  { name: 'Marian Lenoras', title: 'Speaker', image: member3 },
-  { name: 'Bertram Irvin', title: 'Speaker', image: member4 },
-  { name: 'Nathan Cruz', title: 'Coordinator', image: member5 },
-];
-
-const downloadSlides = [
-  {
-    icon: "bi-house-fill",
-    smallText: "Thinking of Living in San Antonio City?",
-    bigText: "Everyone should Live in Smart City at Least Once"
-  },
-  {
-    icon: "bi-building",
-    smallText: "Thinking of Living in San Antonio City?",
-    bigText: "Everyone should Live in Smart City at Least Once"
-  },
-  {
-    icon: "bi-tree-fill",
-    smallText: "Thinking of Living in San Antonio City?",
-    bigText: "Everyone should Live in Smart City at Least Once"
-  }
-];
-
-const files = [
-  { title: "Tax_Paid_Challan", description: "Download the Challan Details file" },
-  { title: "Tender_Schedules", description: "Download Your List at Free of Cost" },
-  { title: "New_License_Forms", description: "We Offer Inner City Career Opportunities" },
-  { title: "New_License_Forms", description: "Latest License Applications for Citizens" },
-  { title: "Annual_Budget_Report", description: "Detailed City Budget for Fiscal Year" },
-  { title: "New_License_Forms", description: "View the Updated Collection Routes" },
-];
-
-const accordionData = [
-  {
-    title: "Natural Areas",
-    content: [
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
-    ]
-  },
-  {
-    title: "Towns & Cities",
-    content: [
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
-    ]
-  },
-  {
-    title: "Arts & Culture Areas",
-    content: [
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
-    ]
-  },
-  {
-    title: "Beach Areas",
-    content: [
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
-    ]
-  }
-];
-const newsData = [
-  {
-    image: news1,
-    date: '11',
-    month: 'SEP’22',
-    title: 'Supporting Local Businesses to Bounce Back',
-    comments: 25,
-  },
-  {
-    image: news2,
-    date: '11',
-    month: 'SEP’22',
-    title: 'Supporting Local Businesses to Bounce Back',
-    comments: 1,
-  },
-  {
-    image: news3,
-    date: '11',
-    month: 'SEP’22',
-    title: 'Supporting Local Businesses to Bounce Back',
-    comments: 1,
-  },
-];
-
+import {slides,teamMembers,downloadSlides,files,accordionData,newsData,iconImage} from '../constants/data';
 
 function Home() {
   const [current, setCurrent] = useState(0);
@@ -239,7 +106,7 @@ function Home() {
               <div className="overlay d-flex align-items-center justify-content-center border border-white">
                 <div className="content-box slide-transition" key={current}>
                   <h4>
-                    {downloadSlides[current].smallText.split(' ').slice(0,3).join(' ')} <br/>
+                    {downloadSlides[current].smallText.split(' ').slice(0, 3).join(' ')} <br />
                     {downloadSlides[current].smallText.split(' ').slice(3).join(' ')}
                   </h4>
                   <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
@@ -259,7 +126,7 @@ function Home() {
                   {files.map((item, idx) => (
                     <div key={idx} className="d-flex align-items-center justify-content-between bg-light p-3 rounded mb-3 shadow-sm">
                       <div className="d-flex align-items-center my-3">
-                        <img src={Icon} alt="pdf" className="me-3" style={{ width: '40px' }} />
+                        <img src={iconImage} alt="pdf" className="me-3" style={{ width: '40px' }} />
                         <div>
                           <h4 className="mb-1">{item.title}</h4>
                           <small className="text-small">{item.description}</small>
@@ -329,40 +196,40 @@ function Home() {
 
       {/* News and Contact */}
       <div className="container py-5 text-center" id="news">
-  <h6 className="text-danger fw-bold mb-2">
-    <span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span>
-  </h6>
-  <h2 className="fw-bold mb-4 pt-2">Latest From Our Newsroom</h2>
-  <div className="divider mx-auto mb-4"></div>
+        <h6 className="text-danger fw-bold mb-2">
+          <span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span>
+        </h6>
+        <h2 className="fw-bold mb-4 pt-2">Latest From Our Newsroom</h2>
+        <div className="divider mx-auto mb-4"></div>
 
-  <div className="row justify-content-center">
-    {newsData.map((item, index) => (
-      <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
-        <div className="card bg-dark text-white rounded shadow-sm mt-5 border-0 image-container position-relative overflow-hidden">
-          <img src={item.image} alt="news" className="card-img img-fluid rounded" />
-          
-          <div className="card-body overlay-gradient position-absolute bottom-0 start-0 end-0 p-4 h-100 d-flex flex-column justify-content-end overflow-visible">
-            <span className="overlay-badge bg-danger text-white fw-bold rounded-2 position-absolute p-2">
-              ★ Announcement
-            </span>
-            <div className="d-flex align-items-center mb-3">
-              <div className="bg-danger text-white text-center px-3 py-2 rounded-2">
-                <div className="fw-bold h4 mb-0">{item.date}</div>
-                <small>{item.month}</small>
+        <div className="row justify-content-center">
+          {newsData.map((item, index) => (
+            <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
+              <div className="card bg-dark text-white rounded shadow-sm mt-5 border-0 image-container position-relative overflow-hidden">
+                <img src={item.image} alt="news" className="card-img img-fluid rounded" />
+
+                <div className="card-body overlay-gradient position-absolute bottom-0 start-0 end-0 p-4 h-100 d-flex flex-column justify-content-end overflow-visible">
+                  <span className="overlay-badge bg-danger text-white fw-bold rounded-2 position-absolute p-2">
+                    ★ Announcement
+                  </span>
+                  <div className="d-flex align-items-center mb-3">
+                    <div className="bg-danger text-white text-center px-3 py-2 rounded-2">
+                      <div className="fw-bold h4 mb-0">{item.date}</div>
+                      <small>{item.month}</small>
+                    </div>
+                  </div>
+                  <h5 className="card-title fw-bold text-start">{item.title}</h5>
+                  <div className="border-bottom border-danger w-25 my-3 border-4"></div>
+                  <div className="d-flex gap-4 text-white-50">
+                    <div><FaUser className="me-1" /> admin</div>
+                    <div><FaComment className="me-1" /> {item.comments} Comments</div>
+                  </div>
+                </div>
               </div>
             </div>
-            <h5 className="card-title fw-bold text-start">{item.title}</h5>
-            <div className="border-bottom border-danger w-25 my-3 border-4"></div>
-            <div className="d-flex gap-4 text-white-50">
-              <div><FaUser className="me-1" /> admin</div>
-              <div><FaComment className="me-1" /> {item.comments} Comments</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
 
       <div className="news-section py-5 bg-white" id="contact"><Contact /></div>
     </>
