@@ -200,8 +200,8 @@ function Home() {
           ))}
         </div>
       </div>
-      {/* Contact Section */}
-      <div className="news-section py-5 bg-white" id="contact"><Contact /></div>
+        {/* Contact Section */}
+      <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
       </div>
     </>
   );

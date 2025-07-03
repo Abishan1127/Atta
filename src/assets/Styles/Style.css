@@ -149,14 +149,6 @@
   text-align: left;
   line-height: 35px;
 }
-.contact-card {
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.contact-card:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-5px);
-}
 .downloads-scroll::-webkit-scrollbar {
   height: 8px;
 }

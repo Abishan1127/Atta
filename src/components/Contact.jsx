@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/Styles/Style.css';
 import Formbg from '../assets/images/formbg.png'
-
+ 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,54 +9,54 @@ const Contact = () => {
     category: '',
     message: ''
   });
-
+ 
   const [errors, setErrors] = useState({});
-
+ 
   const validateField = (name, value) => {
   let error = "";
-
+ 
   // Generic required check
   if (!value.trim()) {
     error = "This field is required.";
     return error;
   }
-
+ 
   switch (name) {
     case "name":
       error = /^[A-Za-z\s]+$/.test(value)
         ? ""
         : "Only alphabets allowed.";
       break;
-
+ 
     case "email":
       error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
         ? ""
         : "Invalid email format.";
       break;
-
+ 
     case "message":
       error = value.length >= 10 ? "" : "Minimum 10 characters required.";
       break;
-
+ 
     default:
       break;
   }
-
+ 
   return error;
 };
-
-
+ 
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
+ 
     // Live validation on change
     setErrors({ ...errors, [name]: validateField(name, value) });
   };
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+ 
     const validationErrors = {};
     Object.entries(formData).forEach(([key, value]) => {
       const error = validateField(key, value);
@@ -64,9 +64,9 @@ const Contact = () => {
         validationErrors[key] = error;
       }
     });
-
+ 
     setErrors(validationErrors);
-
+ 
     if (Object.keys(validationErrors).length === 0) {
       alert("Form submitted successfully!");
       setFormData({
@@ -77,7 +77,7 @@ const Contact = () => {
       });
     }
   };
-
+ 
   return (
     <>
       <div className="container mt-5">
@@ -86,10 +86,10 @@ const Contact = () => {
         </h6>
         <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
         <div className="divider mx-auto mb-4"></div>
-
+ 
         <div className="row mt-5">
           <div className="col-md-4 mb-3 mb-lg-0">
-            <div className="card contact-card h-100 p-3 shadow-sm hover-card">
+            <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-envelope-fill fs-2 text-danger"></i>
               </div>
@@ -100,9 +100,9 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
+ 
           <div className="col-md-4 mb-3 mb-lg-0">
-            <div className="card contact-card h-100 p-3 shadow-sm hover-card">
+            <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-telephone-fill fs-2 text-danger"></i>
               </div>
@@ -113,14 +113,14 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
+ 
           <div className="col-md-4 mb-3 mb-lg-0">
-            <div className="card contact-card h-100 p-3 shadow-sm hover-card">
+            <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
                 <i className="bi bi-share-fill fs-2 text-danger"></i>
               </div>
               <h5 className='ms-3'>Social Media</h5>
-              <p className='ms-3'>Looking for the latest news, events & places to visit.</p>
+              <p className='ms-3'>Looking for the latest news, events & places</p>
               <div className="extra-contact ms-3">
                 <p className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block">@SmartCityOfficial</p>
               </div>
@@ -128,14 +128,13 @@ const Contact = () => {
           </div>
         </div>
      
-
-
+ 
+ 
       {/* Formsss  */}
-      <div className='position-relative pb-5 shadow-lg ' style={{ top: '150px' }}>
+      <div className='position-relative shadow-lg ' style={{ top: '70px' }}>
         <div className=" p-5"
-          style={{ backgroundImage: `url(${Formbg})` }}>
-
-
+          style={{ backgroundImage: `url(${Formbg})`, backgroundSize: 'cover' }}>
+ 
           <form onSubmit={handleSubmit}>
             <div className="row g-3 mb-3">
               <div className="col-md-4">
@@ -174,7 +173,7 @@ const Contact = () => {
                 </select>
               </div>
             </div>
-
+ 
             <div className="mb-3 position-relative">
               <textarea
                 name="message"
@@ -186,7 +185,7 @@ const Contact = () => {
                 style={{ paddingRight: '100px' }} // ensures text doesn’t hide under button
               ></textarea>
               {errors.message && <small className="text-danger">{errors.message}</small>}
-
+ 
               <button
                 type="submit"
                 className="btn btn-danger px-3 py-2 position-absolute "
@@ -202,5 +201,5 @@ const Contact = () => {
     </>
   );
 };
-
+ 
 export default Contact;
