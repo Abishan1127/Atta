@@ -1,3 +1,4 @@
+
 .footer {
     background-color: #1c1b2a;
     color: #8e91a2;
@@ -220,8 +221,8 @@
 /* fixed arrows bottom right */
 .download-section .arrow-controls {
     position: absolute;
-    bottom: 98px;
-    right: 350px;
+    bottom: 88px;
+    right: 210px;
   
 }
 .video-container {

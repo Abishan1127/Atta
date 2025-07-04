@@ -34,6 +34,16 @@ function Home() {
     }
     return text;
   };
+  const scrollDownloads = (amount) => {
+    const container = document.querySelector('.downloads-scroll');
+    if (container) {
+      container.scrollBy({
+        top: amount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
 
   return (
     <>
@@ -93,16 +103,18 @@ function Home() {
         <div className="downloads-section py-5 bg-white" id="downloads">
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
+
+              {/* Slide section */}
               <div className="col-md-6 slide-container ">
-                <div className="overlay d-flex align-items-end justify-content-center border border-white m-4 ">
-                  <div className="content-box slide-transition " key={current}>
+                <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 ">
+                  <div className="content-box slide-transition" key={current}>
                     <h4>
-                      {downloadSlides[current].smallText.split(' ').slice(0, 3).join(' ')} <br />
-                      {downloadSlides[current].smallText.split(' ').slice(3).join(' ')}
+                      <i className="bi bi-house me-2"></i> {/* Home icon added here */}
+                      {downloadSlides[current].smallText}
                     </h4>
                     <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
                     <div className="btn-box mt-3">
-                      <a href="#" className="btn btn-light p-3 mt-5">Read More</a>
+                      <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
                     </div>
                   </div>
                   <div className="arrow-controls">
@@ -111,7 +123,9 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 px-5 pt-5 mt-5">
+
+              {/* Downloads section */}
+              <div className="col-md-6 px-5 pt-5 mt-5 position-relative">
                 <div className="card h-100 border-0">
                   <div className="card-body downloads-scroll">
                     {files.map((item, idx) => (
@@ -127,11 +141,28 @@ function Home() {
                       </div>
                     ))}
                   </div>
+
+                  {/* Up arrow on top right */}
+                  <div className="position-absolute top-0 end-0 mt-3 ms-5">
+                    <button className="btn btn-outline-secondary" onClick={() => scrollDownloads(-150)}>
+                      <i className="bi bi-arrow-up"></i>
+                    </button>
+                  </div>
+
+                  {/* Down arrow on bottom right */}
+                  <div className="position-absolute bottom-0 end-0  ms-5">
+                    <button className="btn btn-outline-secondary" onClick={() => scrollDownloads(150)}>
+                      <i className="bi bi-arrow-down"></i>
+                    </button>
+                  </div>
+
                 </div>
               </div>
+
             </div>
           </div>
         </div>
+
 
         {/* Inline Video Accordion */}
         <div className="container my-4 text-center" id="VideoAccordion">
