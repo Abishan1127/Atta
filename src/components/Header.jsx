@@ -51,7 +51,7 @@ function Header() {
             }
         };
     }, []);
-    
+
 
     return (
         <>
@@ -79,9 +79,9 @@ function Header() {
                     </div>
 
                     {/* Main Navbar */}
-                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-5 ${showTopHeader ? 'container' : 'container-fluid px-5  '}`}>
+                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 ps-md-5 pe-5 ${showTopHeader ? 'container' : 'container-fluid px-5  '}`}>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
-                            <img src={logo} alt="logo" style={{ height: '60px' }} className="" />
+                            <img src={logo} alt="logo" style={{ height: '60px' }} />
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
                             <span className="navbar-toggler-icon"></span>
@@ -97,24 +97,42 @@ function Header() {
                             </ul>
                         </div>
                     </nav>
-
                     {/* Offcanvas for mobile */}
                     <div className="offcanvas offcanvas-end" tabIndex="-1" id="mobileMenu">
                         <div className="offcanvas-header">
-                            
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
                         </div>
-                        <div className="offcanvas-body mt-5 pt-5">
-                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4 align-items-center mt-5 pt-5 text-uppercase fw-semibold">
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="news">News</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="contact">Contact Us</a></li>
+
+                        <div className="offcanvas-body mt-4 pt-4">
+                            {/* Main nav links */}
+                            <ul className="navbar-nav gap-4 align-items-center text-uppercase fw-semibold">
+                                <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#service">Service</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#news">News</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#testimonial">Testimonial</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#contact">Contact Us</a></li>
                             </ul>
+
+                            {/* Additional links with top border */}
+                            <div className="mobile-links mt-5 pt-5">
+                                <a href="#about" className="header-link mx-2 ">About Us</a>
+                                <a href="#faq" className="header-link mx-2">FAQ’s</a>
+                                <a href="#contact" className="header-link mx-2">Contact</a>
+                            </div>
+
+                            {/* Social icons below */}
+                            <div className="d-flex justify-content-center gap-3 mt-4">
+                                <SocialIcon href="#" icon={FaFacebookF} />
+                                <SocialIcon href="#" icon={FaGoogle} />
+                                <SocialIcon href="#" icon={FaInstagram} />
+                                <SocialIcon href="#" icon={FaTwitter} />
+                            </div>
                         </div>
                     </div>
+
+
+
                 </header>
             </div>
         </>

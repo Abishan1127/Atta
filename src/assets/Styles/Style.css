@@ -1,15 +1,12 @@
-
 .footer {
     background-color: #1c1b2a;
     color: #8e91a2;
     font-size: 0.95rem;
 }
-
 .footer a {
    color: #8e91a2;
     text-decoration: none;
 }
-
 .footer-links a {
   color: #8e91a2;; /* Bootstrap secondary */
   position: relative;
@@ -17,7 +14,6 @@
   transition: color 0.3s ease;
   font-size: large;
 }
-
 .footer-links a::after {
   content: '';
   position: absolute;
@@ -30,27 +26,21 @@
   transform-origin: left;
   transition: transform 0.3s ease;
 }
-
 .footer-links a:hover {
   color: white;
 }
-
 .footer-links a:hover::after {
   transform: scaleX(1);
 }
-
-
 .footer-links li {
     margin-bottom: 10px;
 }
-
 .footer .carousel-control-prev-icon,
 .footer .carousel-control-next-icon {
    height: 15px;
    width: 15px;
   
 }
-
 .footer .carousel-inner {
     min-height: 120px;
     max-width: 300px;
@@ -60,7 +50,6 @@
 #eventCarousel {
   position: relative;
 }
-
 .custom-control {
   position: absolute;
   bottom: 10px;
@@ -559,11 +548,29 @@
   position: relative;
   z-index: 1;
 }
+.mobile-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
+.mobile-links a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
 
+.mobile-links a:hover {
+    color: #d33; /* change to your theme color */
+}
 
-
-
+.offcanvas .navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
 /* Auto-scroll animation */
 @keyframes scroll {
   0% {
@@ -573,16 +580,12 @@
     transform: translateX(-50%);
   }
 }
-
 /* Responsive tweak for mobile */
 @media (max-width: 576px) {
   .team-card {
     flex: 0 0 80%;
   }
 }
-
-
-
 /* Responsive text */
 @media (max-width: 768px) {
     .hero-content h1 {
@@ -592,7 +595,6 @@
     .hero-content h2 {
         font-size: 1.25rem;
     }
-
     .hero-content p {
         font-size: 0.95rem;
     }
@@ -603,7 +605,15 @@
     position: absolute;
     bottom: 84px;
     right: 100px;
+   }
+   .input-group{
+    max-width: 320px;
+   }
   
-}}
+  
+  
+}
+
+
 
 
