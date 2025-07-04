@@ -53,7 +53,8 @@ function Header() {
                     </div>
 
                     {/* Your existing navbar and offcanvas here */}
-                    <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 container ">
+                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 ${showTopHeader ? 'container' : 'container-fluid'}`}>
+
                         <a className="navbar-brand fw-bold d-flex align-items-center ms-5 ps-5" href="#">
                             <img src={logo} alt="logo" style={{ height: '60px' }} className="me-2" />
                         </a>
