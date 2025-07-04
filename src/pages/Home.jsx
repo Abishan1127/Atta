@@ -93,9 +93,9 @@ function Home() {
         <div className="downloads-section py-5 bg-white" id="downloads">
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
-              <div className="col-md-6 slide-container">
-                <div className="overlay d-flex align-items-center justify-content-center border border-white">
-                  <div className="content-box slide-transition" key={current}>
+              <div className="col-md-6 slide-container ">
+                <div className="overlay d-flex align-items-end justify-content-center border border-white m-4 ">
+                  <div className="content-box slide-transition " key={current}>
                     <h4>
                       {downloadSlides[current].smallText.split(' ').slice(0, 3).join(' ')} <br />
                       {downloadSlides[current].smallText.split(' ').slice(3).join(' ')}
