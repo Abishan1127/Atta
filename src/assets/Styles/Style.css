@@ -534,6 +534,31 @@
 .navbar .nav-link:hover {
   color: #dc3545; /* Bootstrap's danger color */
 }
+.downloads-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.downloads-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/downbg.jpg'); /* replace with your correct path */
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.2; /* controls your background transparency */
+  z-index: 0;
+}
+
+/* Ensure your content stays above the background */
+.downloads-section > * {
+  position: relative;
+  z-index: 1;
+}
 
 
 
