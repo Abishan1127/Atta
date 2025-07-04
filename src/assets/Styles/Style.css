@@ -241,7 +241,7 @@
   opacity: 1;
 }
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(150, 150, 150, 0.4);

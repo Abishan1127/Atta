@@ -15,6 +15,7 @@ import news2 from '../assets/images/news2.jpg';
 import news3 from '../assets/images/news3.jpg';
 
 import Icon from '../assets/images/icon-1.png';
+import Downbg from '../assets/images/downbg.jpg'
 
 export const slides = [hero1, hero2, hero3];
 
@@ -133,3 +134,4 @@ export const newsData = [
 ];
 
 export const iconImage = Icon;
+export const  downbg= Downbg;

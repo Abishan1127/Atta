@@ -6,7 +6,7 @@ import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
 import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle, FaUser, FaComment } from 'react-icons/fa';
-import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage } from '../constants/data';
+import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage ,downbg} from '../constants/data';
 
 function Home() {
   const [current, setCurrent] = useState(0);
@@ -99,8 +99,8 @@ function Home() {
           </div>
         </div>
 
-        {/* Download Section */}
-        <div className="downloads-section py-5 bg-white" id="downloads">
+        {/* Download full Section */}
+        <div className="downloads-section py-5 bg-white" id="downloads" style={{ backgroundImage: `url(${downbg})`, backgroundSize: 'cover' }}>
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
 
@@ -125,9 +125,9 @@ function Home() {
               </div>
 
               {/* Downloads section */}
-              <div className="col-md-6 px-5 pt-5 mt-5 position-relative">
+              <div className="col-md-6 px-3 pt-5 mt-5 position-relative"  >
                 <div className="card h-100 border-0">
-                  <div className="card-body downloads-scroll">
+                  <div className="card-body downloads-scroll p-0">
                     {files.map((item, idx) => (
                       <div key={idx} className="d-flex align-items-center justify-content-between bg-light p-3 rounded mb-3 shadow-sm">
                         <div className="d-flex align-items-center my-3">
@@ -137,22 +137,22 @@ function Home() {
                             <small className="text-small">{item.description}</small>
                           </div>
                         </div>
-                        <i className="bi bi-arrow-down-circle text-secondary fs-1"></i>
+                        <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
                       </div>
                     ))}
                   </div>
 
                   {/* Up arrow on top right */}
-                  <div className="position-absolute top-0 end-0 mt-3 ms-5">
-                    <button className="btn btn-outline-secondary" onClick={() => scrollDownloads(-150)}>
+                  <div className="position-absolute top-0 end-0  me-2">
+                    <button className="btn btn-outline-dark fs-5 " onClick={() => scrollDownloads(-150)}>
                       <i className="bi bi-arrow-up"></i>
                     </button>
                   </div>
 
                   {/* Down arrow on bottom right */}
-                  <div className="position-absolute bottom-0 end-0  ms-5">
-                    <button className="btn btn-outline-secondary" onClick={() => scrollDownloads(150)}>
-                      <i className="bi bi-arrow-down"></i>
+                  <div className="position-absolute bottom-0 end-0  me-2">
+                    <button className="btn btn-outline-dark" onClick={() => scrollDownloads(150)}>
+                      <i className="bi bi-arrow-down fs-5"></i>
                     </button>
                   </div>
 

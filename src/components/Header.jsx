@@ -53,25 +53,25 @@ function Header() {
                     </div>
 
                     {/* Your existing navbar and offcanvas here */}
-                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 ${showTopHeader ? 'container' : 'container-fluid px-5'}`}>
-
-                        <a className="navbar-brand fw-bold d-flex align-items-center ms-5 ps-5" href="#">
-                            <img src={logo} alt="logo" style={{ height: '60px' }} className="me-2" />
+                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-5 ${showTopHeader ? 'container' : 'container-fluid px-5'}`}>
+                        <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
+                            <img src={logo} alt="logo" style={{ height: '60px' }} className="ms-5" />
                         </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-block">
-                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4">
+                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
+                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="news">News</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li>
-                                <li className="nav-item"><a className="nav-link me-5" href="#" data-target="contact">Contact Us</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="contact">Contact Us</a></li>
                             </ul>
                         </div>
                     </nav>
+
                     {/* offcanvas stays same */}
                 </header>
             </div>
