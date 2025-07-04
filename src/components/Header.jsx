@@ -32,7 +32,7 @@ function Header() {
             <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar">
                 <header>
                     {/* Top Header */}
-                    <div className={`container bg-danger d-lg-flex py-3 text-white justify-content-between transition-top-header ${showTopHeader ? '' : 'hidden'}`}>
+                    <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between transition-top-header ${showTopHeader ? '' : 'hidden'}`}>
                         <div className='align-items-center justify-content-start'>
                             <span className="ms-5">
                                 <FaPhone className="ms-5" /> +44-888-12-345
@@ -53,7 +53,7 @@ function Header() {
                     </div>
 
                     {/* Your existing navbar and offcanvas here */}
-                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-5 ${showTopHeader ? 'container' : 'container-fluid px-5'}`}>
+                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-5 ${showTopHeader ? 'container' : 'container-fluid px-5 '}`}>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
                             <img src={logo} alt="logo" style={{ height: '60px' }} className="ms-5" />
                         </a>
