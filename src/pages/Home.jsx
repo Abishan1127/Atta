@@ -149,14 +149,14 @@ function Home() {
                     </div>
 
                     {/* Up arrow on top right */}
-                    <div className="position-absolute top-0 end-0 me-2">
+                    <div className="position-absolute top-0 end-0 me-2 mt-2">
                       <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
                         <i className="bi bi-arrow-up"></i>
                       </button>
                     </div>
 
                     {/* Down arrow on bottom right */}
-                    <div className="position-absolute bottom-0 end-0 me-2 mb-2">
+                    <div className="position-absolute bottom-0 end-0 me-2 mb-3">
                       <button className="btn btn-outline-dark" onClick={() => scrollDownloads(150)}>
                         <i className="bi bi-arrow-down fs-5"></i>
                       </button>
