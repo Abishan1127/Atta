@@ -571,6 +571,14 @@
 .offcanvas .navbar-nav .nav-link {
     font-size: 1.1rem;
 }
+.scrollbar-track {
+  overflow: hidden;
+}
+
+#scrollbar-thumb {
+  transition: top 0.2s ease;
+}
+
 /* Auto-scroll animation */
 @keyframes scroll {
   0% {

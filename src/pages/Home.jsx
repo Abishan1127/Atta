@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useRef } from 'react';
 import { Modal } from 'react-bootstrap';
 import CustomButton from '../components/CustomButton';
 import Contact from '../components/Contact';
@@ -7,6 +7,7 @@ import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
 import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
 import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage } from '../constants/data';
+
 
 function Home() {
   const [current, setCurrent] = useState(0);
@@ -43,6 +44,7 @@ function Home() {
       });
     }
   };
+  
 
 
   return (
@@ -101,15 +103,12 @@ function Home() {
 
         {/* Download full Section */}
         <div className="downloads-section py-5 bg-transparent" id="downloads">
-
           {/* Background image overlay */}
           <div className='download-section'></div>
-
           {/* Your existing content */}
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div className="download-section">
               <div className="col-md-12 row no-gutters">
-
                 {/* Slide section */}
                 <div className="col-md-6 slide-container ">
                   <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 ">
@@ -130,8 +129,8 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Downloads section */}
-                <div className="col-md-6 px-3 pt-5 mt-5 position-relative " >
+                {/* Right Downloads section */}
+                <div className="col-md-5 px-3 pt-5 mt-5 position-relative " >
                   <div className="card h-100 border-0 bg-transparent ">
                     <div className="card-body downloads-scroll p-0">
                       {files.map((item, idx) => (
@@ -148,19 +147,21 @@ function Home() {
                       ))}
                     </div>
 
-                    {/* Up arrow on top right */}
-                    <div className="position-absolute top-0 end-0 me-2 mt-2">
-                      <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
+                    <div className="scrollbar-container position-absolute top-0 end-0 d-flex flex-column align-items-center" style={{ height: '100%', right: '0.5rem' }}>
+                      <button className="btn btn-outline-dark fs-5 mb-2 mt-2" onClick={() => scrollDownloads(-150)}>
                         <i className="bi bi-arrow-up"></i>
+                      </button>
+
+                      <div className="scrollbar-track my-2" style={{ flexGrow: 1, width: '4px', background: '#ccc', borderRadius: '2px', position: 'relative' }}>
+                        <div id="scrollbar-thumb" style={{ width: '100%', height: '30px', background: 'red', borderRadius: '2px', position: 'absolute', top: 0 }}></div>
+                      </div>
+
+                      <button className="btn btn-outline-dark fs-5 mb-3" onClick={() => scrollDownloads(150)}>
+                        <i className="bi bi-arrow-down"></i>
                       </button>
                     </div>
 
-                    {/* Down arrow on bottom right */}
-                    <div className="position-absolute bottom-0 end-0 me-2 mb-3">
-                      <button className="btn btn-outline-dark" onClick={() => scrollDownloads(150)}>
-                        <i className="bi bi-arrow-down fs-5"></i>
-                      </button>
-                    </div>
+
 
                   </div>
                 </div>
