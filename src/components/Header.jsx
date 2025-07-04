@@ -79,7 +79,7 @@ function Header() {
                     </div>
 
                     {/* Main Navbar */}
-                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 ps-md-5 pe-5 ${showTopHeader ? 'container' : 'container-fluid px-5  '}`}>
+                    <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 ps-md-5 pe-md-5 ${showTopHeader ? 'container' : 'container-fluid px-5  '}`}>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
                             <img src={logo} alt="logo" style={{ height: '60px' }} />
                         </a>
