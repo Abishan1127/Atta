@@ -11,7 +11,7 @@ function Footer() {
             <div className="container py-5 mt-5">
                 <div className="row gy-4 ">
                     {/* Column 1: Logo & About */}
-                    <div className="col-lg-4  d-flex flex-column align-items-center align-items-lg-start">
+                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <img src={logo2} alt="logo" className="mb-3" height={60} width={300} />
                         <p className="mt-1">
                             Righteous indignation and dislike men who <br /> are so beguiled and demoralized by the <br /> charm of pleasure of the moment so blinded.
@@ -53,7 +53,7 @@ function Footer() {
                     </div>
 
                     {/* Column 2: Useful Links */}
-                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ">
+                    <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <h5 className="fw-bold mb-3 mt-3 text-white">Useful Links</h5>
                         <div className="row">
                             <div className="col-6">
@@ -81,7 +81,7 @@ function Footer() {
                     </div>
 
                     {/* Column 3: Recent News & Subscribe */}
-                    <div className="col-lg-4 text-center text-lg-start d-flex flex-column align-items-center align-items-lg-start ">
+                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ">
                         <h5 className="fw-bold mb-3 mt-2 lh-lg text-white">Recent News</h5>
                         <div className="d-flex mb-3 mt-3 pt-3">
                             <div className="bg-danger text-white text-center px-3 me-3 rounded">
