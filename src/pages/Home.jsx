@@ -99,78 +99,76 @@ function Home() {
           </div>
         </div>
 
-       {/* Download full Section */}
-<div className="downloads-section py-5 bg-transparent" id="downloads">
-  
-  {/* Background image overlay */}
-  <div className='download-section'></div>
+        {/* Download full Section */}
+        <div className="downloads-section py-5 bg-transparent" id="downloads">
 
-  {/* Your existing content */}
-  <div style={{ position: 'relative', zIndex: 1 }}>
-    <div className="download-section">
-      <div className="col-md-12 row no-gutters">
+          {/* Background image overlay */}
+          <div className='download-section'></div>
 
-        {/* Slide section */}
-        <div className="col-md-6 slide-container ">
-          <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 ">
-            <div className="content-box slide-transition" key={current}>
-              <h4>
-                <i className="bi bi-house me-2"></i>
-                {downloadSlides[current].smallText}
-              </h4>
-              <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
-              <div className="btn-box mt-3">
-                <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
-              </div>
-            </div>
-            <div className="arrow-controls">
-              <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
-              <button className="btn btn-outline-light p-3" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
-            </div>
-          </div>
-        </div>
+          {/* Your existing content */}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div className="download-section">
+              <div className="col-md-12 row no-gutters">
 
-        {/* Downloads section */}
-        <div className="col-md-6 px-3 pt-5 mt-5 position-relative " >
-          <div className="card h-100 border-0 bg-transparent ">
-            <div className="card-body downloads-scroll p-0">
-              {files.map((item, idx) => (
-                <div key={idx} className="d-flex align-items-center justify-content-between bg-light p-3 rounded mb-3 shadow-sm">
-                  <div className="d-flex align-items-center my-3">
-                    <img src={iconImage} alt="pdf" className="me-3" style={{ width: '40px' }} />
-                    <div>
-                      <h4 className="mb-1">{item.title}</h4>
-                      <small className="text-small">{item.description}</small>
+                {/* Slide section */}
+                <div className="col-md-6 slide-container ">
+                  <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 ">
+                    <div className="content-box slide-transition" key={current}>
+                      <h4>
+                        <i className="bi bi-house me-2"></i>
+                        {downloadSlides[current].smallText}
+                      </h4>
+                      <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
+                      <div className="btn-box mt-3">
+                        <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
+                      </div>
+                    </div>
+                    <div className="arrow-controls">
+                      <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
+                      <button className="btn btn-outline-light p-3" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
                     </div>
                   </div>
-                  <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
                 </div>
-              ))}
-            </div>
 
-            {/* Up arrow on top right */}
-            <div className="position-absolute top-0 end-0 me-2">
-              <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
-                <i className="bi bi-arrow-up"></i>
-              </button>
-            </div>
+                {/* Downloads section */}
+                <div className="col-md-6 px-3 pt-5 mt-5 position-relative " >
+                  <div className="card h-100 border-0 bg-transparent ">
+                    <div className="card-body downloads-scroll p-0">
+                      {files.map((item, idx) => (
+                        <div key={idx} className="d-flex align-items-center justify-content-between bg-light p-3 rounded mb-3 shadow-sm">
+                          <div className="d-flex align-items-center my-3">
+                            <img src={iconImage} alt="pdf" className="me-3" style={{ width: '40px' }} />
+                            <div>
+                              <h4 className="mb-1">{item.title}</h4>
+                              <small className="text-small">{item.description}</small>
+                            </div>
+                          </div>
+                          <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
+                        </div>
+                      ))}
+                    </div>
 
-            {/* Down arrow on bottom right */}
-            <div className="position-absolute bottom-0 end-0 me-2">
-              <button className="btn btn-outline-dark" onClick={() => scrollDownloads(150)}>
-                <i className="bi bi-arrow-down fs-5"></i>
-              </button>
-            </div>
+                    {/* Up arrow on top right */}
+                    <div className="position-absolute top-0 end-0 me-2">
+                      <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
+                        <i className="bi bi-arrow-up"></i>
+                      </button>
+                    </div>
 
+                    {/* Down arrow on bottom right */}
+                    <div className="position-absolute bottom-0 end-0 me-2 mb-2">
+                      <button className="btn btn-outline-dark" onClick={() => scrollDownloads(150)}>
+                        <i className="bi bi-arrow-down fs-5"></i>
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-
 
         {/* Inline Video Accordion */}
         <div className="container my-4 text-center" id="VideoAccordion">
