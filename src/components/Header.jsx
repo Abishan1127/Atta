@@ -104,8 +104,8 @@ function Header() {
                             <h5 className="offcanvas-title">Menu</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
                         </div>
-                        <div className="offcanvas-body">
-                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4">
+                        <div className="offcanvas-body mt-5 pt-5">
+                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4 align-items-center mt-5 pt-5 text-uppercase fw-semibold">
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
