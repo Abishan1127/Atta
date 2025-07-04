@@ -596,11 +596,14 @@
     .hero-content p {
         font-size: 0.95rem;
     }
-}
-@media (max-width: 768px) {
-  .custom-arrow {
+    .custom-arrow {
     top: 60%;
-   
-  }
-}
+    }
+    .download-section .arrow-controls {
+    position: absolute;
+    bottom: 84px;
+    right: 100px;
+  
+}}
+
 
