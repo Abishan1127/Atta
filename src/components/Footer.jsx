@@ -55,9 +55,9 @@ function Footer() {
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <h5 className="fw-bold mb-3 mt-3 text-white">Useful Links</h5>
-                        <div className="row">
-                            <div className="col-6">
-                                <ul className="list-unstyled footer-links lh-base mt-3 ">
+                        <div className="row ">
+                            <div className="col-6 ">
+                                <ul className="list-unstyled footer-links lh-base mt-3 text-nowrap">
                                     <li><a href="#">All Departments</a></li>
                                     <li><a href="#">Health & Medical</a></li>
                                     <li><a href="#">Housing & Land</a></li>
@@ -68,7 +68,7 @@ function Footer() {
                                 </ul>
                             </div>
                             <div className="col-6">
-                                <ul className="list-unstyled footer-links lh-base mt-3">
+                                <ul className="list-unstyled footer-links lh-base mt-3 ms-5 ">
                                     <li><a href="#">About Us</a></li>
                                     <li><a href="#">Our Team</a></li>
                                     <li><a href="#">Services</a></li>
