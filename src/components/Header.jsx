@@ -27,11 +27,37 @@ function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    useEffect(() => {
+        const offcanvas = document.getElementById('mobileMenu');
+        const togglerIcon = document.querySelector('.navbar-toggler-icon');
+
+        const handleShow = () => {
+            togglerIcon.style.backgroundImage = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E")`;
+        };
+
+        const handleHide = () => {
+            togglerIcon.style.backgroundImage = "";
+        };
+
+        if (offcanvas) {
+            offcanvas.addEventListener('show.bs.offcanvas', handleShow);
+            offcanvas.addEventListener('hide.bs.offcanvas', handleHide);
+        }
+
+        return () => {
+            if (offcanvas) {
+                offcanvas.removeEventListener('show.bs.offcanvas', handleShow);
+                offcanvas.removeEventListener('hide.bs.offcanvas', handleHide);
+            }
+        };
+    }, []);
+    
+
     return (
         <>
             <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar">
                 <header>
-                    {/* Top Header */}
+                    {/* Top Header for large devices */}
                     <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between transition-top-header ${showTopHeader ? '' : 'hidden'}`}>
                         <div className='align-items-center justify-content-start'>
                             <span className="ms-5">
@@ -52,15 +78,15 @@ function Header() {
                         </div>
                     </div>
 
-                    {/* Your existing navbar and offcanvas here */}
+                    {/* Main Navbar */}
                     <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-5 ${showTopHeader ? 'container' : 'container-fluid px-5 '}`}>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
                             <img src={logo} alt="logo" style={{ height: '60px' }} className="ms-5" />
                         </a>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
+                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
                             <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
@@ -72,7 +98,23 @@ function Header() {
                         </div>
                     </nav>
 
-                    {/* offcanvas stays same */}
+                    {/* Offcanvas for mobile */}
+                    <div className="offcanvas offcanvas-end" tabIndex="-1" id="mobileMenu">
+                        <div className="offcanvas-header">
+                            <h5 className="offcanvas-title">Menu</h5>
+                            <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div className="offcanvas-body">
+                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4">
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="home">Home</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="news">News</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#" data-target="contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </header>
             </div>
         </>
