@@ -157,7 +157,7 @@ function Home() {
                   </div>
                 </div>
 
-                <div className="col-md-6 px-3 pt-5 mt-5 position-relative ">
+                <div className="col-md-6 px-3 pt-5 mt-0 mt-md-5 position-relative ">
                   <div className="card h-100 border-0 bg-transparent justify-content-between col-11 ">
                     <div className="card-body downloads-scroll p-0  " ref={scrollContainerRef}>
                       {files.map((item, idx) => (
