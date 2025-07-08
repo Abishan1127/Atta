@@ -6,7 +6,30 @@ import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
 import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
-import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage } from '../constants/data';
+import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage,services } from '../constants/data';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import ServiceCard from "../components/ServiceCard";
+
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3, // show 3 cards
+    slidesToSlide: 1 
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1
+  }
+};
+
 
 function Home() {
   const [current, setCurrent] = useState(0);
@@ -111,6 +134,59 @@ function Home() {
             <button className="carousel-control-next custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
               <span className="carousel-control-next-icon" aria-hidden="true"></span>
             </button>
+          </div>
+        </div>
+        {/* Service Section  */}
+        <div className="service-section py-5 bg-transparent" id="downloads">
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <div className="service-section text-white">
+              <div className="col-md-12 row no-gutters">
+
+                {/* Left Side */}
+                <div className="col-md-6 slide-container">
+                  <div className="overlay d-flex align-items-center justify-content-center border border-white rounded m-4">
+                    <div className="content-box my-5" >
+                      <h4 className='mt-5'>
+                        <i className="bi bi-house me-2"></i>
+                        Services & Activities
+                      </h4>
+                      <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
+                      <p className="mt-3">
+                        Denounce with righteous indignations <br /> and dislike men who are so beguiled all <br /> demoralized charms.
+                      </p>
+                      <div className="btn-box mt-3">
+                        <a href="#" className="btn btn-light p-3 mt-3 text-danger mb-5">READ MORE</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Side */}
+                <div className="col-md-7 pt-5 mt-0 mt-md-5 position-relative overlap-carousel">
+
+                  <Carousel
+                    responsive={responsive}
+                    autoPlay={true}
+                    autoPlaySpeed={3000}
+                    infinite={true}
+                    containerClass="carousel-container"
+                    itemClass="px-2"
+                    arrows={false}
+                  >
+                    {services.map((service, idx) => (
+                      <ServiceCard
+                        key={idx}
+                        title={service.title}
+                        category={service.category}
+                        icon={service.icon}
+                        image={service.image}
+                      />
+                    ))}
+                  </Carousel>
+                </div>
+
+              </div>
+            </div>
           </div>
         </div>
 

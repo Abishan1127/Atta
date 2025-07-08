@@ -1,5 +1,3 @@
-// src/constants/data.jsx
-
 import hero1 from '../assets/images/hero1.jpg';
 import hero2 from '../assets/images/hero2.jpg';
 import hero3 from '../assets/images/hero3.jpg';
@@ -14,8 +12,13 @@ import news1 from '../assets/images/news1.jpg';
 import news2 from '../assets/images/news2.jpg';
 import news3 from '../assets/images/news3.jpg';
 
+import service1 from '../assets/images/service-1.jpg';
+import service2 from '../assets/images/service-2.jpg';
+import service3 from '../assets/images/service-3.jpg';
+import service4 from '../assets/images/service-4.jpg';
+
 import Icon from '../assets/images/icon-1.png';
-import Downbg from '../assets/images/downbg.jpg'
+import Downbg from '../assets/images/downbg.jpg';
 
 export const slides = [hero1, hero2, hero3];
 
@@ -133,5 +136,32 @@ export const newsData = [
   },
 ];
 
+export const services = [
+  {
+    title: "Garbage & Recycling",
+    category: "Request",
+    icon: "bi-building",
+    image: service1,
+  },
+  {
+    title: "Public Parks",
+    category: "Visit",
+    icon: "bi-building",
+    image: service2,
+  },
+  {
+    title: "Water & Sewer",
+    category: "Manage",
+   icon: "bi-building",
+    image: service3,
+  },
+  {
+    title: "Building Permits",
+    category: "Apply",
+    icon: "bi-building",
+    image: service4,
+  }
+];
+
 export const iconImage = Icon;
-export const  downbg= Downbg;
+export const downbg = Downbg;
