@@ -624,6 +624,7 @@
 .scrollbar-container-custom .btn:hover {
   background-color: red;
   color: white;
+  outline: red; 
 }
 .scrollbar-container-custom .btn-down {
   margin-bottom: -40px; /* adjust to your need */
@@ -644,6 +645,9 @@
 @media (max-width: 576px) {
   .team-card {
     flex: 0 0 80%;
+  }
+  .scrollbar-container-custom {
+    margin-left: 40px;
   }
 }
 /* Responsive text */
