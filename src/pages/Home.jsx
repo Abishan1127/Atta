@@ -8,11 +8,14 @@ import '../assets/Styles/Style.css';
 import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
 import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage } from '../constants/data';
 
-
 function Home() {
   const [current, setCurrent] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [activeSection, setActiveSection] = useState('Natural Areas');
+
+  // NEW
+  const scrollContainerRef = useRef(null);
+  const thumbRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,8 +38,9 @@ function Home() {
     }
     return text;
   };
+
   const scrollDownloads = (amount) => {
-    const container = document.querySelector('.downloads-scroll');
+    const container = scrollContainerRef.current; // updated to use ref
     if (container) {
       container.scrollBy({
         top: amount,
@@ -44,6 +48,33 @@ function Home() {
       });
     }
   };
+
+  // NEW: update thumb position on scroll
+  const updateThumbPosition = () => {
+    const container = scrollContainerRef.current;
+    const thumb = thumbRef.current;
+    if (!container || !thumb) return;
+
+    const scrollTop = container.scrollTop;
+    const scrollHeight = container.scrollHeight - container.clientHeight;
+
+    const percentScrolled = scrollHeight ? scrollTop / scrollHeight : 0;
+    const trackHeight = container.clientHeight - thumb.offsetHeight;
+
+    thumb.style.top = `${percentScrolled * trackHeight}px`;
+  };
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.addEventListener('scroll', updateThumbPosition);
+    }
+    return () => {
+      if (container) {
+        container.removeEventListener('scroll', updateThumbPosition);
+      }
+    };
+  }, []);
 
 
 
@@ -103,15 +134,12 @@ function Home() {
 
         {/* Download full Section */}
         <div className="downloads-section py-5 bg-transparent" id="downloads">
-          {/* Background image overlay */}
           <div className='download-section'></div>
-          {/* Your existing content */}
           <div style={{ position: 'relative', zIndex: 1 }}>
             <div className="download-section">
               <div className="col-md-12 row no-gutters">
-                {/* Slide section */}
-                <div className="col-md-6 slide-container ">
-                  <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 ">
+                <div className="col-md-6 slide-container">
+                  <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4">
                     <div className="content-box slide-transition" key={current}>
                       <h4>
                         <i className="bi bi-house me-2"></i>
@@ -129,12 +157,11 @@ function Home() {
                   </div>
                 </div>
 
-                {/* Right Downloads section */}
-                <div className="col-md-6 px-3 pt-5 mt-5 position-relative">
+                <div className="col-md-6 px-3 pt-5 mt-5 position-relative ">
                   <div className="card h-100 border-0 bg-transparent justify-content-between col-11 ">
-                    <div className="card-body downloads-scroll p-0">
+                    <div className="card-body downloads-scroll p-0  " ref={scrollContainerRef}>
                       {files.map((item, idx) => (
-                        <div key={idx} className="download-item d-flex align-items-center justify-content-between">
+                        <div key={idx} className={`download-item d-flex align-items-center justify-content-between ${idx === files.length - 1 ? 'mb-0' : ''}`}>
                           <div className="d-flex align-items-center my-3">
                             <img src={iconImage} alt="pdf" className="download-icon me-3" />
                             <div>
@@ -146,30 +173,27 @@ function Home() {
                         </div>
                       ))}
                     </div>
-
-
                   </div>
                   <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center">
-                    <button className="btn btn-outline-dark fs-5 mb-2 mt-2" onClick={() => scrollDownloads(-150)}>
+                    <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
                       <i className="bi bi-arrow-up"></i>
                     </button>
 
-                    <div className="scrollbar-track-custom my-2">
-                      <div id="scrollbar-thumb" className="scrollbar-thumb-custom"></div>
+                    <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
+                      <div ref={thumbRef} className="scrollbar-thumb-custom "></div>
                     </div>
 
-                    <button className="btn btn-outline-dark fs-5 mb-3" onClick={() => scrollDownloads(150)}>
+                    <button className="btn btn-outline-dark fs-5 btn-down" onClick={() => scrollDownloads(150)}>
                       <i className="bi bi-arrow-down"></i>
                     </button>
                   </div>
-                </div>
 
+                </div>
 
               </div>
             </div>
           </div>
         </div>
-
         {/* Inline Video Accordion */}
         <div className="container my-4 text-center" id="VideoAccordion">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>

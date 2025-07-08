@@ -606,6 +606,7 @@
   background: #ccc;
   border-radius: 2px;
   position: relative;
+  height: 80%;
 }
 
 .scrollbar-thumb-custom {
@@ -616,6 +617,18 @@
   position: absolute;
   top: 0;
 }
+.scrollbar-container-custom .btn {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.scrollbar-container-custom .btn:hover {
+  background-color: red;
+  color: white;
+}
+.scrollbar-container-custom .btn-down {
+  margin-bottom: -40px; /* adjust to your need */
+}
+
 
 
 /* Auto-scroll animation */
