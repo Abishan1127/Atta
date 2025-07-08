@@ -578,6 +578,42 @@
 #scrollbar-thumb {
   transition: top 0.2s ease;
 }
+/* Downloads section custom styles */
+.download-item {
+  background: #f8f9fa; /* same as bg-light */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.download-icon {
+  width: 40px;
+}
+
+/* Scrollbar styles */
+.scrollbar-container-custom {
+  height: 100%;
+  right: 0.5rem;
+}
+
+.scrollbar-track-custom {
+  flex-grow: 1;
+  width: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  position: relative;
+}
+
+.scrollbar-thumb-custom {
+  width: 100%;
+  height: 30px;
+  background: red;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+}
+
 
 /* Auto-scroll animation */
 @keyframes scroll {

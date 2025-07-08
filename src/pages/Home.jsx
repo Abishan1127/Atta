@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Modal } from 'react-bootstrap';
 import CustomButton from '../components/CustomButton';
 import Contact from '../components/Contact';
@@ -44,7 +44,7 @@ function Home() {
       });
     }
   };
-  
+
 
 
   return (
@@ -130,13 +130,13 @@ function Home() {
                 </div>
 
                 {/* Right Downloads section */}
-                <div className="col-md-5 px-3 pt-5 mt-5 position-relative " >
-                  <div className="card h-100 border-0 bg-transparent ">
+                <div className="col-md-5 px-3 pt-5 mt-5 position-relative">
+                  <div className="card h-100 border-0 bg-transparent">
                     <div className="card-body downloads-scroll p-0">
                       {files.map((item, idx) => (
-                        <div key={idx} className="d-flex align-items-center justify-content-between bg-light p-3 rounded mb-3 shadow-sm">
+                        <div key={idx} className="download-item d-flex align-items-center justify-content-between">
                           <div className="d-flex align-items-center my-3">
-                            <img src={iconImage} alt="pdf" className="me-3" style={{ width: '40px' }} />
+                            <img src={iconImage} alt="pdf" className="download-icon me-3" />
                             <div>
                               <h4 className="mb-1">{item.title}</h4>
                               <small className="text-small">{item.description}</small>
@@ -147,24 +147,22 @@ function Home() {
                       ))}
                     </div>
 
-                    <div className="scrollbar-container position-absolute top-0 end-0 d-flex flex-column align-items-center" style={{ height: '100%', right: '0.5rem' }}>
+                    <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center">
                       <button className="btn btn-outline-dark fs-5 mb-2 mt-2" onClick={() => scrollDownloads(-150)}>
                         <i className="bi bi-arrow-up"></i>
                       </button>
 
-                      <div className="scrollbar-track my-2" style={{ flexGrow: 1, width: '4px', background: '#ccc', borderRadius: '2px', position: 'relative' }}>
-                        <div id="scrollbar-thumb" style={{ width: '100%', height: '30px', background: 'red', borderRadius: '2px', position: 'absolute', top: 0 }}></div>
+                      <div className="scrollbar-track-custom my-2">
+                        <div id="scrollbar-thumb" className="scrollbar-thumb-custom"></div>
                       </div>
 
                       <button className="btn btn-outline-dark fs-5 mb-3" onClick={() => scrollDownloads(150)}>
                         <i className="bi bi-arrow-down"></i>
                       </button>
                     </div>
-
-
-
                   </div>
                 </div>
+
 
               </div>
             </div>
