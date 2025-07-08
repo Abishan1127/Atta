@@ -130,8 +130,8 @@ function Home() {
                 </div>
 
                 {/* Right Downloads section */}
-                <div className="col-md-5 px-3 pt-5 mt-5 position-relative">
-                  <div className="card h-100 border-0 bg-transparent">
+                <div className="col-md-6 px-3 pt-5 mt-5 position-relative">
+                  <div className="card h-100 border-0 bg-transparent justify-content-between col-11 ">
                     <div className="card-body downloads-scroll p-0">
                       {files.map((item, idx) => (
                         <div key={idx} className="download-item d-flex align-items-center justify-content-between">
@@ -147,19 +147,20 @@ function Home() {
                       ))}
                     </div>
 
-                    <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center">
-                      <button className="btn btn-outline-dark fs-5 mb-2 mt-2" onClick={() => scrollDownloads(-150)}>
-                        <i className="bi bi-arrow-up"></i>
-                      </button>
 
-                      <div className="scrollbar-track-custom my-2">
-                        <div id="scrollbar-thumb" className="scrollbar-thumb-custom"></div>
-                      </div>
+                  </div>
+                  <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center">
+                    <button className="btn btn-outline-dark fs-5 mb-2 mt-2" onClick={() => scrollDownloads(-150)}>
+                      <i className="bi bi-arrow-up"></i>
+                    </button>
 
-                      <button className="btn btn-outline-dark fs-5 mb-3" onClick={() => scrollDownloads(150)}>
-                        <i className="bi bi-arrow-down"></i>
-                      </button>
+                    <div className="scrollbar-track-custom my-2">
+                      <div id="scrollbar-thumb" className="scrollbar-thumb-custom"></div>
                     </div>
+
+                    <button className="btn btn-outline-dark fs-5 mb-3" onClick={() => scrollDownloads(150)}>
+                      <i className="bi bi-arrow-down"></i>
+                    </button>
                   </div>
                 </div>
 

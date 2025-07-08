@@ -176,7 +176,10 @@
 /* Fixed height + vertical scroll on downloads card */
 .downloads-scroll {
   max-height: 400px;
-  overflow-y: auto;
+  overflow-y: auto; 
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE & Edge */
+
 }
 
 /* Optional: smooth icon transitions */
