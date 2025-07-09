@@ -6,40 +6,29 @@ import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
 import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
-import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage,services } from '../constants/data';
+import {
+  slides, teamMembers, downloadSlides, files, accordionData, newsData,
+  iconImage, services, departmentsData
+} from '../constants/data';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ServiceCard from "../components/ServiceCard";
-
+import DepartmentCard from '../components/DepartmentCard';
 
 const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3, // show 3 cards
-    slidesToSlide: 1 
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 2,
-    slidesToSlide: 1
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1
-  }
+  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
+  tablet: { breakpoint: { max: 1024, min: 464 }, items: 2 },
+  mobile: { breakpoint: { max: 464, min: 0 }, items: 1 }
 };
-
 
 function Home() {
   const [current, setCurrent] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [activeSection, setActiveSection] = useState('Natural Areas');
-
-  // NEW
   const scrollContainerRef = useRef(null);
   const thumbRef = useRef(null);
 
+  // Downloads auto slide
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % downloadSlides.length);
@@ -52,69 +41,71 @@ function Home() {
 
   const splitBigText = (text) => {
     const words = text.split(' ');
-    if (words.length > 4) {
-      return (
-        <>
-          {words.slice(0, 4).join(' ')} <br /> {words.slice(4).join(' ')}
-        </>
-      );
-    }
-    return text;
+    return words.length > 4
+      ? <>{words.slice(0, 4).join(' ')} <br /> {words.slice(4).join(' ')}</>
+      : text;
   };
 
+  // Scrollbar for downloads
   const scrollDownloads = (amount) => {
-    const container = scrollContainerRef.current; // updated to use ref
-    if (container) {
-      container.scrollBy({
-        top: amount,
-        behavior: 'smooth'
-      });
-    }
-  };
-
-  // NEW: update thumb position on scroll
-  const updateThumbPosition = () => {
     const container = scrollContainerRef.current;
-    const thumb = thumbRef.current;
-    if (!container || !thumb) return;
-
-    const scrollTop = container.scrollTop;
-    const scrollHeight = container.scrollHeight - container.clientHeight;
-
-    const percentScrolled = scrollHeight ? scrollTop / scrollHeight : 0;
-    const trackHeight = container.clientHeight - thumb.offsetHeight;
-
-    thumb.style.top = `${percentScrolled * trackHeight}px`;
+    if (container) {
+      container.scrollBy({ top: amount, behavior: 'smooth' });
+    }
   };
 
   useEffect(() => {
     const container = scrollContainerRef.current;
-    if (container) {
-      container.addEventListener('scroll', updateThumbPosition);
-    }
-    return () => {
-      if (container) {
-        container.removeEventListener('scroll', updateThumbPosition);
-      }
+    const updateThumbPosition = () => {
+      const scrollTop = container.scrollTop;
+      const scrollHeight = container.scrollHeight - container.clientHeight;
+      const percentScrolled = scrollHeight ? scrollTop / scrollHeight : 0;
+      const trackHeight = container.clientHeight - thumbRef.current.offsetHeight;
+      thumbRef.current.style.top = `${percentScrolled * trackHeight}px`;
     };
+    container.addEventListener('scroll', updateThumbPosition);
+    return () => container.removeEventListener('scroll', updateThumbPosition);
   }, []);
 
+  // ========== Departments Section ==========
+  const departmentsScrollRef = useRef(null);
+  const [departmentsActiveIndex, setDepartmentsActiveIndex] = useState(0);
 
+  useEffect(() => {
+    const container = departmentsScrollRef.current;
+    if (!container) return;
+
+    const numItems = departmentsData.length;
+    const itemsPerScreen = 3;
+    const maxIndex = Math.ceil(numItems / itemsPerScreen) - 2;
+
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index > maxIndex) index = 0;
+
+      container.scrollTo({
+        left: container.clientWidth * index,
+        behavior: 'smooth'
+      });
+      setDepartmentsActiveIndex(index);
+      index++;
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
-      <div className='container-fluid p-0'
-      >
-        {/* Hero Section */}
-        <div className="p-0 z-index-1 hero-wrapper position-relative" >
+      <div className="container-fluid p-0">
+
+        {/* Hero */}
+        <div className="p-0 z-index-1 hero-wrapper position-relative">
           <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
-              {slides.map((image, index) => (
-                <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                  <div
-                    className="hero-slide d-flex align-items-center justify-content-center text-center text-white"
-                    style={{ backgroundImage: `url(${image})` }}
-                  >
+              {slides.map((img, idx) => (
+                <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
+                  <div className="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style={{ backgroundImage: `url(${img})` }}>
                     <div className="overlay"></div>
                     <div className="hero-content animate-slide-up">
                       <h1 className="display-1 fw-bold">My City</h1>
@@ -129,68 +120,91 @@ function Home() {
               ))}
             </div>
             <button className="carousel-control-prev custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="carousel-control-prev-icon"></span>
             </button>
             <button className="carousel-control-next custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="carousel-control-next-icon"></span>
             </button>
           </div>
         </div>
-        {/* Service Section  */}
-        <div className="service-section py-5 bg-transparent" id="downloads">
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div className="service-section text-white">
-              <div className="col-md-12 row no-gutters">
 
-                {/* Left Side */}
-                <div className="col-md-6 slide-container">
-                  <div className="overlay d-flex align-items-center justify-content-center border border-white rounded m-4">
-                    <div className="content-box my-5" >
-                      <h4 className='mt-5'>
-                        <i className="bi bi-house me-2"></i>
-                        Services & Activities
-                      </h4>
-                      <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
-                      <p className="mt-3">
-                        Denounce with righteous indignations <br /> and dislike men who are so beguiled all <br /> demoralized charms.
-                      </p>
-                      <div className="btn-box mt-3">
-                        <a href="#" className="btn btn-light p-3 mt-3 text-danger mb-5">READ MORE</a>
-                      </div>
+        {/* Services */}
+        <div className="service-section py-5 bg-transparent" id="service">
+          <div className="service-section text-white">
+            <div className="col-md-12 row no-gutters">
+              <div className="col-md-6 slide-container">
+                <div className="overlay d-flex align-items-center justify-content-center border border-white rounded m-4">
+                  <div className="content-box my-5">
+                    <h4 className='mt-5'><i className="bi bi-house me-2"></i> Services & Activities</h4>
+                    <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
+                    <p className="mt-3">Denounce with righteous indignations <br /> and dislike men who are so beguiled all <br /> demoralized charms.</p>
+                    <div className="btn-box mt-3">
+                      <a href="#" className="btn btn-light p-3 mt-3 text-danger mb-5">READ MORE</a>
                     </div>
                   </div>
                 </div>
-
-                {/* Right Side */}
-                <div className="col-md-7 pt-5 mt-0 mt-md-5 position-relative overlap-carousel">
-
-                  <Carousel
-                    responsive={responsive}
-                    autoPlay={true}
-                    autoPlaySpeed={3000}
-                    infinite={true}
-                    containerClass="carousel-container"
-                    itemClass="px-2"
-                    arrows={false}
-                  >
-                    {services.map((service, idx) => (
-                      <ServiceCard
-                        key={idx}
-                        title={service.title}
-                        category={service.category}
-                        icon={service.icon}
-                        image={service.image}
-                      />
-                    ))}
-                  </Carousel>
-                </div>
-
+              </div>
+              <div className="col-md-7 pt-5 mt-0 mt-md-5 position-relative overlap-carousel">
+                <Carousel
+                  responsive={responsive}
+                  autoPlay autoPlaySpeed={3000} infinite
+                  containerClass="carousel-container" itemClass="px-2" arrows={false}
+                >
+                  {services.map((service, idx) => (
+                    <ServiceCard key={idx} {...service} />
+                  ))}
+                </Carousel>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Team Section */}
+        {/* Departments inline in Home */}
+        <section className="departments-section py-5">
+          <div className="container">
+            <div className="text-center mb-4">
+              <p className="text-danger fw-bold mb-1">
+                <i className="bi bi-star-fill"></i> DEPARTMENTS <i className="bi bi-star-fill"></i>
+              </p>
+              <h2 className="fw-bold">Explore Our Departments</h2>
+              <div className="mt-2" style={{ width: '50px', height: '3px', backgroundColor: '#c00', margin: '0 auto' }}></div>
+            </div>
+
+            <div className="department-scroll-container position-relative">
+              <div className="d-flex overflow-auto no-scrollbar" ref={departmentsScrollRef}>
+                {departmentsData.map((dept, index) => (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 pe-0 pe-md-3 col-12 col-md-3"
+                  
+                  >
+                    <DepartmentCard
+                      image={dept.image}
+                      iconUrl={dept.iconUrl}
+                      title={dept.title}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="d-flex justify-content-center mt-5">
+                {[0, 1, 2].map(i => (
+                  <div
+                    key={i}
+                    style={{
+                      width: '30px',
+                      height: '3px',
+                      background: departmentsActiveIndex === i ? '#c00' : '#ddd',
+                      margin: '0 5px',
+                      transition: 'background 0.3s'
+                    }}
+                  ></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Team */}
         <div className="team-section py-5 bg-white mt-5" id="team">
           <div className="container-fluid text-center">
             <h6 className="text-danger fw-bold mb-2">
@@ -199,110 +213,85 @@ function Home() {
             <h2 className="fw-bold mb-3 pt-2">Meet Council Members</h2>
             <div className="divider mx-auto mb-4"></div>
             <div className="row justify-content-center g-4 pt-3">
-              {teamMembers.map((member, idx) => (
-                <div key={idx} className="col-12 col-sm-6 col-md-4 col-lg-2">
-                  <TeamCard member={member} />
+              {teamMembers.map((m, i) => (
+                <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-2">
+                  <TeamCard member={m} />
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Download full Section */}
+        {/* Downloads */}
         <div className="downloads-section py-5 bg-transparent" id="downloads">
-          <div className='download-section'></div>
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div className="download-section">
-              <div className="col-md-12 row no-gutters">
-                <div className="col-md-6 slide-container">
-                  <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4">
-                    <div className="content-box slide-transition" key={current}>
-                      <h4>
-                        <i className="bi bi-house me-2"></i>
-                        {downloadSlides[current].smallText}
-                      </h4>
-                      <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
-                      <div className="btn-box mt-3">
-                        <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
-                      </div>
-                    </div>
-                    <div className="arrow-controls">
-                      <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
-                      <button className="btn btn-outline-light p-3" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
+          <div className="download-section">
+            <div className="col-md-12 row no-gutters">
+              <div className="col-md-6 slide-container">
+                <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4">
+                  <div className="content-box slide-transition" key={current}>
+                    <h4><i className="bi bi-house me-2"></i>{downloadSlides[current].smallText}</h4>
+                    <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
+                    <div className="btn-box mt-3">
+                      <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
                     </div>
                   </div>
+                  <div className="arrow-controls">
+                    <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
+                    <button className="btn btn-outline-light p-3" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
+                  </div>
                 </div>
-
-                <div className="col-md-6 px-3 pt-5 mt-0 mt-md-5 position-relative ">
-                  <div className="card h-100 border-0 bg-transparent justify-content-between col-11 ">
-                    <div className="card-body downloads-scroll p-0  " ref={scrollContainerRef}>
-                      {files.map((item, idx) => (
-                        <div key={idx} className={`download-item d-flex align-items-center justify-content-between ${idx === files.length - 1 ? 'mb-0' : ''}`}>
-                          <div className="d-flex align-items-center my-3">
-                            <img src={iconImage} alt="pdf" className="download-icon me-3" />
-                            <div>
-                              <h4 className="mb-1">{item.title}</h4>
-                              <small className="text-small">{item.description}</small>
-                            </div>
-                          </div>
-                          <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
+              </div>
+              <div className="col-md-6 px-3 pt-5 mt-0 mt-md-5 position-relative">
+                <div className="card h-100 border-0 bg-transparent justify-content-between col-11">
+                  <div className="card-body downloads-scroll p-0" ref={scrollContainerRef}>
+                    {files.map((item, idx) => (
+                      <div key={idx} className={`download-item d-flex align-items-center justify-content-between ${idx === files.length - 1 ? 'mb-0' : ''}`}>
+                        <div className="d-flex align-items-center my-3">
+                          <img src={iconImage} alt="pdf" className="download-icon me-3" />
+                          <div><h4 className="mb-1">{item.title}</h4><small className="text-small">{item.description}</small></div>
                         </div>
-                      ))}
-                    </div>
+                        <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
+                      </div>
+                    ))}
                   </div>
-                  <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3 me-md-0 mt-1 mt-md-0">
-                    <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}>
-                      <i className="bi bi-arrow-up"></i>
-                    </button>
-                    <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
-                      <div ref={thumbRef} className="scrollbar-thumb-custom "></div>
-                    </div>
-                    <button className="btn btn-outline-dark fs-5 btn-down" onClick={() => scrollDownloads(150)}>
-                      <i className="bi bi-arrow-down"></i>
-                    </button>
-                  </div>
-
-
                 </div>
-
+                <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3">
+                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}><i className="bi bi-arrow-up"></i></button>
+                  <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
+                    <div ref={thumbRef} className="scrollbar-thumb-custom"></div>
+                  </div>
+                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(150)}><i className="bi bi-arrow-down"></i></button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        {/* Inline Video Accordion */}
+
+        {/* News Accordion */}
         <div className="container my-4 text-center" id="VideoAccordion">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
           <div className="divider mx-auto mb-4"></div>
           <div className="row">
             <div className="col-md-8 position-relative video-thumbnail-container p-0">
-              <img
-                src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg"
-                alt="Video Thumbnail"
-                className="video-thumbnail"
-                onClick={() => setShowModal(true)}
-              />
+              <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
               <div className="play-overlay" onClick={() => setShowModal(true)}>
-                <span className="ripple"></span>
-                <span className="ripple delay1"></span>
-                <span className="ripple delay2"></span>
+                <span className="ripple"></span><span className="ripple delay1"></span><span className="ripple delay2"></span>
                 <FaPlayCircle size={80} />
               </div>
-
-
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">
-              {accordionData.map((section) => (
-                <div key={section.title} className="accordion-section">
-                  <div className="accordion-header" onClick={() => setActiveSection(section.title)}>
-                    <span className="accordion-title m-2">{section.title}</span>
-                    {activeSection === section.title ? <FaMinus className="accordion-icon active" /> : <FaPlus className="accordion-icon" />}
+              {accordionData.map((sec) => (
+                <div key={sec.title} className="accordion-section">
+                  <div className="accordion-header" onClick={() => setActiveSection(sec.title)}>
+                    <span className="accordion-title m-2">{sec.title}</span>
+                    {activeSection === sec.title ? <FaMinus className="accordion-icon active" /> : <FaPlus className="accordion-icon" />}
                   </div>
-                  {activeSection === section.title && section.content.length > 0 && (
-                    <div className="accordion-body m-1 ">
+                  {activeSection === sec.title && (
+                    <div className="accordion-body m-1">
                       <div className="accordion-subtitle">Must Visited Parks & Natural Areas;</div>
                       <div className="accordion-list m-2 my-3">
-                        {section.content.map((item) => (
+                        {sec.content.map((item) => (
                           <div key={item.name} className="accordion-item">
                             <FaCheckCircle className={`check-icon ${item.active ? 'active' : ''}`} />
                             <span className={`item-text ${item.active ? 'active' : ''}`}>{item.name}</span>
@@ -315,8 +304,6 @@ function Home() {
               ))}
             </div>
           </div>
-
-          {/* Modal */}
           <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
             <Modal.Body className="p-0">
               <div className="video-responsive">
@@ -328,21 +315,19 @@ function Home() {
 
         {/* News */}
         <div className="container py-5 text-center" id="news">
-          <h6 className="text-danger fw-bold mb-2">
-            <span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span>
-          </h6>
+          <h6 className="text-danger fw-bold mb-2"><span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span></h6>
           <h2 className="fw-bold mb-4 pt-2">Latest From Our Newsroom</h2>
           <div className="divider mx-auto mb-4"></div>
-
           <div className="row justify-content-center">
-            {newsData.map((item, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-4 mb-4">
+            {newsData.map((item, idx) => (
+              <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">
                 <NewsCard item={item} />
               </div>
             ))}
           </div>
         </div>
-        {/* Contact Section */}
+
+        {/* Contact */}
         <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
       </div>
     </>

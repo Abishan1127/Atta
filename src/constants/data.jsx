@@ -17,6 +17,14 @@ import service2 from '../assets/images/service-2.jpg';
 import service3 from '../assets/images/service-3.jpg';
 import service4 from '../assets/images/service-4.jpg';
 
+import explore1 from '../assets/images/explore-1.jpg';
+import explore2 from '../assets/images/explore-2.jpg';
+import explore3 from '../assets/images/explore-3.jpg';
+import explore4 from '../assets/images/explore-4.jpg';
+import explore5 from '../assets/images/explore-5.jpg';
+import explore6 from '../assets/images/explore-6.jpg';
+
+
 import Icon from '../assets/images/icon-1.png';
 import Downbg from '../assets/images/downbg.jpg';
 
@@ -152,7 +160,7 @@ export const services = [
   {
     title: "Water & Sewer",
     category: "Manage",
-   icon: "bi-building",
+    icon: "bi-building",
     image: service3,
   },
   {
@@ -162,6 +170,41 @@ export const services = [
     image: service4,
   }
 ];
+export const departmentsData = [
+  {
+    image: explore1,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+    title: "Land & Housing Department",
+  },
+  {
+    image: explore2,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
+    title: "School & College Department",
+  },
+  {
+    image: explore3,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
+    title: "Policing & Crime Department",
+  },
+  {
+    image: explore4,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
+    title: "Policing & Crime Department",
+  },
+  {
+    image: explore5,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+    title: "Land & Housing Department",
+  },
+  {
+    image: explore6,
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
+    title: "School & College Department",
+  },
+];
+
+
+
 
 export const iconImage = Icon;
 export const downbg = Downbg;

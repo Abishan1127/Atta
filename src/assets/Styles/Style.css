@@ -289,6 +289,72 @@
   font-size: 24px;
   color: #bbb;
 }
+/*department card styles*/
+.department-card {
+  height: 400px;
+  border-radius: 1rem;
+}
+
+.department-card-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.department-icon-circle {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.department-icon-img {
+  width: 50px;
+}
+
+.department-title {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.department-scroll-container .d-flex::-webkit-scrollbar {
+  display: none; /* hide scrollbar on Chrome/Safari */
+}
+
+.department-scroll-container .d-flex {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.department-scroll-container .d-flex {
+  scroll-snap-type: x mandatory;
+}
+
+.department-scroll-container .d-flex > div {
+  scroll-snap-align: start;
+}
+.department-icon-overlay {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.department-icon-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
 
 
 
