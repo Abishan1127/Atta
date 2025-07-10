@@ -14,21 +14,20 @@ const DepartmentCard = ({ image, iconUrl, title }) => {
         <img src={iconUrl} alt="icon" className="department-icon-img" />
       </div>
 
-     <div className="department-title position-absolute bottom-0 text-center p-3 bg-white" style={{ transform: "translateY(40%)" }}>
-
+      <div className="department-title position-absolute text-center p-3 bg-white " style={{bottom:"-40px"}}>
         <h5 className="mb-0 mx-4 fw-semibold">{title.split('\n').map((line, index) => (
           <div key={index}>{line}</div>
         ))}</h5>
       </div>
 
       {/* NEW hover overlay */}
-      {/* <div className="department-hover-overlay position-absolute bottom-0 w-100 text-center p-3">
+      <div className="department-hover-overlay position-absolute bottom-0 w-100 text-center p-3">
         <h5 className="mb-2 fw-semibold">{title.split('\n').map((line, index) => (
           <div key={index}>{line}</div>
         ))}</h5>
         <div className="hover-line mx-auto my-2"></div>
         <p className="hover-read mb-0">READ MORE</p>
-      </div> */}
+      </div>
     </div>
   );
 };

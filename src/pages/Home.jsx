@@ -137,23 +137,35 @@ function Home() {
         {/* Departments */}
         <div className="department-section py-5 bg-light" id="departments">
           <div className="container text-center">
-             <h6 className="text-danger fw-bold mb-2">
+            <h6 className="text-danger fw-bold mb-2">
               <span className="me-1">★</span> Departments<span className="ms-1">★</span>
             </h6>
             <h2 className="fw-bold mb-3 pt-2">Explore Our Departments</h2>
             <div className="divider mx-auto mb-4"></div>
 
-            {/* Large screen grid */}
-            <div className="row d-none d-md-flex">
-              {departmentsData.map((dept, idx) => (
-                <div className="col-12 col-md-6 col-lg-3 mb-4" key={idx}>
-                  <DepartmentCard {...dept} />
-                </div>
-              ))}
+            {/* Large screen carousel (4 items, no indicators) */}
+            <div className="d-none d-md-block ">
+              <Carousel
+                responsive={{
+                  desktop: { breakpoint: { max: 3000, min: 1024 }, items: 4 },
+                  tablet: { breakpoint: { max: 1024, min: 768 }, items: 2 },
+                }}
+                autoPlay
+                autoPlaySpeed={3000}
+                infinite
+                arrows={false}
+                showDots={false}
+                containerClass="carousel-container"
+                itemClass="px-2"
+              >
+                {departmentsData.map((dept, idx) => (
+                  <DepartmentCard key={idx} {...dept} />
+                ))}
+              </Carousel>
             </div>
 
             {/* Small screen carousel */}
-            <div id="departmentCarousel" className="carousel slide d-md-none" data-bs-ride="carousel">
+            <div id="departmentCarousel" className="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="3000">
               <div className="carousel-inner">
                 {departmentsData.map((dept, idx) => (
                   <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
@@ -170,6 +182,7 @@ function Home() {
             </div>
           </div>
         </div>
+
 
 
 
