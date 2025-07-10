@@ -620,6 +620,9 @@
   border: 0 !important;
   overflow: hidden;
 }
+.my-download-btn {
+  margin-bottom: -44px;
+}
 
 
 /* fade + slide from right */

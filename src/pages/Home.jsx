@@ -238,11 +238,14 @@ function Home() {
                   </div>
                 </div>
                 <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3">
-                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(-150)}><i className="bi bi-arrow-up"></i></button>
+                  <button className="btn btn-outline-dark fs-5 mt-1 mt-md-0" onClick={() => scrollDownloads(-150)}><i className="bi bi-arrow-up"></i></button>
                   <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
                     <div ref={thumbRef} className="scrollbar-thumb-custom"></div>
                   </div>
-                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(150)}><i className="bi bi-arrow-down "></i></button>
+                  <button className="btn btn-outline-dark fs-5 my-download-btn" onClick={() => scrollDownloads(150)}>
+                    <i className="bi bi-arrow-down"></i>
+                  </button>
+
                 </div>
               </div>
             </div>
