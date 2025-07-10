@@ -395,6 +395,18 @@
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+/* Adjust dot style if you want to look like small bars */
+.react-multi-carousel-dot button {
+  width: 30px;
+  height: 4px;
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.react-multi-carousel-dot--active button {
+  background: #dc3545;
+}
+
 
 
 

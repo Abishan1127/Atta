@@ -67,7 +67,7 @@ function Home() {
     return () => container.removeEventListener('scroll', updateThumbPosition);
   }, []);
 
-  
+
 
   return (
     <>
@@ -134,36 +134,43 @@ function Home() {
           </div>
         </div>
 
-        {/* Departments inline in Home */}
-        <section className="departments-section py-5">
-          <div className="container">
-            <div className="text-center mb-4">
-              <p className="text-danger fw-bold mb-1">
-                <i className="bi bi-star-fill"></i> DEPARTMENTS <i className="bi bi-star-fill"></i>
-              </p>
-              <h2 className="fw-bold my-2">Explore Our Departments</h2>
-              <div className="divider mx-auto mb-4"></div>
+        {/* Departments */}
+        <div className="department-section py-5 bg-light" id="departments">
+          <div className="container text-center">
+             <h6 className="text-danger fw-bold mb-2">
+              <span className="me-1">★</span> Departments<span className="ms-1">★</span>
+            </h6>
+            <h2 className="fw-bold mb-3 pt-2">Explore Our Departments</h2>
+            <div className="divider mx-auto mb-4"></div>
+
+            {/* Large screen grid */}
+            <div className="row d-none d-md-flex">
+              {departmentsData.map((dept, idx) => (
+                <div className="col-12 col-md-6 col-lg-3 mb-4" key={idx}>
+                  <DepartmentCard {...dept} />
+                </div>
+              ))}
             </div>
 
-            <div className="department-scroll-container position-relative mt-5">
-              <div className="d-flex flex-nowrap " style={{ gap: "1rem" }}>
-                {departmentsData.map((dept, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0"
-                    style={{ minWidth: "250px", maxWidth: "300px" }}
-                  >
-                    <DepartmentCard
-                      image={dept.image}
-                      iconUrl={dept.iconUrl}
-                      title={dept.title}
-                    />
+            {/* Small screen carousel */}
+            <div id="departmentCarousel" className="carousel slide d-md-none" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                {departmentsData.map((dept, idx) => (
+                  <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
+                    <DepartmentCard {...dept} />
                   </div>
                 ))}
               </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#departmentCarousel" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon"></span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#departmentCarousel" data-bs-slide="next">
+                <span className="carousel-control-next-icon"></span>
+              </button>
             </div>
           </div>
-        </section>
+        </div>
+
 
 
         {/* Team */}
