@@ -74,12 +74,12 @@ function Home() {
       <div className="container-fluid p-0">
 
         {/* Hero */}
-        <div className="p-0 z-index-1 hero-wrapper position-relative">
+        <div className="p-0 z-index-1 hero-wrapper position-relative hero-section">
           <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
               {slides.map((img, idx) => (
                 <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-                  <div className="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                  <div className="hero-slide d-flex align-items-center justify-content-center text-center text-white "
                     style={{ backgroundImage: `url(${img})` }}>
                     <div className="overlay"></div>
                     <div className="hero-content animate-slide-up">
@@ -262,8 +262,8 @@ function Home() {
               <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
               <div className="play-overlay" onClick={() => setShowModal(true)}>
                 <span className="ripple"></span><span className="ripple delay1"></span><span className="ripple delay2"></span>
-                <FaPlayCircle size={80} />
-              </div>
+               <i class="bi bi-play-circle display-1 my-bold-icon"></i>
+                </div>
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">
               {accordionData.map((sec) => (

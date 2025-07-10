@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneAlt, FaShareAlt } from 'react-icons/fa';
 
 const TeamCard = ({ member }) => {
   return (
-    <div className="card h-100 shadow rounded-0 overflow-hidden">
+    <div className="card h-100 shadow rounded-0 overflow-hidden border-0">
       <div className="position-relative">
         <img src={member.image} alt={member.name} className="card-img-top img-fluid" />
         <div className="card-body bg-white text-center rounded position-relative team-cardbody" >
