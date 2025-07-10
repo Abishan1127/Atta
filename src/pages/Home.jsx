@@ -67,32 +67,7 @@ function Home() {
     return () => container.removeEventListener('scroll', updateThumbPosition);
   }, []);
 
-  // ========== Departments Section ==========
-  const departmentsScrollRef = useRef(null);
-  const [departmentsActiveIndex, setDepartmentsActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const container = departmentsScrollRef.current;
-    if (!container) return;
-
-    const numItems = departmentsData.length;
-    const itemsPerScreen = 3;
-    const maxIndex = Math.ceil(numItems / itemsPerScreen) - 2;
-
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index > maxIndex) index = 0;
-
-      container.scrollTo({
-        left: container.clientWidth * index,
-        behavior: 'smooth'
-      });
-      setDepartmentsActiveIndex(index);
-      index++;
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
+  
 
   return (
     <>
@@ -166,17 +141,17 @@ function Home() {
               <p className="text-danger fw-bold mb-1">
                 <i className="bi bi-star-fill"></i> DEPARTMENTS <i className="bi bi-star-fill"></i>
               </p>
-              <h2 className="fw-bold">Explore Our Departments</h2>
-              <div className="mt-2" style={{ width: '50px', height: '3px', backgroundColor: '#c00', margin: '0 auto' }}></div>
+              <h2 className="fw-bold my-2">Explore Our Departments</h2>
+              <div className="divider mx-auto mb-4"></div>
             </div>
 
-            <div className="department-scroll-container position-relative">
-              <div className="d-flex overflow-auto no-scrollbar" ref={departmentsScrollRef}>
+            <div className="department-scroll-container position-relative mt-5">
+              <div className="d-flex flex-nowrap " style={{ gap: "1rem" }}>
                 {departmentsData.map((dept, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 pe-0 pe-md-3 col-12 col-md-3"
-                  
+                    className="flex-shrink-0"
+                    style={{ minWidth: "250px", maxWidth: "300px" }}
                   >
                     <DepartmentCard
                       image={dept.image}
@@ -186,23 +161,10 @@ function Home() {
                   </div>
                 ))}
               </div>
-              <div className="d-flex justify-content-center mt-5">
-                {[0, 1, 2].map(i => (
-                  <div
-                    key={i}
-                    style={{
-                      width: '30px',
-                      height: '3px',
-                      background: departmentsActiveIndex === i ? '#c00' : '#ddd',
-                      margin: '0 5px',
-                      transition: 'background 0.3s'
-                    }}
-                  ></div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
+
 
         {/* Team */}
         <div className="team-section py-5 bg-white mt-5" id="team">
@@ -260,7 +222,7 @@ function Home() {
                   <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
                     <div ref={thumbRef} className="scrollbar-thumb-custom"></div>
                   </div>
-                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(150)}><i className="bi bi-arrow-down"></i></button>
+                  <button className="btn btn-outline-dark fs-5" onClick={() => scrollDownloads(150)}><i className="bi bi-arrow-down "></i></button>
                 </div>
               </div>
             </div>

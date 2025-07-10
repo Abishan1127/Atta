@@ -174,34 +174,35 @@ export const departmentsData = [
   {
     image: explore1,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-    title: "Land & Housing Department",
+    title: "Land & Housing\nDepartment",
   },
   {
     image: explore2,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
-    title: "School & College Department",
+    title: "School & College\nDepartment",
   },
   {
     image: explore3,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
-    title: "Policing & Crime Department",
+    title: "Policing & Crime\nDepartment",
   },
   {
     image: explore4,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
-    title: "Policing & Crime Department",
+    title: "Policing & Crime\nDepartment",
   },
   {
     image: explore5,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-    title: "Land & Housing Department",
+    title: "Land & Housing\nDepartment",
   },
   {
     image: explore6,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
-    title: "School & College Department",
+    title: "School & College\nDepartment",
   },
 ];
+
 
 
 

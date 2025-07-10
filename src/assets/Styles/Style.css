@@ -291,13 +291,15 @@
 }
 /*department card styles*/
 .department-card {
-  height: 400px;
+  height: 450px;
+  
   border-radius: 1rem;
+  overflow: visible;
 }
 
 .department-card-img {
   height: 100%;
-  width: 100%;
+ 
   object-fit: cover;
 }
 
@@ -355,6 +357,47 @@
   height: 40px;
   object-fit: contain;
 }
+/* Hover overlay starts hidden at bottom */
+.department-hover-overlay {
+  background: #dc3545;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.4s;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.department-hover-overlay .hover-line {
+  width: 30px;
+  height: 2px;
+  background: white;
+}
+
+.department-hover-overlay .hover-read {
+  font-size: 14px;
+}
+
+/* When hovering on card, slide overlay up */
+.department-card:hover .department-hover-overlay {
+  transform: translateY(0);
+}
+
+/* Also fade icon + white title slightly */
+.department-card:hover .department-icon-overlay,
+.department-card:hover .department-title {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.department-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.department-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+
 
 
 
@@ -769,6 +812,76 @@
 }
 .scrollbar-container-custom .btn-down {
   margin-bottom: -40px; /* adjust to your need */
+}
+/*mouse hover card*/
+.mousehover-card {
+  position: relative;
+  background: white;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.mousehover-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Icon Circle */
+.icon-circle {
+  background: #dc3545;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid rgba(220, 53, 69, 0.3);
+}
+
+.icon-img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Description */
+.description {
+  color: #6c757d;
+  font-size: 16px;
+  min-height: 50px;
+}
+
+/* Bottom Hover Effect */
+.bottom-hover {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: #dc3545;
+  color: white;
+  padding: 1rem;
+  transition: bottom 0.4s;
+}
+
+.mousehover-card:hover .bottom-hover {
+  bottom: 0;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.line {
+  width: 30px;
+  height: 2px;
+  background: white;
+  margin: 0.5rem auto;
+}
+
+.read-more {
+  font-size: 14px;
 }
 
 
