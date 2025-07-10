@@ -233,17 +233,8 @@
 }
 
 /* fixed arrows bottom right */
-.service-section .arrow-controls {
-    position: absolute;
-    bottom: 88px;
-    right: 210px;
-  
-}
-.service-card {
-  overflow: hidden;
-  
-  
-}
+
+
 
 .service-category {
   color: #d6252c;
@@ -285,20 +276,9 @@
   background-color: #f9f9f9;
   font-size: 24px;
   color: #bbb;
+ 
 }
 /*department card styles*/
-.department-card {
-  height: 450px;
-  
-  border-radius: 1rem;
-  overflow: visible;
-}
-
-.department-card-img {
-  height: 100%;
- 
-  object-fit: cover;
-}
 
 .department-icon-circle {
   width: 100px;
@@ -551,6 +531,7 @@
 .hover-card:hover .extra-contact {
     display: block;
 }
+
 .team-cardbody{
   margin-top: -50px;
   z-index: 2;

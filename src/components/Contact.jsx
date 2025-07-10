@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../assets/Styles/Style.css';
 import Formbg from '../assets/images/formbg.png'
- 
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -9,54 +9,54 @@ const Contact = () => {
     category: '',
     message: ''
   });
- 
+
   const [errors, setErrors] = useState({});
- 
+
   const validateField = (name, value) => {
-  let error = "";
- 
-  // Generic required check
-  if (!value.trim()) {
-    error = "This field is required.";
+    let error = "";
+
+    // Generic required check
+    if (!value.trim()) {
+      error = "This field is required.";
+      return error;
+    }
+
+    switch (name) {
+      case "name":
+        error = /^[A-Za-z\s]+$/.test(value)
+          ? ""
+          : "Only alphabets allowed.";
+        break;
+
+      case "email":
+        error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
+          ? ""
+          : "Invalid email format.";
+        break;
+
+      case "message":
+        error = value.length >= 10 ? "" : "Minimum 10 characters required.";
+        break;
+
+      default:
+        break;
+    }
+
     return error;
-  }
- 
-  switch (name) {
-    case "name":
-      error = /^[A-Za-z\s]+$/.test(value)
-        ? ""
-        : "Only alphabets allowed.";
-      break;
- 
-    case "email":
-      error = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)
-        ? ""
-        : "Invalid email format.";
-      break;
- 
-    case "message":
-      error = value.length >= 10 ? "" : "Minimum 10 characters required.";
-      break;
- 
-    default:
-      break;
-  }
- 
-  return error;
-};
- 
- 
+  };
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
- 
+
     // Live validation on change
     setErrors({ ...errors, [name]: validateField(name, value) });
   };
- 
+
   const handleSubmit = (e) => {
     e.preventDefault();
- 
+
     const validationErrors = {};
     Object.entries(formData).forEach(([key, value]) => {
       const error = validateField(key, value);
@@ -64,9 +64,9 @@ const Contact = () => {
         validationErrors[key] = error;
       }
     });
- 
+
     setErrors(validationErrors);
- 
+
     if (Object.keys(validationErrors).length === 0) {
       alert("Form submitted successfully!");
       setFormData({
@@ -77,7 +77,7 @@ const Contact = () => {
       });
     }
   };
- 
+
   return (
     <>
       <div className="container mt-5">
@@ -86,7 +86,7 @@ const Contact = () => {
         </h6>
         <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
         <div className="divider mx-auto mb-4"></div>
- 
+
         <div className="row mt-5">
           <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
@@ -100,7 +100,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
- 
+
           <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
@@ -113,7 +113,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
- 
+
           <div className="col-md-4 mb-3 mb-lg-0">
             <div className="card border-0 shadow-lg contact-card h-100 p-3 shadow-sm hover-card">
               <div className="icon mb-2 ms-3">
@@ -127,79 +127,79 @@ const Contact = () => {
             </div>
           </div>
         </div>
-     
- 
- 
-      {/* Formsss  */}
-      <div className='position-relative shadow-lg ' style={{ top: '70px' }}>
-        <div className=" p-5"
-          style={{ backgroundImage: `url(${Formbg})`, backgroundSize: 'cover' }}>
- 
-          <form onSubmit={handleSubmit}>
-            <div className="row g-3 mb-3">
-              <div className="col-md-4">
-                <input
-                  type="text"
-                  name="name"
-                  className="form-control"
-                  placeholder="Your Name*"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-                {errors.name && <small className="text-danger">{errors.name}</small>}
+
+
+
+        {/* Formsss  */}
+        <div className='position-relative shadow-lg ' style={{ top: '70px' }}>
+          <div className=" p-5"
+            style={{ backgroundImage: `url(${Formbg})`, backgroundSize: 'cover' }}>
+
+            <form onSubmit={handleSubmit}>
+              <div className="row g-3 mb-3">
+                <div className="col-md-4">
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    placeholder="Your Name*"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                  {errors.name && <small className="text-danger">{errors.name}</small>}
+                </div>
+                <div className="col-md-4">
+                  <input
+                    type="text"
+                    name="email"
+                    className="form-control"
+                    placeholder="Email Address*"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                  {errors.email && <small className="text-danger">{errors.email}</small>}
+                </div>
+                <div className="col-md-4">
+                  <select
+                    name="category"
+                    className="form-select"
+                    value={formData.category}
+                    onChange={handleChange}
+                  >
+                    <option>Traffic & Transport</option>
+                    <option>Public Safety</option>
+                    <option>Sanitation</option>
+                    <option>Other</option>
+                  </select>
+                </div>
               </div>
-              <div className="col-md-4">
-                <input
-                  type="text"
-                  name="email"
+
+              <div className="mb-3 position-relative">
+                <textarea
+                  name="message"
                   className="form-control"
-                  placeholder="Email Address*"
-                  value={formData.email}
+                  rows="4"
+                  placeholder="Write your complaints or suggestions..."
+                  value={formData.message}
                   onChange={handleChange}
-                />
-                {errors.email && <small className="text-danger">{errors.email}</small>}
-              </div>
-              <div className="col-md-4">
-                <select
-                  name="category"
-                  className="form-select"
-                  value={formData.category}
-                  onChange={handleChange}
+                  style={{ paddingRight: '100px' }} // ensures text doesn’t hide under button
+                ></textarea>
+                {errors.message && <small className="text-danger">{errors.message}</small>}
+
+                <button
+                  type="submit"
+                  className="btn btn-danger px-3 py-2 position-absolute "
+                  style={{ bottom: '10px', right: '10px', height: '80px' }}
                 >
-                  <option>Traffic & Transport</option>
-                  <option>Public Safety</option>
-                  <option>Sanitation</option>
-                  <option>Other</option>
-                </select>
+                  SEND
+                </button>
               </div>
-            </div>
- 
-            <div className="mb-3 position-relative">
-              <textarea
-                name="message"
-                className="form-control"
-                rows="4"
-                placeholder="Write your complaints or suggestions..."
-                value={formData.message}
-                onChange={handleChange}
-                style={{ paddingRight: '100px' }} // ensures text doesn’t hide under button
-              ></textarea>
-              {errors.message && <small className="text-danger">{errors.message}</small>}
- 
-              <button
-                type="submit"
-                className="btn btn-danger px-3 py-2 position-absolute "
-                style={{ bottom: '10px', right: '10px', height: '80px' }}
-              >
-                SEND
-              </button>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
-       </div>
     </>
   );
 };
- 
+
 export default Contact;
