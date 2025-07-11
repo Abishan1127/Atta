@@ -175,31 +175,37 @@ export const departmentsData = [
     image: explore1,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     title: "Land & Housing\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
   {
     image: explore2,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
     title: "School & College\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
   {
     image: explore3,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
     title: "Policing & Crime\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
   {
     image: explore4,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png",
     title: "Policing & Crime\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
   {
     image: explore5,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
     title: "Land & Housing\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
   {
     image: explore6,
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3135/3135807.png",
     title: "School & College\nDepartment",
+    para: "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment "
   },
 ];
 

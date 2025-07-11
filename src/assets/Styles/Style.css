@@ -218,7 +218,7 @@
 .service-section .slide-container {
     background: url('../images/service-bg-2.jpg') center/cover no-repeat;
     position: relative;
-    min-height: 650px;
+
 }
 
 /* semi-transparent overlay */
@@ -254,6 +254,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 
 .service-icon {
@@ -261,7 +262,7 @@
 }
 
 .service-image-container {
-  height: 380px;
+  height: 350px;
 
   overflow: hidden;
 }
@@ -297,8 +298,8 @@
 }
 
 .department-title {
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+ width: 250px;
+
 }
 
 .department-scroll-container .d-flex::-webkit-scrollbar {
@@ -318,8 +319,8 @@
   scroll-snap-align: start;
 }
 .department-icon-overlay {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   display: flex;
@@ -336,19 +337,13 @@
 }
 /* Hover overlay starts hidden at bottom */
 .department-hover-overlay {
-  background: #dc3545;
-  color: white;
+  background:white;
   transform: translateY(100%);
   transition: transform 0.4s;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+
 }
 
-.department-hover-overlay .hover-line {
-  width: 30px;
-  height: 2px;
-  background: white;
-}
+
 
 .department-hover-overlay .hover-read {
   font-size: 14px;
@@ -357,6 +352,38 @@
 /* When hovering on card, slide overlay up */
 .department-card:hover .department-hover-overlay {
   transform: translateY(0);
+}
+.department-hover-overlay {
+  /* Bootstrap red with opacity */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  
+}
+
+.department-card:hover .department-hover-overlay {
+  opacity: 1;
+}
+
+/* Ensure text and icon scale nicely */
+.department-hover-icon-img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+.department-hover-icon{
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 33%;
+  margin-top: 20px;
 }
 
 /* Also fade icon + white title slightly */
@@ -657,6 +684,12 @@
   width: 60px;
   height: 3px;
   background-color: red;
+  border-radius: 3px;
+}
+.dividerr {
+  width: 60px;
+  height: 3px;
+  background-color: white;
   border-radius: 3px;
 }
 

@@ -135,7 +135,7 @@ function Home() {
         </div>
 
         {/* Departments */}
-        <div className="department-section py-5 bg-light" id="departments">
+        <div className="department-section py-5" id="departments">
           <div className="container text-center">
             <h6 className="text-danger fw-bold mb-2">
               <span className="me-1">★</span> Departments<span className="ms-1">★</span>
