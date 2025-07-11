@@ -10,13 +10,13 @@ const DepartmentCard = ({ image, iconUrl, title, para }) => {
         alt="department background"
       />
 
-      <div className="department-icon-overlay position-absolute start-50 translate-middle" style={{top:"200px"}}>
+      <div className="department-icon-overlay position-absolute start-50 translate-middle" >
         <img src={iconUrl} alt="icon" className="h-100 department-icon-img" style={{ objectFit: "contain" }} />
       </div>
 
 
 
-      <div className="department-title text-center py-3 bg-white position-relative rounded" style={{ bottom: "40px" }}>
+      <div className="department-title text-center py-3 bg-white position-relative rounded" >
         <h5 className="mb-0  fw-semibold">{title.split('\n').map((line, index) => (
           <div key={index}>{line}</div>
         ))}</h5>

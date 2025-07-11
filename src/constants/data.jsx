@@ -91,53 +91,53 @@ export const accordionData = [
   {
     title: "Natural Areas",
     content: [
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
+      { name: "Medina Rivers", active: false },
+      { name: "Denman Estate Park1", active: true },
+      { name: "Acequia Park.", active: false },
       { name: "Bracken Bat Flight", active: false },
       { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
+      { name: "Denman Estate Park.", active: true },
+      { name: "Acequia Park..", active: false },
+      { name: "Bracken Bat Flight,.", active: false }
     ]
   },
   {
     title: "Towns & Cities",
     content: [
-      { name: "Medina River", active: false },
+      { name: "Medina Riverss", active: false },
       { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
+      { name: "Acequia Park1", active: false },
+      { name: "Bracken Bat Flight.,", active: false },
+      { name: "Medina River.", active: false },
+      { name: "Denman Estate Park..", active: true },
+      { name: "Acequia Park2", active: false },
+      { name: "Bracken Bat Flight,,", active: false }
     ]
   },
   {
     title: "Arts & Culture Areas",
     content: [
-      { name: "Medina River", active: false },
+      { name: "Medina River..", active: false },
+      { name: "Denman Estate Park,", active: true },
+      { name: "Acequia Park3", active: false },
+      { name: "Bracken Bat Flight,", active: false },
+      { name: "Medina River,", active: false },
       { name: "Denman Estate Park", active: true },
       { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
+      { name: "Bracken Bat Flight..", active: false }
     ]
   },
   {
     title: "Beach Areas",
     content: [
-      { name: "Medina River", active: false },
+      { name: "Medina River'", active: false },
       { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
+      { name: "Acequia Park4", active: false },
       { name: "Bracken Bat Flight", active: false },
-      { name: "Medina River", active: false },
-      { name: "Denman Estate Park", active: true },
-      { name: "Acequia Park", active: false },
-      { name: "Bracken Bat Flight", active: false }
+      { name: "Medina River,.", active: false },
+      { name: "Denman Estate Park,,", active: true },
+      { name: "Acequia Park5", active: false },
+      { name: "Bracken Bat Flight.", active: false }
     ]
   }
 ];

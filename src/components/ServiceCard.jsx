@@ -13,7 +13,7 @@ const ServiceCard = ({
       <Card.Body className="text-center service-card-body" >
         <small className="service-category">{category}</small>
         <h5 className="service-title mt-3 ">{title}</h5>
-        <div className="service-icon-wrapper mx-auto position-relative " style={{top:"23px"}} >
+        <div className="service-icon-wrapper mx-auto position-relative ">
           <i className={`bi ${icon}`} ></i>
 
         </div>

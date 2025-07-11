@@ -162,6 +162,19 @@ function Home() {
                   <DepartmentCard key={idx} {...dept} />
                 ))}
               </Carousel>
+              <div className="department-carousel-bars d-flex justify-content-center mt-3">
+                {[0, 1, 2].map((idx) => (
+                  <div
+                    key={idx}
+                    className={`bar ${Math.floor(current / 2) === idx ? 'active' : ''
+                      } me-2`}
+                    onClick={() => setCurrent(idx * 2)}
+                  ></div>
+                ))}
+              </div>
+
+
+
             </div>
 
             {/* Small screen carousel */}
