@@ -10,10 +10,10 @@ const ServiceCard = ({
 }) => {
   return (
     <Card className="service-card shadow-sm rounded border-0">
-      <Card.Body className="text-center " >
+      <Card.Body className="text-center service-card-body" >
         <small className="service-category">{category}</small>
         <h5 className="service-title mt-3 ">{title}</h5>
-        <div className="service-icon-wrapper mx-auto position-relative " style={{top:"55px"}} >
+        <div className="service-icon-wrapper mx-auto position-relative " style={{top:"23px"}} >
           <i className={`bi ${icon}`} ></i>
 
         </div>

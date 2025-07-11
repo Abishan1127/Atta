@@ -92,7 +92,7 @@
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.4);
 }
 
 .hero-content {
@@ -266,6 +266,9 @@
 .service-icon-wrapper i {
   color: #d6252c;
   font-size: 36px;
+}
+.service-card-body{
+  height: 150px;
 }
 
 /*department card styles*/
