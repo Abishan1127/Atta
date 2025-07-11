@@ -77,23 +77,23 @@ function Home() {
         <div className="p-0 z-index-1 hero-wrapper position-relative hero-section">
           <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
-              {slides.map((img, idx) => (
+              {slides.map((slide, idx) => (
                 <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-                  <div className="hero-slide d-flex align-items-center justify-content-center text-center text-white "
-                    style={{ backgroundImage: `url(${img})` }}>
-                    <div className="overlay"></div>
+                  <div
+                    className="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style={{ backgroundImage: `url(${slide.image})` }}>
+                    <div className="overlays"></div>
                     <div className="hero-content animate-slide-up">
-                      <h1 className="display-1 fw-bold">My City</h1>
-                      <h2 className="fs-2 mb-3">My Responsibility</h2>
-                      <p className="mb-4 px-3 px-md-0">
-                        Righteous indignation and dislike men who are so beguiled & demoralized.
-                      </p>
+                      <h1 className="display-1 fw-bold">{slide.title}</h1>
+                      <h2 className="fs-2 mb-3">{slide.subtitle}</h2>
+                      <p className="mb-4 px-3 px-md-0">{slide.description}</p>
                       <CustomButton label="Read More" bgColor="#dc3545" />
                     </div>
                   </div>
                 </div>
               ))}
             </div>
+
             <button className="carousel-control-prev custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
               <span className="carousel-control-prev-icon"></span>
             </button>
@@ -262,8 +262,8 @@ function Home() {
               <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
               <div className="play-overlay" onClick={() => setShowModal(true)}>
                 <span className="ripple"></span><span className="ripple delay1"></span><span className="ripple delay2"></span>
-               <i class="bi bi-play-circle display-1 my-bold-icon"></i>
-                </div>
+                <i class="bi bi-play-circle display-1 my-bold-icon"></i>
+              </div>
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">
               {accordionData.map((sec) => (

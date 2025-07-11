@@ -28,7 +28,29 @@ import explore6 from '../assets/images/explore-6.jpg';
 import Icon from '../assets/images/icon-1.png';
 import Downbg from '../assets/images/downbg.jpg';
 
-export const slides = [hero1, hero2, hero3];
+
+
+export const slides = [
+  {
+    image: hero1,
+    title: "My City",
+    subtitle: "My Responsibility",
+    description: "Righteous indignation and dislike men who are so beguiled & demoralized."
+  },
+  {
+    image: hero2,
+    title: "Clean & Green",
+    subtitle: "Our Collective Duty",
+    description: "Pleasures to secure other greater pleasures avoid pain produce resultant."
+  },
+  {
+    image: hero3,
+    title: "Future Ready",
+    subtitle: "Smart Living",
+    description: "Undertakes laborious physical exercise obtain advantage from it."
+  }
+];
+
 
 export const teamMembers = [
   { name: 'Elvina Julies', title: 'Actuary', image: member1 },
