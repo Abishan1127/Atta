@@ -14,8 +14,9 @@ const ServiceCard = ({
         <small className="service-category">{category}</small>
         <h5 className="service-title mt-3 ">{title}</h5>
         <div className="service-icon-wrapper mx-auto position-relative ">
+          <div className="service-icon-wrappers">
           <i className={`bi ${icon}`} ></i>
-
+          </div>
         </div>
       </Card.Body>
       <div className="service-image-container">
