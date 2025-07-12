@@ -164,9 +164,9 @@ function Home() {
                 {[0, 1, 2].map((idx) => (
                   <div
                     key={idx}
-                    className={`bar ${Math.floor(current / 2) === idx ? 'active' : ''
+                    className={`bar ${Math.floor(current / 1) === idx ? 'active' : ''
                       } me-2`}
-                    onClick={() => setCurrent(idx * 2)}
+                    onClick={() => setCurrent(idx * 1)}
                   ></div>
                 ))}
               </div>
@@ -315,7 +315,7 @@ function Home() {
             ))}
           </div>
         </div>
-        {/* Contact */}
+{/* Contact */}
         <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
       </div>
     </>
