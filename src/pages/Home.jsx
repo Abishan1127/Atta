@@ -104,7 +104,7 @@ function Home() {
         </div>
 
         {/* Services */}
-        <div className="service-section py-5 bg-transparent" id="service">
+        <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
               <div className="col-md-6 slide-container">
