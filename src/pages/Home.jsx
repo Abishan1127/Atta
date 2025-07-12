@@ -102,7 +102,6 @@ function Home() {
             </button>
           </div>
         </div>
-
         {/* Services */}
         <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
@@ -133,7 +132,6 @@ function Home() {
             </div>
           </div>
         </div>
-
         {/* Departments */}
         <div className="department-section py-5" id="departments">
           <div className="container text-center">
@@ -195,10 +193,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-
-
-
         {/* Team */}
         <div className="team-section py-5 bg-white mt-5" id="team">
           <div className="container-fluid text-center">
@@ -216,7 +210,6 @@ function Home() {
             </div>
           </div>
         </div>
-
         {/* Downloads */}
         <div className="downloads-section py-5 bg-transparent" id="downloads">
           <div className="download-section">
@@ -264,7 +257,6 @@ function Home() {
             </div>
           </div>
         </div>
-
         {/* News Accordion */}
         <div className="container my-4 text-center" id="VideoAccordion">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>
@@ -310,7 +302,6 @@ function Home() {
             </Modal.Body>
           </Modal>
         </div>
-
         {/* News */}
         <div className="container py-5 text-center" id="news">
           <h6 className="text-danger fw-bold mb-2"><span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span></h6>
@@ -324,7 +315,6 @@ function Home() {
             ))}
           </div>
         </div>
-
         {/* Contact */}
         <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
       </div>

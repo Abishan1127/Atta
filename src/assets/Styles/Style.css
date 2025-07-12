@@ -605,6 +605,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .play-overlay {
   position: absolute;
   top: 50%;
@@ -731,20 +732,6 @@
 .team-carousel-wrapper {
   overflow-x: hidden;
   position: relative;
-}
-
-/* Horizontal scroll row */
-.team-carousel {
-  display: flex;
-  gap: 1rem;
-  animation: scroll 20s linear infinite;
-  width: max-content;
-}
-
-.team-card {
-  flex: 0 0 250px;
-  min-width: 250px;
-  max-width: 250px;
 }
 .input-group{
     min-height: 70px;

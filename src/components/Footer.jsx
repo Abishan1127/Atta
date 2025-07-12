@@ -73,7 +73,7 @@ function Footer() {
                                     <li><a href="#">Our Team</a></li>
                                     <li><a href="#">Services</a></li>
                                     <li><a href="#">Our FAQ’s</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">ContactUs</a></li>
                                     <li><a href="#">Blog Grid</a></li>
                                 </ul>
                             </div>

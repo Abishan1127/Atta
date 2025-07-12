@@ -5,7 +5,7 @@ const TeamCard = ({ member }) => {
   return (
     <div className="card h-100 shadow rounded-0 overflow-hidden border-0">
       <div className="position-relative">
-        <img src={member.image} alt={member.name} className="card-img-top img-fluid" />
+        <img src={member.image} alt={member.name} className="card-img-top img-fluid" style={{height:"300px"}}/>
         <div className="card-body bg-white text-center rounded position-relative team-cardbody" >
           <h5 className="card-title fw-bold mb-1">{member.name}</h5>
           <p className="text-danger mb-3">{member.title}</p>
