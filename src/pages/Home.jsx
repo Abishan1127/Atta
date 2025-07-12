@@ -107,8 +107,8 @@ function Home() {
         <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
-              <div className="col-md-6 slide-container">
-                <div className="overlay d-flex align-items-center justify-content-center border border-white rounded m-4">
+              <div className="col-md-6 slide-container rounded">
+                <div className="overlay d-flex align-items-center justify-content-center border border-white rounded my-3 me-3 ms-4">
                   <div className="content-box my-5">
                     <h4 className='mt-5'><i className="bi bi-house me-2"></i> Services & Activities</h4>
                     <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
@@ -119,7 +119,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-7 pt-5 mt-0 mt-md-5 position-relative overlap-carousel">
+              <div className="col-md-7 pt-5 mt-md-5 position-relative overlap-carousel">
                 <Carousel
                   responsive={responsive}
                   autoPlay autoPlaySpeed={3000} infinite

@@ -220,6 +220,7 @@
 }
 .service-section{
    top: -70px;
+  
 }
 /* semi-transparent overlay */
 .service-section .overlay {
@@ -943,6 +944,7 @@
 .read-more {
   font-size: 14px;
 }
+
 /* Auto-scroll animation */
 @keyframes scroll {
   0% {
