@@ -19,8 +19,12 @@ const ServiceCard = ({
           </div>
         </div>
       </Card.Body>
-      <div className="service-image-container">
+      <div className="service-image-container ">
         <img src={image} alt={title} className="service-image "/>
+        <div className="service-plus text-center position-relative rounded" > </div>
+        <span className="plus-icon text-center position-relative">+</span>
+     
+        
       </div>
       
     </Card>
@@ -29,6 +33,3 @@ const ServiceCard = ({
 
 export default ServiceCard;
 
-{/* <div className="service-plus text-center position-relative " >
-        <span className="">+</span>
-      </div> */}

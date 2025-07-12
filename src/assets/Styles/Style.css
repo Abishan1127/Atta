@@ -286,8 +286,17 @@
   object-fit: cover;
 }
 .service-plus {
-  background-color: #f9f9f9;
-  font-size: 24px;
+  background-color: white;
+  height: 80px;
+  width: 80px;
+  top: -35px;
+  margin-left: 110px;
+  transform: rotate(45deg);
+}
+.plus-icon{
+  top: -118px;
+  margin-left: 140px;
+  font-size: 34px;
   color: #bbb;
 }
 
@@ -975,6 +984,13 @@
    .input-group{
     max-width: 320px;
    }
+   .service-plus {
+     margin-left: 42%;
+   }
+   .plus-icon{
+     margin-left: 49%;
+  
+}
 }
 @media (min-width: 1024px) {
   .overlap-carousel {
