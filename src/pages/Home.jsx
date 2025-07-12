@@ -5,11 +5,8 @@ import Contact from '../components/Contact';
 import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
-import { FaPlayCircle, FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
-import {
-  slides, teamMembers, downloadSlides, files, accordionData, newsData,
-  iconImage, services, departmentsData
-} from '../constants/data';
+import { FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
+import {slides, teamMembers, downloadSlides, files, accordionData, newsData,iconImage, services, departmentsData} from '../constants/data';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ServiceCard from "../components/ServiceCard";
@@ -73,7 +70,7 @@ function Home() {
     <>
       <div className="container-fluid p-0">
 
-        {/* Hero */}
+        {/* Hero section */}
         <div className="p-0 z-index-1 hero-wrapper position-relative hero-section">
           <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
@@ -102,7 +99,7 @@ function Home() {
             </button>
           </div>
         </div>
-        {/* Services */}
+        {/* Services section */}
         <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
@@ -132,7 +129,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Departments */}
+        {/* Departments section*/}
         <div className="department-section py-5" id="departments">
           <div className="container text-center">
             <h6 className="text-danger fw-bold mb-2">
@@ -170,12 +167,8 @@ function Home() {
                   ></div>
                 ))}
               </div>
-
-
-
             </div>
-
-            {/* Small screen carousel */}
+         {/* Small screen carousel */}
             <div id="departmentCarousel" className="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="3000">
               <div className="carousel-inner">
                 {departmentsData.map((dept, idx) => (
@@ -193,7 +186,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Team */}
+        {/* Team section*/}
         <div className="team-section py-5 bg-white mt-5" id="team">
           <div className="container-fluid text-center">
             <h6 className="text-danger fw-bold mb-2">
@@ -210,7 +203,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Downloads */}
+        {/* Downloads section*/}
         <div className="downloads-section py-5 bg-transparent" id="downloads">
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
@@ -257,7 +250,7 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* News Accordion */}
+        {/* News Accordion section*/}
         <div className="container my-4 text-center" id="VideoAccordion">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
@@ -302,7 +295,7 @@ function Home() {
             </Modal.Body>
           </Modal>
         </div>
-        {/* News */}
+        {/* News section*/}
         <div className="container py-5 text-center" id="news">
           <h6 className="text-danger fw-bold mb-2"><span className="me-1">★</span> NEWS & BLOG <span className="ms-1">★</span></h6>
           <h2 className="fw-bold mb-4 pt-2">Latest From Our Newsroom</h2>
@@ -315,7 +308,7 @@ function Home() {
             ))}
           </div>
         </div>
-{/* Contact */}
+        {/* Contact section*/}
         <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
       </div>
     </>
