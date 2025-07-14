@@ -16,7 +16,7 @@ const DepartmentCard = ({ image, iconUrl, title, para }) => {
           </div>
         </div>
         {/* NEW hover overlay */}
-        <div className="department-hover-overlay position-absolute  text-center p-4">
+        <div className="department-hover-overlay position-absolute  text-center p-4 rounded">
           <div className="department-hover-icon mb-3 ">
             <div className='department-hover-icons'>
               <img src={iconUrl} alt="icon" className="department-hover-icon-img " />

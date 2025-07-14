@@ -253,19 +253,6 @@
   top: 7.1px;
  
 }
-.service-icon-wrappers {
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 10px;
- 
-  
- 
-}
 
 .service-card:hover .plus-icon{
   color: #d31c1c;
@@ -273,6 +260,8 @@
 }
 
 /* Create bottom-half ripple */
+
+
 .service-icon-wrapper::after {
   content: "";
   position: absolute;
@@ -286,9 +275,28 @@
   
   /* only show bottom half using clip-path */
   clip-path: inset(50% 0 0 0); /* top 50% hidden */
-  z-index: 0;
+  z-index: 1;
 }
-
+.service-icon-wrappers {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2; /* keep above ripple */
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+ 
+}
 
 /* Trigger on hover */
 .service-card:hover .service-icon-wrapper::after {
