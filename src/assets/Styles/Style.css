@@ -329,12 +329,18 @@
 .department-title {
  width: 250px;
  bottom: 40px;
+ 
 }
 .department-titles{
  width: 250px;
  bottom: -90px;
  height: 120px;
 }
+.department-card:hover + .department-title {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
 .department-scroll-container .d-flex::-webkit-scrollbar {
   display: none; /* hide scrollbar on Chrome/Safari */
 }
