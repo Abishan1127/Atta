@@ -130,42 +130,16 @@ function Home() {
           </div>
         </div>
         {/* Departments section with left & right background images */}
-        <div className="department-section position-relative py-0" id="departments">
+        <div className="department-section position-relative py-0 " id="departments">
 
           {/* Left background image */}
-          <div
-            className="d-none d-md-block"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              bottom: 0,
-              width: "20%",
-              backgroundImage: "url('/images/left-bg.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              zIndex: 0
-            }}>
-          </div>
+          <div className="department-bg-left d-none d-md-block"></div>
 
           {/* Right background image */}
-          <div
-            className="d-none d-md-block"
-            style={{
-              position: "absolute",
-              top: 0,
-              right: 0,
-              bottom: 0,
-              width: "20%",
-              backgroundImage: "url('/images/right-bg.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              zIndex: 0
-            }}>
-          </div>
+          <div className="department-bg-right d-none d-md-block"></div>
 
           {/* Center container */}
-          <div className="container text-center position-relative" style={{ zIndex: 1 }}>
+          <div className="container text-center position-relative department-center-content">
             <h6 className="text-danger fw-bold mb-2">
               <span className="me-1">★</span> Departments<span className="ms-1">★</span>
             </h6>
@@ -220,6 +194,7 @@ function Home() {
             </div>
           </div>
         </div>
+
 
         {/* Team section*/}
         <div className="team-section py-5 bg-white mt-5" id="team">
