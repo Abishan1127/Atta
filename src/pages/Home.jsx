@@ -6,7 +6,7 @@ import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
 import { FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
-import {slides, teamMembers, downloadSlides, files, accordionData, newsData,iconImage, services, departmentsData} from '../constants/data';
+import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage, services, departmentsData } from '../constants/data';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ServiceCard from "../components/ServiceCard";
@@ -129,16 +129,50 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* Departments section*/}
-        <div className="department-section py-5" id="departments">
-          <div className="container text-center">
+        {/* Departments section with left & right background images */}
+        <div className="department-section position-relative py-0" id="departments">
+
+          {/* Left background image */}
+          <div
+            className="d-none d-md-block"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              width: "20%",
+              backgroundImage: "url('/images/left-bg.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: 0
+            }}>
+          </div>
+
+          {/* Right background image */}
+          <div
+            className="d-none d-md-block"
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: "20%",
+              backgroundImage: "url('/images/right-bg.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: 0
+            }}>
+          </div>
+
+          {/* Center container */}
+          <div className="container text-center position-relative" style={{ zIndex: 1 }}>
             <h6 className="text-danger fw-bold mb-2">
               <span className="me-1">★</span> Departments<span className="ms-1">★</span>
             </h6>
             <h2 className="fw-bold mb-3 pt-2">Explore Our Departments</h2>
             <div className="divider mx-auto mb-4"></div>
 
-            {/* Large screen carousel (4 items, no indicators) */}
+            {/* Large screen carousel */}
             <div className="d-none d-md-block ">
               <Carousel
                 responsive={{
@@ -161,14 +195,14 @@ function Home() {
                 {[0, 1, 2].map((idx) => (
                   <div
                     key={idx}
-                    className={`bar ${Math.floor(current / 1) === idx ? 'active' : ''
-                      } me-2`}
+                    className={`bar ${Math.floor(current / 1) === idx ? 'active' : ''} me-2`}
                     onClick={() => setCurrent(idx * 1)}
                   ></div>
                 ))}
               </div>
             </div>
-         {/* Small screen carousel */}
+
+            {/* Small screen carousel */}
             <div id="departmentCarousel" className="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="3000">
               <div className="carousel-inner">
                 {departmentsData.map((dept, idx) => (
@@ -186,6 +220,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         {/* Team section*/}
         <div className="team-section py-5 bg-white mt-5" id="team">
           <div className="container-fluid text-center">
