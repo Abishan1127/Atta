@@ -27,7 +27,7 @@ const ScrollToTop = () => {
 
   return (
     <div className={`scroll-to-top ${visible ? 'show' : ''}`} onClick={scrollToTop}>
-     <HiChevronUp size={34} strokeWidth={2} />
+     <HiChevronUp size={35} strokeWidth={1} />
 
     </div>
   );
