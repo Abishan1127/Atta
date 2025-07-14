@@ -295,7 +295,7 @@ function Home() {
               <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
               <div className="play-overlay" onClick={() => setShowModal(true)}>
                 <span className="ripple"></span><span className="ripple delay1"></span><span className="ripple delay2"></span>
-                <i class="bi bi-play-circle display-1 my-bold-icon"></i>
+                <i className="bi bi-play-circle display-1 my-bold-icon"></i>
               </div>
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">

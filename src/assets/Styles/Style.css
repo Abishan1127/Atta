@@ -250,31 +250,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 10px;
+  top: 7.1px;
  
 }
 .service-icon-wrappers {
   width: 80px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.6);
+  background: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 10px;
+ 
+  
  
 }
-/* .service-icon-wrapper :hover  {
-  width: 80px;
-  height: 80px;
-  background: rgba(169, 41, 41, 0.6);
+
+.service-card:hover .plus-icon{
+  color: #d31c1c;
+  
+}
+
+/* Create bottom-half ripple */
+.service-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 10px;
- 
-} */
+  background: rgba(201, 5, 5, 0.6);
+  transform: scale(0.8);
+  opacity: 0;
+  transition: transform 0.5s, opacity 0.5s;
+  
+  /* only show bottom half using clip-path */
+  clip-path: inset(50% 0 0 0); /* top 50% hidden */
+  z-index: 0;
+}
+
+
+/* Trigger on hover */
+.service-card:hover .service-icon-wrapper::after {
+  transform: scale(1.4);
+  opacity: 1;
+  
+}
+
 .service-icon {
   width: 40px;
 }
@@ -406,11 +428,17 @@
 /* Hover overlay starts hidden at bottom */
 .department-hover-overlay {
   background:white;
- 
-  transition: transform 0.4s;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s;
 }
 .department-hover-overlay .hover-read {
   font-size: 14px;
+}
+.department-card:hover .department-hover-overlay {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* When hovering on card, slide overlay up */
@@ -430,6 +458,8 @@
 .department-card:hover .department-hover-overlay {
   opacity: 1;
 }
+
+
 /* Ensure text and icon scale nicely */
 .department-hover-icon-img {
   height: 50px;
