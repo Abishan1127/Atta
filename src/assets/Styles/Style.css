@@ -533,6 +533,25 @@
   position: relative;
   z-index: 1;
 }
+/* Refine hover overlay movement to be smoother */
+.department-hover-overlay {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.department-card:hover .department-hover-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Keep the existing icon overlay + title fade intact */
+.department-card:hover .department-icon-overlay,
+.department-card:hover .department-title {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
 
 .video-container {
   cursor: pointer;

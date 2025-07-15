@@ -91,10 +91,10 @@ function Home() {
               ))}
             </div>
 
-            <button className="carousel-control-prev custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-              <span className="carousel-control-prev-icon"></span>
+            <button className="carousel-control-prev custom-arrow d-none d-sm-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span className="carousel-control-prev-icon "></span>
             </button>
-            <button className="carousel-control-next custom-arrow" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <button className="carousel-control-next custom-arrow d-none d-sm-block" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
               <span className="carousel-control-next-icon"></span>
             </button>
           </div>
@@ -268,10 +268,10 @@ function Home() {
           <div className="row">
             <div className="col-md-8 position-relative video-thumbnail-container p-0">
               <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
-             <div className="play-overlay" onClick={() => setShowModal(true)}>
-  <i className="bi bi-play-circle display-1 my-bold-icon"></i>
-  <span className="wave"></span>
-</div>
+              <div className="play-overlay" onClick={() => setShowModal(true)}>
+                <i className="bi bi-play-circle display-1 my-bold-icon"></i>
+                <span className="wave"></span>
+              </div>
 
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">
