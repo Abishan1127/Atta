@@ -1108,7 +1108,7 @@
 .navbar-animated {
     position: sticky;
     top: 0;
-    transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.4s; /* delays by 0.4s */
+    transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.1s; /* delays by 0.4s */
     transform: translateY(-100%);
     opacity: 0;
     z-index: 1030;
@@ -1134,9 +1134,10 @@
     right: 0;
     transform: translateY(-100%);
     opacity: 0;
-    transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.4s;
+    transition: transform 0.4s ease, opacity 0.4s ease;
     z-index: 1030;
 }
+
 .sticky-navbar-transition.show {
     transform: translateY(0);
     opacity: 1;
