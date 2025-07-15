@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/Styles/Style.css';
-import { FaPhone, FaFacebookF, FaGoogle, FaInstagram, FaTwitter, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FaPhone, FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import logo from '../assets/images/logo1.png';
 
 const SocialIcon = ({ href, icon: Icon }) => (
@@ -47,7 +47,6 @@ function Header() {
         };
     }, []);
 
-    // ✅ bulletproof closeOffcanvas
     const closeOffcanvas = () => {
         const offcanvasElement = document.getElementById('mobileMenu');
         if (!offcanvasElement) return;
@@ -71,6 +70,18 @@ function Header() {
         bsOffcanvas.hide();
     };
 
+    const handleNavClick = (e, sectionId) => {
+        e.preventDefault(); 
+        closeOffcanvas();
+
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar ">
             <header>
@@ -89,7 +100,7 @@ function Header() {
                     </div>
                 </div>
 
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 rounded-bottom ${showTopHeader ? 'container' : 'container-fluid'}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 ${showTopHeader ? 'container' : 'container-fluid'}`}>
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
                         <img src={logo} alt="logo" style={{ height: '60px' }} />
                     </a>
@@ -98,11 +109,11 @@ function Header() {
                     </button>
                     <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
-                            <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#service">Service</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#news">News</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#contact">Contact Us</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -113,11 +124,11 @@ function Header() {
                     </div>
                     <div className="offcanvas-body mt-5 pt-5 ">
                         <ul className="navbar-nav gap-4 align-items-center text-uppercase fw-semibold mt-5">
-                            <li className="nav-item"><a className="nav-link" href="#home" onClick={closeOffcanvas}>Home</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#service" onClick={closeOffcanvas}>Service</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#team" onClick={closeOffcanvas}>Team</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#news" onClick={closeOffcanvas}>News</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={closeOffcanvas}>Contact Us</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
                         </ul>
 
                         <div className="d-flex justify-content-center gap-3 mt-4 ">

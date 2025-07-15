@@ -1,5 +1,5 @@
 import React from 'react';
-import logo2 from '../assets/images/logo2.png';
+import logo2 from '../assets/images/ataa-logo-white.png';
 import { FaRegCalendarAlt } from 'react-icons/fa';
 import '../assets/Styles/Style.css';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -12,7 +12,7 @@ function Footer() {
                 <div className="row gy-4 ">
                     {/* Column 1: Logo & About */}
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                        <img src={logo2} alt="logo" className="mb-3" height={60} width={300} />
+                        <img src={logo2} alt="logo" className="mb-5" height={70} width={280} />
                         <p className="mt-1">
                             Righteous indignation and dislike men who <br /> are so beguiled and demoralized by the <br /> charm of pleasure of the moment so blinded.
                         </p>
