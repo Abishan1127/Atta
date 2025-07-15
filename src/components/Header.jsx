@@ -13,12 +13,16 @@ const SocialIcon = ({ href, icon: Icon }) => (
 );
 
 function Header() {
-    const [showTopHeader, setShowTopHeader] = useState(true);
+    const [scrolled, setScrolled] = useState(false);
+    const [showStickyNavbar, setShowStickyNavbar] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
-            setShowTopHeader(window.scrollY <= 50);
+            const scrollY = window.scrollY;
+            setScrolled(scrollY > 50);
+            setShowStickyNavbar(scrollY > 200); // navbar comes back after top header fully out
         };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -71,21 +75,19 @@ function Header() {
     };
 
     const handleNavClick = (e, sectionId) => {
-        e.preventDefault(); 
+        e.preventDefault();
         closeOffcanvas();
-
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth'
-            });
+            element.scrollIntoView({ behavior: 'smooth' });
         }
     };
 
     return (
-        <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar ">
+        <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar">
             <header>
-                <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between transition-top-header ${showTopHeader ? '' : 'hidden'}`}>
+                {/* Full top header */}
+                <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between top-header-transition ${scrolled ? 'hide' : ''}`}>
                     <div className='d-flex align-items-center justify-content-start'>
                         <span><FaPhone className="ms-5" /> +44-888-12-345</span>
                         <span className="border-start ms-3">
@@ -100,7 +102,27 @@ function Header() {
                     </div>
                 </div>
 
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 ${showTopHeader ? 'container' : 'container-fluid'}`}>
+                {/* Navbar - when in full header */}
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition ${scrolled ? 'hide' : ''}`}>
+                    <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
+                        <img src={logo} alt="logo" style={{ height: '60px' }} />
+                    </a>
+                    <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
+                        <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
+                            <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
+                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                {/* Sticky navbar that appears later */}
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container-fluid sticky-navbar-transition ${showStickyNavbar ? 'show' : ''}`}>
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
                         <img src={logo} alt="logo" style={{ height: '60px' }} />
                     </a>
