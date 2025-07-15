@@ -122,23 +122,27 @@ function Header() {
                 </nav>
 
                 {/* Sticky navbar that appears later */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container-fluid sticky-navbar-transition ${showStickyNavbar ? 'show' : ''}`}>
-                    <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
-                        <img src={logo} alt="logo" style={{ height: '60px' }} />
-                    </a>
-                    <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
-                        <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
-                            <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
-                        </ul>
+
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 mt-4 mt-md-0 container-fluid sticky-navbar-transition ${showStickyNavbar ? 'show' : ''}`}>
+                    <div className='container '>
+                        <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
+                            <img src={logo} alt="logo" style={{ height: '60px' }} />
+                        </a>
+                        <button className="navbar-toggler me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
+                            <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
+                                <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
+                                <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
+
 
                 <div className="offcanvas offcanvas-end" tabIndex="-1" id="mobileMenu">
                     <div className="offcanvas-header">
