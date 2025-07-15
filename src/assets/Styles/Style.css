@@ -106,8 +106,14 @@
 .carousel-item.active .hero-content {
     animation: slideUp 1s ease-out forwards;
 }
+
 .card-body h6 {
   transition: color 0.3s ease;
+}
+
+.contact-card{
+  padding: 20px;
+  transition: background 0.8s ease, color 0.8s ease;
 }
 
 .card-body h6:hover {
@@ -669,6 +675,21 @@
 .hover-card:hover .extra-contact {
     display: block;
 }
+.hover-card {
+  transition: box-shadow 0.4s ease;
+}
+.hover-card .card-body {
+  transition: transform 0.4s ease;
+}
+
+.hover-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hover-card:hover .card-body {
+  transform: translateY(-10px);
+}
+
 
 .team-cardbody{
   margin-top: -50px;
@@ -684,39 +705,59 @@
   left: 50%;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  z-index: 2;
 }
 
-.play-overlay .ripple {
+.play-overlay i {
+  color: white;
+  font-size: 4rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* same wave base for all three */
+.play-overlay::before,
+.play-overlay::after,
+.play-overlay .wave {
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(1);
-  animation: ripple 2s infinite;
+  opacity: 0;
+  z-index: 1;
 }
 
-.play-overlay .ripple.delay1 {
-  animation-delay: 0.66s;
+/* first wave */
+.play-overlay::before {
+  animation: wave 3s infinite;
 }
 
-.play-overlay .ripple.delay2 {
-  animation-delay: 1.33s;
+/* second wave delayed */
+.play-overlay::after {
+  animation: wave 3s infinite 1s;
 }
 
-@keyframes ripple {
+/* third wave further delayed */
+.play-overlay .wave {
+  animation: wave 3s infinite 2s;
+}
+
+/* keyframes same */
+@keyframes wave {
   0% {
     transform: translate(-50%, -50%) scale(1);
-    opacity: 0.7;
+    opacity: 0.6;
   }
   100% {
-    transform: translate(-50%, -50%) scale(2);
+    transform: translate(-50%, -50%) scale(2.5);
     opacity: 0;
   }
 }
+
 .transparent-navbar {
   background-color: transparent;
   transition: background-color 0.4s ease, top 0.4s ease;
@@ -767,6 +808,7 @@
         transform: translateY(0);
     }
 }
+
 
 /* Controls box at bottom */
 .custom-arrow {

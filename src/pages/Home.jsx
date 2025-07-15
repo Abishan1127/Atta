@@ -268,10 +268,11 @@ function Home() {
           <div className="row">
             <div className="col-md-8 position-relative video-thumbnail-container p-0">
               <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
-              <div className="play-overlay" onClick={() => setShowModal(true)}>
-                <span className="ripple"></span><span className="ripple delay1"></span><span className="ripple delay2"></span>
-                <i className="bi bi-play-circle display-1 my-bold-icon"></i>
-              </div>
+             <div className="play-overlay" onClick={() => setShowModal(true)}>
+  <i className="bi bi-play-circle display-1 my-bold-icon"></i>
+  <span className="wave"></span>
+</div>
+
             </div>
             <div className="col-md-4 text-start accordion-custom px-4 shadow">
               {accordionData.map((sec) => (
@@ -319,7 +320,7 @@ function Home() {
           </div>
         </div>
         {/* Contact section*/}
-        <div className="news-section pt-5 bg-white" id="contact"><Contact /></div>
+        <div className="news-section pt-5 bg-white mt-3" id="contact"><Contact /></div>
       </div>
     </>
   );
