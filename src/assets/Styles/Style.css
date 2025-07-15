@@ -1033,7 +1033,9 @@
 .scroll-to-top:hover {
   color: #dc3545;
 }
-
+#home, #service, #team, #news, #contact {
+  scroll-margin-top: 100px;
+}
 
 /* Auto-scroll animation */
 @keyframes scroll {

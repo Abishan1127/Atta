@@ -59,18 +59,18 @@ function Header() {
                 <header>
                     {/* Top Header for large devices */}
                     <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between transition-top-header ${showTopHeader ? '' : 'hidden'}`}>
-                        <div className='align-items-center justify-content-start'>
+                        <div className=' d-flex align-items-center justify-content-start'>
                             <span >
                                 <FaPhone className="ms-5" /> +44-888-12-345
                             </span>
                             <span className="border-start ms-3">
-                                <FaClock className="ms-3" /> Today: 09.00 to 18.45
+                               <div className='ms-3'>158 Toongabbie Road, Toongabbie NSW 2146</div> 
                             </span>
                         </div>
                         <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center ">
-                            <a href="#about" className="header-link me-4">About Us</a>
+                            {/* <a href="#about" className="header-link me-4">About Us</a>
                             <a href="#faq" className="header-link me-4">FAQ’s</a>
-                            <a href="#contact" className="header-link pe-4 border-end">Contact</a>
+                            <a href="#contact" className="header-link pe-4 border-end">Contact</a> */}
                             <SocialIcon href="#" icon={FaFacebookF} />
                             <SocialIcon href="#" icon={FaGoogle} />
                             <SocialIcon href="#" icon={FaInstagram} />
@@ -92,7 +92,7 @@ function Header() {
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="service">Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="team">Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="news">News</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li>
+                                {/* <li className="nav-item"><a className="nav-link" href="#" data-target="testimonial">Testimonial</a></li> */}
                                 <li className="nav-item"><a className="nav-link" href="#" data-target="contact">Contact Us</a></li>
                             </ul>
                         </div>
@@ -110,7 +110,7 @@ function Header() {
                                 <li className="nav-item"><a className="nav-link" href="#service">Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#team">Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#news">News</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#testimonial">Testimonial</a></li>
+                                {/* <li className="nav-item"><a className="nav-link" href="#testimonial">Testimonial</a></li> */}
                                 <li className="nav-item"><a className="nav-link" href="#contact">Contact Us</a></li>
                             </ul>
 
