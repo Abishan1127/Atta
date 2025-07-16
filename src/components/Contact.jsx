@@ -80,59 +80,67 @@ const Contact = () => {
 
   return (
     <>
-      <div className="container mt-5">
-        <h6 className="text-danger fw-bold mb-2 text-center">
-          <span className="me-1">★</span> Make Connecting <span className="ms-1">★</span>
-        </h6>
-        <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
-        <div className="divider mx-auto mb-4"></div>
+    <div className="container mt-5">
+  <h6 className="text-danger fw-bold mb-2 text-center">
+    <span className="me-1">★</span> Make Connecting <span className="ms-1">★</span>
+  </h6>
+  <h2 className="fw-bold mb-4 text-center">Suggestions and Complaints</h2>
+  <div className="divider mx-auto mb-4"></div>
 
-       <div className="row mt-5">
-  <div className="col-md-4 mb-3 mb-lg-0">
-    <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
-      <div className="card-body">
-        <div className="icon mb-2 ms-3">
-          <i className="bi bi-envelope-fill fs-2 text-danger"></i>
+  <div className="row mt-5">
+    <div className="col-md-4 mb-3 mb-lg-0">
+      <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
+        <div className="card-body">
+          <div className="icon mb-2 ms-3">
+            <i className="bi bi-envelope-fill fs-2 text-danger"></i>
+          </div>
+          <h5 className='ms-3'>Email Us</h5>
+          <p className='ms-3'>Have you got a question or issue? Drop us a line.</p>
+          <div className="extra-contact ms-3">
+            <a href="mailto:info@example.com" className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block text-decoration-none">
+              info@example.com
+            </a>
+          </div>
         </div>
-        <h5 className='ms-3'>Email Us</h5>
-        <p className='ms-3'>Have you got a question or issue? Drop us a line.</p>
-        <div className="extra-contact ms-3">
-          <p className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block">info@example.com</p>
+      </div>
+    </div>
+
+    <div className="col-md-4 mb-3 mb-lg-0">
+      <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
+        <div className="card-body">
+          <div className="icon mb-2 ms-3">
+            <i className="bi bi-telephone-fill fs-2 text-danger"></i>
+          </div>
+          <h5 className='ms-3'>Phone</h5>
+          <p className='ms-3'>You can call us on weekdays between 8am to 5pm.</p>
+          <div className="extra-contact ms-3">
+            <a href="tel:+15551234567" className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block text-decoration-none">
+              +1 (555) 123-4567
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="col-md-4 mb-3 mb-lg-0">
+      <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
+        <div className="card-body">
+          <div className="icon mb-2 ms-3">
+            <i className="bi bi-share-fill fs-2 text-danger"></i>
+          </div>
+          <h5 className='ms-3'>Social Media</h5>
+          <p className='ms-3'>Looking for the latest news, events & places</p>
+          <div className="extra-contact ms-3">
+            <a href="https://twitter.com/SmartCityOfficial" target="_blank" rel="noopener noreferrer" 
+               className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block text-decoration-none">
+              @SmartCityOfficial
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div className="col-md-4 mb-3 mb-lg-0">
-    <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
-      <div className="card-body">
-        <div className="icon mb-2 ms-3">
-          <i className="bi bi-telephone-fill fs-2 text-danger"></i>
-        </div>
-        <h5 className='ms-3'>Phone</h5>
-        <p className='ms-3'>You can call us on weekdays between 8am to 5pm.</p>
-        <div className="extra-contact ms-3">
-          <p className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block">+1 (555) 123-4567</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="col-md-4 mb-3 mb-lg-0">
-    <div className="card border-0 shadow-lg contact-card h-100 p-3 hover-card">
-      <div className="card-body">
-        <div className="icon mb-2 ms-3">
-          <i className="bi bi-share-fill fs-2 text-danger"></i>
-        </div>
-        <h5 className='ms-3'>Social Media</h5>
-        <p className='ms-3'>Looking for the latest news, events & places</p>
-        <div className="extra-contact ms-3">
-          <p className="mt-2 mb-0 text-danger border-bottom border-danger d-inline-block">@SmartCityOfficial</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/Styles/Style.css';
 import { FaPhone, FaFacebookF, FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import logo from '../assets/images/logo1.png';
@@ -17,24 +17,17 @@ export default function Header() {
     const [showStickyNavbar, setShowStickyNavbar] = useState(false);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-   useEffect(() => {
-    const handleScroll = () => {
-        if (window.innerWidth >= 992) {
+    useEffect(() => {
+        const handleScroll = () => {
             const scrollY = window.scrollY;
             setScrolled(scrollY > 50);
             setShowStickyNavbar(scrollY > 200);
-        } else {
-            setScrolled(false);
-            setShowStickyNavbar(false);
-        }
-    };
+        };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-
-    // disable body scroll when offcanvas open
     useEffect(() => {
         if (showOffcanvas) {
             document.body.style.overflow = 'hidden';
@@ -71,7 +64,6 @@ export default function Header() {
                                 158 Toongabbie Road, Toongabbie NSW 2146
                             </a>
                         </span>
-
                     </div>
                     <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center ">
                         <SocialIcon href="#" icon={FaFacebookF} />
@@ -81,8 +73,8 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* Main navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition ${scrolled ? 'hide' : ''}`}>
+                {/* Mobile fixed navbar */}
+                <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container fixed-top d-lg-none">
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                         <img src={logo} alt="logo" style={{ height: '60px' }} />
                     </a>
@@ -93,7 +85,14 @@ export default function Header() {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
+                </nav>
+
+                {/* Desktop normal navbar */}
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition d-none d-lg-flex ${scrolled ? 'hide' : ''}`}>
+                    <a className="navbar-brand fw-bold d-flex align-items-center" href="">
+                        <img src={logo} alt="logo" style={{ height: '60px' }} />
+                    </a>
+                    <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
                             <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
@@ -104,20 +103,20 @@ export default function Header() {
                     </div>
                 </nav>
 
-                {/* Sticky navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 mt-4 mt-md-0 container-fluid sticky-navbar-transition ${showStickyNavbar ? 'show' : ''}`}>
+                {/* Desktop sticky navbar */}
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
-                        <a className="navbar-brand fw-bold d-flex align-items-center mt-3 mt-md-0" href="">
+                        <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                             <img src={logo} alt="logo" style={{ height: '60px' }} />
                         </a>
                         <button
-                            className="navbar-toggler me-3 mt-3 mt-md-0"
+                            className="navbar-toggler me-3"
                             type="button"
                             onClick={() => setShowOffcanvas(true)}
                         >
                             <span className="navbar-toggler-icon"></span>
                         </button>
-                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex">
+                        <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold">
                             <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                                 <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
@@ -131,7 +130,7 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show mt-4" style={{ visibility: 'visible', transform: 'translateX(0%)',overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show mt-4" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" style={{ height: '60px' }} />
@@ -144,7 +143,6 @@ export default function Header() {
                                 ></button>
                             </div>
                         </div>
-
 
                         <div className="offcanvas-body mt-5 pt-5">
                             <ul className="navbar-nav gap-4 align-items-center text-uppercase fw-semibold mt-5">
