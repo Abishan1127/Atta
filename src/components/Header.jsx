@@ -17,16 +17,22 @@ export default function Header() {
     const [showStickyNavbar, setShowStickyNavbar] = useState(false);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
+   useEffect(() => {
+    const handleScroll = () => {
+        if (window.innerWidth >= 992) {
             const scrollY = window.scrollY;
             setScrolled(scrollY > 50);
             setShowStickyNavbar(scrollY > 200);
-        };
+        } else {
+            setScrolled(false);
+            setShowStickyNavbar(false);
+        }
+    };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
     // disable body scroll when offcanvas open
     useEffect(() => {
@@ -54,10 +60,18 @@ export default function Header() {
                 {/* Top header */}
                 <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between top-header-transition ${scrolled ? 'hide' : ''}`}>
                     <div className='d-flex align-items-center justify-content-start'>
-                        <span><FaPhone className="ms-5" /> +44-888-12-345</span>
+                        <a className="text-decoration-none text-white  ms-5" href="tel:+(03) 9886 0005">(03) 9886 0005</a>
                         <span className="border-start ms-3">
-                            <div className='ms-3'>158 Toongabbie Road, Toongabbie NSW 2146</div>
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=158+Toongabbie+Road,+Toongabbie+NSW+2146"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ms-3 text-decoration-none text-white"
+                            >
+                                158 Toongabbie Road, Toongabbie NSW 2146
+                            </a>
                         </span>
+
                     </div>
                     <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center ">
                         <SocialIcon href="#" icon={FaFacebookF} />
@@ -69,7 +83,7 @@ export default function Header() {
 
                 {/* Main navbar */}
                 <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition ${scrolled ? 'hide' : ''}`}>
-                    <a className="navbar-brand fw-bold d-flex align-items-center" href="#">
+                    <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                         <img src={logo} alt="logo" style={{ height: '60px' }} />
                     </a>
                     <button
@@ -81,7 +95,7 @@ export default function Header() {
                     </button>
                     <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold d-none d-lg-flex" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
-                            <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
                             <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
                             <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
                             <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
@@ -93,7 +107,7 @@ export default function Header() {
                 {/* Sticky navbar */}
                 <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 mt-4 mt-md-0 container-fluid sticky-navbar-transition ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
-                        <a className="navbar-brand fw-bold d-flex align-items-center mt-3 mt-md-0" href="#">
+                        <a className="navbar-brand fw-bold d-flex align-items-center mt-3 mt-md-0" href="">
                             <img src={logo} alt="logo" style={{ height: '60px' }} />
                         </a>
                         <button
@@ -117,14 +131,21 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show" style={{ visibility: 'visible', transform: 'translateX(0%)' }}>
-                        <div className="offcanvas-header">
-                            <button
-                                type="button"
-                                className="btn-close"
-                                onClick={() => setShowOffcanvas(false)}
-                            ></button>
+                    <div className="offcanvas offcanvas-end show mt-4" style={{ visibility: 'visible', transform: 'translateX(0%)',overflow: 'hidden' }}>
+                        <div className="offcanvas-header justify-content-between">
+                            <a className="navbar-brand fw-bold d-flex align-items-center" href="">
+                                <img src={logo} alt="logo" style={{ height: '60px' }} />
+                            </a> 
+                            <div className="border border-dark p-1 rounded me-2">
+                                <button
+                                    type="button"
+                                    className="btn-close m-1"
+                                    onClick={() => setShowOffcanvas(false)}
+                                ></button>
+                            </div>
                         </div>
+
+
                         <div className="offcanvas-body mt-5 pt-5">
                             <ul className="navbar-nav gap-4 align-items-center text-uppercase fw-semibold mt-5">
                                 <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>

@@ -71,7 +71,7 @@ function Home() {
       <div className="container-fluid p-0">
 
         {/* Hero section */}
-        <div className="p-0 z-index-1 hero-wrapper position-relative hero-section">
+        <div className="p-0 z-index-1 hero-wrapper position-relative hero-section" id="home">
           <div id="heroCarousel" className="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
             <div className="carousel-inner">
               {slides.map((slide, idx) => (
@@ -261,7 +261,7 @@ function Home() {
           </div>
         </div>
         {/* News Accordion section*/}
-        <div className="container my-4 text-center" id="VideoAccordion">
+        <div className="container my-4 text-center" id="blog">
           <h6 className="section-subtitle"><span className="star">★</span> NEWS & BLOG <span className="star">★</span></h6>
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
           <div className="divider mx-auto mb-4"></div>
