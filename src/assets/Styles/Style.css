@@ -1,3 +1,17 @@
+.custom-social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    background-color: #0000001A !important;
+    color:white  !important;
+    margin-left: 5px;
+
+}
+
+.custom-social-icon:hover {
+    background-color: white !important;
+    color:red  !important;
+}
 .footer {
     background-color: #1c1b2a;
     color: #8e91a2;
@@ -1203,6 +1217,18 @@
     .sticky-navbar-transition {
       top: -25px;
       padding-top: 30px;
+    }
+    .custom-social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    background-color: #0000001A !important;
+    color:black !important;
+    margin-left: 5px;
+    }
+    .custom-social-icon:hover {
+    background-color: white !important;
+    color:red  !important;
     }
 }
 @media (min-width: 1024px) {

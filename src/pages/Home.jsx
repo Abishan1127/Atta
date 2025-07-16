@@ -194,8 +194,6 @@ function Home() {
             </div>
           </div>
         </div>
-
-
         {/* Team section*/}
         <div className="team-section py-5 bg-white mt-5" id="team">
           <div className="container-fluid text-center">
