@@ -74,8 +74,8 @@ export default function Header() {
                 </div>
 
                 {/* Mobile fixed navbar */}
-                <nav className="navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container fixed-top d-lg-none">
-                    <a className="navbar-brand fw-bold d-flex align-items-center" href="">
+                <nav className="navbar bg-white border-bottom py-4 px-2 px-md-5 container fixed-top d-lg-none  ">
+                    <a className="navbar-brand fw-bold d-flex align-items-center mt-1" href="">
                         <img src={logo} alt="logo" style={{ height: '60px' }} />
                     </a>
                     <button

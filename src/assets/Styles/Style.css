@@ -785,6 +785,8 @@
   top: 0;
   z-index: 999;
 }
+
+
 .transition-top-header {
   transition: all 0.3s ease;
   height: auto;
