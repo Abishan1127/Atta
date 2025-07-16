@@ -1192,8 +1192,11 @@
    }
    .plus-icon{
      margin-left: 49%;
-  
-}
+    }
+    .sticky-navbar-transition {
+      top: -25px;
+      padding-top: 30px;
+    }
 }
 @media (min-width: 1024px) {
   .overlap-carousel {
