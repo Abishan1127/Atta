@@ -2,6 +2,8 @@ import React from 'react';
 import logo2 from '../assets/images/ataa-logo-white.png';
 import { FaRegCalendarAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../assets/Styles/Style.css';
+import { useState } from 'react';
+
 
 function Footer() {
 
@@ -14,6 +16,15 @@ function Footer() {
             }
         }, 100);
     };
+    const [subscribeEmail, setSubscribeEmail] = useState('');
+    const [subscribeError, setSubscribeError] = useState('');
+
+    const validateEmail = (email) => {
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return regex.test(email);
+    };
+
+
 
     return (
         <footer className="footer pt-5">
@@ -29,7 +40,7 @@ function Footer() {
                         </p>
                         {/* Carousel */}
                         <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">
-                            <div className="carousel-inner p-3 rounded mt-5">
+                            <div className="carousel-inner p-3 rounded mt-4">
                                 <div className="carousel-item active">
                                     <p className="mb-1 d-flex align-items-center gap-2">
                                         <FaRegCalendarAlt /> September 11, 2022
@@ -69,7 +80,7 @@ function Footer() {
                                     <li><a href="#housing" onClick={(e) => handleNavClick(e, 'housing')}>Housing & Land</a></li>
                                     <li><a href="#policing" onClick={(e) => handleNavClick(e, 'policing')}>Policing & Crime</a></li>
                                     <li><a href="#overlay" onClick={(e) => handleNavClick(e, 'overlay')}>Title Overlay</a></li>
-                                      <li><a href="#policing" onClick={(e) => handleNavClick(e, 'policing')}>Policing & Crime</a></li>
+                                    <li><a href="#policing" onClick={(e) => handleNavClick(e, 'policing')}>Policing & Crime</a></li>
                                     <li><a href="#overlay" onClick={(e) => handleNavClick(e, 'overlay')}>Title Overlay</a></li>
                                 </ul>
                             </div>
@@ -110,12 +121,36 @@ function Footer() {
                             </div>
                         </div>
 
-                        <div className='mt-5'>
+                        <div className='mt-4'>
                             <p className=''>Subscribe us & Get Updates in Your Inbox</p>
                             <div className="input-group">
-                                <input type="email" className="form-control" placeholder="Your email ..." />
-                                <button className="btn btn-danger">Subscribe</button>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    placeholder="Your email ..."
+                                    value={subscribeEmail}
+                                    onChange={(e) => {
+                                        setSubscribeEmail(e.target.value);
+                                        setSubscribeError(""); // clear on change
+                                    }}
+                                />
+                                <button
+                                    className="btn btn-danger"
+                                    onClick={() => {
+                                        if (!validateEmail(subscribeEmail)) {
+                                            setSubscribeError("Please enter a valid email address.");
+                                        } else {
+                                            setSubscribeError("");
+                                            alert("Subscribed successfully!"); // or call your API here
+                                            setSubscribeEmail('');
+                                        }
+                                    }}
+                                >
+                                    Subscribe
+                                </button>
                             </div>
+                            {subscribeError && <small className="text-danger">{subscribeError}</small>}
+
                         </div>
                     </div>
                 </div>

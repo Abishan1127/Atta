@@ -68,10 +68,11 @@ export default function Header() {
                         </span>
                     </div>
                     <div className="d-flex justify-content-end gap-1 ps-5 me-5 align-items-center ">
-                        <SocialIcon href="#" icon={FaFacebookF} />
-                        <SocialIcon href="#" icon={FaInstagram} />
-                        <SocialIcon href="#" icon={FaYoutube} />
-                        <SocialIcon href="#" icon={FaWhatsapp} />
+                        <SocialIcon href="https://www.facebook.com/" icon={FaFacebookF} />
+                        <SocialIcon href="https://www.instagram.com/" icon={FaInstagram} />
+                        <SocialIcon href="https://www.youtube.com/" icon={FaYoutube} />
+                        <SocialIcon href="https://wa.me/1234567890" icon={FaWhatsapp} />
+
                     </div>
                 </div>
 
@@ -136,7 +137,7 @@ export default function Header() {
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" style={{ height: '60px' }} />
-                            </a> 
+                            </a>
                             <div className="border border-dark p-1 rounded me-2">
                                 <button
                                     type="button"
@@ -155,10 +156,11 @@ export default function Header() {
                                 <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
                             </ul>
                             <div className="d-flex justify-content-center gap-3 mt-4">
-                                <SocialIcon href="#" icon={FaFacebookF} />
-                                <SocialIcon href="#" icon={FaInstagram} />
-                                <SocialIcon href="#" icon={FaYoutube} />
-                                <SocialIcon href="#" icon={FaWhatsapp} />
+                                  <SocialIcon href="https://www.facebook.com/" icon={FaFacebookF} />
+                                  <SocialIcon href="https://www.instagram.com/" icon={FaInstagram} />
+                                  <SocialIcon href="https://www.youtube.com/" icon={FaYoutube} />
+                                  <SocialIcon href="https://wa.me/1234567890" icon={FaWhatsapp} />
+
                             </div>
                         </div>
                     </div>
