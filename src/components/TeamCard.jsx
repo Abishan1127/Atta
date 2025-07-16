@@ -10,11 +10,15 @@ const TeamCard = ({ member }) => {
           <h5 className="card-title fw-bold mb-1">{member.name}</h5>
           <p className="text-danger mb-3">{member.title}</p>
           <div className="d-flex justify-content-center gap-2">
-            <button className="btn btn-light d-flex align-items-center gap-1 text-muted">
+            <a href={`mailto:${member.email}`} className="btn btn-light d-flex align-items-center gap-1 text-muted">
               <FaEnvelope /> Email
+            </a>
+            <a href={`tel:${member.phone}`} className="btn btn-light text-muted">
+              <FaPhoneAlt />
+            </a>
+            <button className="btn btn-light text-muted">
+              <FaShareAlt />
             </button>
-            <button className="btn btn-light text-muted"><FaPhoneAlt /></button>
-            <button className="btn btn-light text-muted"><FaShareAlt /></button>
           </div>
         </div>
       </div>
@@ -23,4 +27,3 @@ const TeamCard = ({ member }) => {
 };
 
 export default TeamCard;
-

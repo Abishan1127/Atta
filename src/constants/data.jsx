@@ -53,11 +53,41 @@ export const slides = [
 
 
 export const teamMembers = [
-  { name: 'Elvina Julies', title: 'Actuary', image: member1 },
-  { name: 'Hermans Gordon', title: 'Director', image: member2 },
-  { name: 'Marian Lenoras', title: 'Speaker', image: member3 },
-  { name: 'Bertram Irvin', title: 'Speaker', image: member4 },
-  { name: 'Nathan Cruz', title: 'Coordinator', image: member5 },
+  { 
+    name: 'Elvina Julies', 
+    title: 'Actuary', 
+    image: member1, 
+    email: 'elvina@example.com', 
+    phone: '+61412345678'
+  },
+  { 
+    name: 'Hermans Gordon', 
+    title: 'Director', 
+    image: member2, 
+    email: 'hermans@example.com', 
+    phone: '+61498765432'
+  },
+  { 
+    name: 'Marian Lenoras', 
+    title: 'Speaker', 
+    image: member3, 
+    email: 'marian@example.com', 
+    phone: '+61411223344'
+  },
+  { 
+    name: 'Bertram Irvin', 
+    title: 'Speaker', 
+    image: member4, 
+    email: 'bertram@example.com', 
+    phone: '+61455667788'
+  },
+  { 
+    name: 'Nathan Cruz', 
+    title: 'Coordinator', 
+    image: member5, 
+    email: 'nathan@example.com', 
+    phone: '+61466778899'
+  },
 ];
 
 export const downloadSlides = [
