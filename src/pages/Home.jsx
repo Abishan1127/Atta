@@ -5,7 +5,7 @@ import Contact from '../components/Contact';
 import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
-import { FaPlus, FaMinus, FaCheckCircle, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaPlus, FaMinus, FaCheckCircle, FaChevronLeft, FaChevronRight, FaDove } from 'react-icons/fa';
 import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage, services, departmentsData, aboutData } from '../constants/data';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -122,36 +122,28 @@ function Home() {
           </div>
         </div>
 
-
         {/* About section */}
         <section className="about-section py-5" id="about">
-          <div className="container">
+          <div className="container py-5">
             <div className="row">
               {/* Left: Fixed Background Image + Quote */}
-              <div
-                className="col-md-6 d-flex align-items-center justify-content-center about-left"
-                style={{
-                  backgroundImage: `url('/images/women-1.jpg')`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  minHeight: "400px",
-                }}
-              >
-                <div className="about-circle text-white">
-                  <div className="fs-1 fw-bold">“</div>
-                  <p className="mb-1 small">My City’s Residents Showed Commitment & Courage in this Crucial Situation.</p>
-                  <p className="fw-bold mb-0">Jordon Cooper</p>
-                  <small>City Mayor</small>
+              <div className="col-md-6 about-left d-flex align-items-center justify-content-end">
+                <div className="about-circle text-white d-flex me-5 mb-5">
+                  <div className="text-start ms-3">
+                    <div className="fs-1 fw-bold">“</div>
+                    <p className="mb-1 small">My City’s Residents Showed Commitment & Courage in this Crucial Situation.</p>
+                    <p className="fw-bold mb-0">Jordon Cooper</p>
+                    <small>City Mayor</small>
+                  </div>
                 </div>
               </div>
 
               {/* Right: Animated Text Content */}
-              <div className="col-md-6 position-relative overflow-hidden" style={{ minHeight: "400px" }}>
-                {/* Static heading */}
-                <p className="text-danger small fw-bold">★ MAYOR OF WHITEHALL</p>
+              <div className="col-md-6 position-relative overflow-hidden about-right">
+                <p className="text-danger small fw-bold ms-5">★ About Us ★</p>
+                <div className="divider ms-5  mb-4"></div>
 
-                {/* Sliding content */}
-                <div className="about-slider-wrapper position-relative">
+                <div className="about-slider-wrapper position-relative ms-5">
                   {aboutData.map((item, i) => {
                     const isActive = i === aboutIndex;
                     const isExiting = i === exitingIndex;
@@ -159,15 +151,17 @@ function Home() {
                     return (
                       <div
                         key={item.id}
-                        className={`about-slide-content ${isActive ? "active" : isExiting ? "exiting" : ""
-                          }`}
+                        className={`about-slide-content ${isActive ? "active" : isExiting ? "exiting" : ""}`}
                       >
                         <h3 className="fw-bold">{item.heading}</h3>
-                        <h6 className="fw-semibold">{item.subheading}</h6>
-                        <p className="text-muted">{item.description}</p>
-                        <ul className="ps-3">
+                        <h6 className="fw-semibold mt-4">{item.subheading}</h6>
+                        <p className="text-muted mt-4">{item.description}</p>
+                        <ul className="list-unstyled">
                           {item.points.map((point, j) => (
-                            <li key={j}>{point}</li>
+                            <li key={j} className="d-flex align-items-start gap-2 mb-2">
+                              <FaDove className="text-secondary mt-1 about-icon" />
+                              <span>{point}</span>
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -177,7 +171,7 @@ function Home() {
 
 
                 {/* Arrows */}
-                <div className="position-absolute bottom-0 end-0 p-3 d-flex gap-2">
+                <div className="position-absolute bottom-0 start-0 pt-3 px-3 ms-5 d-flex gap-2 ">
                   <button className="btn btn-outline-dark" onClick={prevAbout}>
                     <FaChevronLeft />
                   </button>

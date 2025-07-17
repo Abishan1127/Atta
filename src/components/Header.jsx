@@ -98,10 +98,11 @@ export default function Header() {
                     <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
-                            <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
+                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -122,6 +123,7 @@ export default function Header() {
                         <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold">
                             <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                                 <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                                   <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>

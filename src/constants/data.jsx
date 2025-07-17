@@ -273,7 +273,7 @@ export const aboutData = [
       "Carry out the Duties",
       "Develop the Municipality",
       "Maintain Financial Integrity",
-      "Represent the Public",
+     
     ],
   },
   {
