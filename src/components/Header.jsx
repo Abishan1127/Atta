@@ -77,9 +77,9 @@ export default function Header() {
                 </div>
 
                 {/* Mobile fixed navbar */}
-                <nav className="navbar bg-white border-bottom py-4 px-2 px-md-5 container fixed-top d-lg-none  ">
+                <nav className="navbar bg-white border-bottom py-3 px-3 px-md-5 container fixed-top d-lg-none  ">
                     <a className="navbar-brand fw-bold d-flex align-items-center mt-1" href="">
-                        <img src={logo} alt="logo" style={{ height: '60px' }} />
+                        <img src={logo} alt="logo" style={{ height: '70px' }} />
                     </a>
                     <button
                         className="navbar-toggler me-3"
@@ -135,10 +135,10 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show mt-4" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-2 " style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                                <img src={logo} alt="logo" style={{ height: '60px' }} />
+                                <img src={logo} alt="logo" style={{ height: '70px' }} />
                             </a>
                             <div className="border border-dark p-1 rounded me-2">
                                 <button

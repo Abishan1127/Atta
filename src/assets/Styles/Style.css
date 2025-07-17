@@ -322,7 +322,9 @@
   opacity: 1;
   
 }
-
+body, html {
+  overflow-x: hidden;
+}
 .service-icon {
   width: 40px;
 }
@@ -1216,11 +1218,11 @@
   background-image: url('../images/about.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 400px;
+  min-height: 470px;
 }
 
 .about-right {
-  min-height: 400px;
+  min-height: 470px;
 }
 
 .about-circle {
@@ -1266,6 +1268,7 @@
   font-size: 1rem;
   flex-shrink: 0;
 }
+
 
 
 
@@ -1332,6 +1335,9 @@
     .custom-social-icon:hover {
     background-color: white !important;
     color:red  !important;
+    }
+    .about-arrow{
+      
     }
 }
 @media (min-width: 1024px) {

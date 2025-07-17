@@ -36,7 +36,8 @@ function Footer() {
                         <p className="mt-5">
                             Righteous indignation and like <br />men who 
                             are so beguiled and <br /> demoralized by the
-                            charm of<br /> pleasure of the moment so <br />blinded.
+                            charm of<br /> pleasure of the moment so <br />
+                             Righteous indignation and like 
                         </p>
                         
                     </div>

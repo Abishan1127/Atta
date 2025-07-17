@@ -121,10 +121,9 @@ function Home() {
             </button>
           </div>
         </div>
-
         {/* About section */}
         <section className="about-section py-5" id="about">
-          <div className="container py-5">
+          <div className="container my-5">
             <div className="row">
               {/* Left: Fixed Background Image + Quote */}
               <div className="col-md-6 about-left d-flex align-items-center justify-content-end">
@@ -171,11 +170,11 @@ function Home() {
 
 
                 {/* Arrows */}
-                <div className="position-absolute bottom-0 start-0 pt-3 px-3 ms-5 d-flex gap-2 ">
-                  <button className="btn btn-outline-dark" onClick={prevAbout}>
+                <div className="position-absolute bottom-0 start-0 pt-3 px-3 ms-5 d-flex gap-2 about-arrow  ">
+                  <button className="btn btn-outline-dark " onClick={prevAbout}>
                     <FaChevronLeft />
                   </button>
-                  <button className="btn btn-outline-dark" onClick={nextAbout}>
+                  <button className="btn btn-outline-dark " onClick={nextAbout}>
                     <FaChevronRight />
                   </button>
                 </div>
@@ -183,14 +182,12 @@ function Home() {
             </div>
           </div>
         </section>
-
-
         {/* Services section */}
         <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
               <div className="col-md-6 slide-container rounded">
-                <div className="overlay d-flex align-items-center justify-content-center border border-white rounded my-3 me-3 ms-4">
+                <div className="overlay d-flex align-items-center justify-content-center border border-white rounded my-3 ">
                   <div className="content-box my-5">
                     <h4 className='mt-5'><i className="bi bi-house me-2"></i> Services & Activities</h4>
                     <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
