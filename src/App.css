@@ -25,7 +25,7 @@
 }
 
 .custom-nav-link:hover {
-  color: #dc3545; /* Bootstrap's danger/red color */
+  color: #dc3545; /* /red color */
   text-decoration: none;
 }
 .hero-slide {
