@@ -5,8 +5,8 @@ import Contact from '../components/Contact';
 import TeamCard from '../components/TeamCard';
 import NewsCard from '../components/NewsCard';
 import '../assets/Styles/Style.css';
-import { FaPlus, FaMinus, FaCheckCircle } from 'react-icons/fa';
-import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage, services, departmentsData } from '../constants/data';
+import { FaPlus, FaMinus, FaCheckCircle, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { slides, teamMembers, downloadSlides, files, accordionData, newsData, iconImage, services, departmentsData, aboutData } from '../constants/data';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ServiceCard from "../components/ServiceCard";
@@ -42,6 +42,27 @@ function Home() {
       ? <>{words.slice(0, 4).join(' ')} <br /> {words.slice(4).join(' ')}</>
       : text;
   };
+  const [aboutIndex, setAboutIndex] = useState(0);
+  const [exitingIndex, setExitingIndex] = useState(null);
+
+  const nextAbout = () => {
+    setExitingIndex(aboutIndex);
+    setAboutIndex((prev) => (prev + 1) % aboutData.length);
+  };
+
+  const prevAbout = () => {
+    setExitingIndex(aboutIndex);
+    setAboutIndex((prev) => (prev - 1 + aboutData.length) % aboutData.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextAbout();
+    }, 6000);
+    return () => clearInterval(interval);
+  }, [aboutIndex]);
+
+
 
   // Scrollbar for downloads
   const scrollDownloads = (amount) => {
@@ -63,6 +84,7 @@ function Home() {
     container.addEventListener('scroll', updateThumbPosition);
     return () => container.removeEventListener('scroll', updateThumbPosition);
   }, []);
+
 
 
 
@@ -99,6 +121,76 @@ function Home() {
             </button>
           </div>
         </div>
+
+
+        {/* About section */}
+        <section className="about-section py-5" id="about">
+          <div className="container">
+            <div className="row">
+              {/* Left: Fixed Background Image + Quote */}
+              <div
+                className="col-md-6 d-flex align-items-center justify-content-center about-left"
+                style={{
+                  backgroundImage: `url('/images/women-1.jpg')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  minHeight: "400px",
+                }}
+              >
+                <div className="about-circle text-white">
+                  <div className="fs-1 fw-bold">“</div>
+                  <p className="mb-1 small">My City’s Residents Showed Commitment & Courage in this Crucial Situation.</p>
+                  <p className="fw-bold mb-0">Jordon Cooper</p>
+                  <small>City Mayor</small>
+                </div>
+              </div>
+
+              {/* Right: Animated Text Content */}
+              <div className="col-md-6 position-relative overflow-hidden" style={{ minHeight: "400px" }}>
+                {/* Static heading */}
+                <p className="text-danger small fw-bold">★ MAYOR OF WHITEHALL</p>
+
+                {/* Sliding content */}
+                <div className="about-slider-wrapper position-relative">
+                  {aboutData.map((item, i) => {
+                    const isActive = i === aboutIndex;
+                    const isExiting = i === exitingIndex;
+
+                    return (
+                      <div
+                        key={item.id}
+                        className={`about-slide-content ${isActive ? "active" : isExiting ? "exiting" : ""
+                          }`}
+                      >
+                        <h3 className="fw-bold">{item.heading}</h3>
+                        <h6 className="fw-semibold">{item.subheading}</h6>
+                        <p className="text-muted">{item.description}</p>
+                        <ul className="ps-3">
+                          {item.points.map((point, j) => (
+                            <li key={j}>{point}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+
+
+                {/* Arrows */}
+                <div className="position-absolute bottom-0 end-0 p-3 d-flex gap-2">
+                  <button className="btn btn-outline-dark" onClick={prevAbout}>
+                    <FaChevronLeft />
+                  </button>
+                  <button className="btn btn-outline-dark" onClick={nextAbout}>
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
         {/* Services section */}
         <div className="service-section py-5 bg-transparent position-relative overlay " id="service" >
           <div className="service-section text-white">
@@ -129,6 +221,7 @@ function Home() {
             </div>
           </div>
         </div>
+
         {/* Departments section with left & right background images */}
         <div className="department-section position-relative py-0 " id="departments">
 

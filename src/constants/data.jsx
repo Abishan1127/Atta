@@ -261,9 +261,67 @@ export const departmentsData = [
   },
 ];
 
+export const aboutData = [
+  {
+    id: 1,
+    heading: "Major Voice of City Government, San Antonio",
+    subheading: "From “The Earliest City”",
+    description:
+      "Righteous indignion & dislike men who are so beguiled demoralized by charms pleasure the moment so blinded by desires that they cannot foresee to bound.",
+    points: [
+      "Administrative Practices",
+      "Carry out the Duties",
+      "Develop the Municipality",
+      "Maintain Financial Integrity",
+      "Represent the Public",
+    ],
+  },
+  {
+    id: 2,
+    heading: "City Planning and Sustainability",
+    subheading: "Building for Future Generations",
+    description:
+      "We believe in urban infrastructure that supports environmental and economic sustainability through long-term strategic goals.",
+    points: [
+      "Smart Infrastructure",
+      "Green Public Spaces",
+      "Public Transportation Access",
+      "Zoning Innovation",
+    ],
+  },
+  {
+    id: 3,
+    heading: "Public Health and Safety Initiatives",
+    subheading: "Protecting Our Communities",
+    description:
+      "Health and safety are the backbone of thriving cities. Our mission is to ensure equal access to clean air, healthcare, and emergency response.",
+    points: [
+      "Emergency Services Access",
+      "Pandemic Response",
+      "Clean Water Projects",
+      "Mental Health Resources",
+    ],
+  },
+  {
+    id: 4,
+    heading: "Economic Empowerment for Citizens",
+    subheading: "Enabling Inclusive Growth",
+    description:
+      "From small business incentives to job training programs, we aim to empower every citizen economically through fair opportunity.",
+    points: [
+      "Workforce Training",
+      "Startup Grants",
+      "Community Markets",
+      "Fair Employment",
+    ],
+  },
+];
+
+
 
 
 
 
 export const iconImage = Icon;
 export const downbg = Downbg;
+export const image=Image

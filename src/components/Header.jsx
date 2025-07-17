@@ -93,7 +93,7 @@ export default function Header() {
                 {/* Desktop normal navbar */}
                 <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition d-none d-lg-flex ${scrolled ? 'hide' : ''}`}>
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                        <img src={logo} alt="logo" style={{ height: '60px' }} />
+                        <img src={logo} alt="logo" style={{ height: '70px' }} />
                     </a>
                     <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
@@ -110,7 +110,7 @@ export default function Header() {
                 <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                            <img src={logo} alt="logo" style={{ height: '60px' }} />
+                            <img src={logo} alt="logo" style={{ height: '70px' }} />
                         </a>
                         <button
                             className="navbar-toggler me-3"

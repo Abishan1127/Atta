@@ -1162,8 +1162,56 @@
 .sticky-navbar-transition {
     transition: all 0.5s;
 }
+.about-left {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
 
+.about-circle {
+  background-color: red;
+  border-radius: 50%;
+  padding: 40px;
+  width: 260px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
+.about-slider-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* base state: hidden and positioned off-screen right */
+.about-slide-content {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  z-index: 0;
+}
+
+/* active slide (visible) */
+.about-slide-content.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* exit animation (old slide moving out to left) */
+.about-slide-content.exiting {
+  left: -100%;
+  opacity: 0;
+  z-index: 1;
+}
 
 
 
