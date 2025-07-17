@@ -3,19 +3,12 @@ import logo2 from '../assets/images/ataa-logo-white.png';
 import { FaRegCalendarAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import '../assets/Styles/Style.css';
 import { useState } from 'react';
+import { recentNews } from '../constants/data';
 
 
 function Footer() {
 
-    const handleNavClick = (e, sectionId) => {
-        e.preventDefault();
-        setTimeout(() => {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-            }
-        }, 100);
-    };
+   
     const [subscribeEmail, setSubscribeEmail] = useState('');
     const [subscribeError, setSubscribeError] = useState('');
 
@@ -33,19 +26,19 @@ function Footer() {
                     {/* Column 1 */}
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <img src={logo2} alt="logo" className="" height={70}  />
-                        <p className="mt-3">
+                        <p className="mt-5">
                             Righteous indignation and like <br />men who 
                             are so beguiled and <br /> demoralized by the
                             charm of<br /> pleasure of the moment so <br />
-                             Righteous indignation and like 
+                             Righteous indignation 
                         </p>
                         
                     </div>
 
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                       
-                       <div className='mt-4'>
+                       <h5 className="fw-bold mb-3 mt-4 text-white ">Subscribe Us</h5>
+                            <div className='mt-4'>
                             <p className='mt-4'>Subscribe us & Get Updates in Your Inbox</p>
                             <div className="input-group">
                                 <input
@@ -79,8 +72,8 @@ function Footer() {
                     </div>
 
                     {/* Column 3: Recent News & Subscribe */}
-                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ">
-                  
+                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start  ">
+                        <h5 className="fw-bold mb-3 mt-2 lh-lg text-white ">Recent News</h5>
                         <div className="d-flex mb-3 mt-2 pt-3">
                            {/* Carousel */}
                         <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">

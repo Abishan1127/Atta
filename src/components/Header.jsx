@@ -53,10 +53,10 @@ export default function Header() {
                 {/* Top header */}
                 <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between top-header-transition ${scrolled ? 'hide' : ''}`}>
                     <div className='d-flex align-items-center justify-content-start'>
-                        <i class="bi bi-telephone ms-5"></i>
+                        <i className="bi bi-telephone ms-5"></i>
                         <a className="text-decoration-none text-white ms-3" href="tel:+(03) 9886 0005">(03) 9886 0005</a>
                         <span className="border-start ms-3">
-                            <i class="bi bi-geo-alt ms-3 "></i>
+                            <i className="bi bi-geo-alt ms-3 "></i>
                             <a
                                 href="https://www.google.com/maps/search/?api=1&query=158+Toongabbie+Road,+Toongabbie+NSW+2146"
                                 target="_blank"

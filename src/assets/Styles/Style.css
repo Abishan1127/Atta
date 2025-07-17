@@ -21,13 +21,7 @@
    color: #8e91a2;
     text-decoration: none;
 }
-.footer-links a {
-  color: #8e91a2;; /* Bootstrap secondary */
-  position: relative;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: large;
-}
+
 .footer-links a::after {
   content: '';
   position: absolute;
@@ -61,6 +55,9 @@
     background-color: #2e2f43;
   
 }
+
+
+
 #eventCarousel {
   position: relative;
 }
@@ -1218,7 +1215,7 @@ body, html {
   min-height: 470px;
 }
 .about-part {
-   background: url('../images/about.jpg') no-repeat;
+   background: url('../images/about.png') no-repeat;
    background-size: 50% auto; 
 }
 

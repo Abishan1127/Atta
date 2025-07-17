@@ -316,6 +316,24 @@ export const aboutData = [
     ],
   },
 ];
+// src/data.jsx
+export const recentNews = [
+  {
+    date: 'September 11, 2022',
+    description:
+      'New year celebration by the charm pleasure of the moment and trouble are bound to pleasure of the moment',
+  },
+  {
+    date: 'September 12, 2022',
+    description:
+      'Outdoor concert series continues with local jazz pleasure of the moment and trouble are pleasure of the',
+  },
+  {
+    date: 'September 15, 2022',
+    description: 'Annual meet-up and dinner with community members and supporters.',
+  },
+];
+
 
 
 
