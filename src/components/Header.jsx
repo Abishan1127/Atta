@@ -123,7 +123,7 @@ export default function Header() {
                         <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold">
                             <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                                 <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                                   <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+                                <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
@@ -135,7 +135,7 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show py-2 " style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-2 w-100" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" style={{ height: '70px' }} />
@@ -152,6 +152,7 @@ export default function Header() {
                         <div className="offcanvas-body mt-5 pt-5">
                             <ul className="navbar-nav gap-4 align-items-center text-uppercase fw-semibold mt-5">
                                 <li className="nav-item"><a className="nav-link" href="#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
+                                <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#service" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#team" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
                                 <li className="nav-item"><a className="nav-link" href="#news" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>

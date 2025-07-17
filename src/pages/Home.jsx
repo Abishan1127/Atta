@@ -123,10 +123,10 @@ function Home() {
         </div>
         {/* About section */}
         <section className="about-section py-5" id="about">
-          <div className="container my-5">
+          <div className="container py-5">
             <div className="row">
               {/* Left: Fixed Background Image + Quote */}
-              <div className="col-md-6 about-left d-flex align-items-center justify-content-end">
+              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mt-5">
                 <div className="about-circle text-white d-flex me-5 mb-5">
                   <div className="text-start ms-3">
                     <div className="fs-1 fw-bold">“</div>
@@ -138,9 +138,9 @@ function Home() {
               </div>
 
               {/* Right: Animated Text Content */}
-              <div className="col-md-6 position-relative overflow-hidden about-right">
-                <p className="text-danger small fw-bold ms-5">★ About Us ★</p>
-                <div className="divider ms-5  mb-4"></div>
+              <div className="col-md-6 position-relative overflow-hidden about-right mt-5">
+                <p className="text-danger small fw-bold ms-5 ">★ About Us ★</p>
+                 <div className='ms-3'> <div className="divider ms-5   mb-4"></div></div>
 
                 <div className="about-slider-wrapper position-relative ms-5">
                   {aboutData.map((item, i) => {

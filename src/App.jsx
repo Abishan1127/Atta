@@ -37,11 +37,9 @@ function App() {
       <main className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* You can add more routes here */}
         </Routes>
       </main>
       <Footer />
-      {/* Always visible on all pages */}
       <ScrollToTop />
     </Router>
   );
