@@ -33,7 +33,7 @@ function Footer() {
                     {/* Column 1 */}
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <img src={logo2} alt="logo" className="" height={70}  />
-                        <p className="mt-5">
+                        <p className="mt-3">
                             Righteous indignation and like <br />men who 
                             are so beguiled and <br /> demoralized by the
                             charm of<br /> pleasure of the moment so <br />
@@ -44,7 +44,7 @@ function Footer() {
 
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                        <h5 className="fw-bold mb-3 mt-4 text-white">Subscribe</h5>
+                       
                        <div className='mt-4'>
                             <p className='mt-4'>Subscribe us & Get Updates in Your Inbox</p>
                             <div className="input-group">
@@ -80,7 +80,7 @@ function Footer() {
 
                     {/* Column 3: Recent News & Subscribe */}
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ">
-                        <h5 className="fw-bold mb-3 mt-2 lh-lg text-white">Recent News</h5>
+                  
                         <div className="d-flex mb-3 mt-2 pt-3">
                            {/* Carousel */}
                         <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">

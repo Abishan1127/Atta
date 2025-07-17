@@ -11,6 +11,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import ServiceCard from "../components/ServiceCard";
 import DepartmentCard from '../components/DepartmentCard';
+import Invert from'../assets/images/inverted.png'
 
 const responsive = {
   desktop: { breakpoint: { max: 3000, min: 1024 }, items: 3 },
@@ -122,14 +123,14 @@ function Home() {
           </div>
         </div>
         {/* About section */}
-        <section className="about-section py-5" id="about">
-          <div className="container py-5">
+        <section className="about-section py-5 about-part" id="about">
+          <div className="container py-5 ">
             <div className="row">
               {/* Left: Fixed Background Image + Quote */}
-              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mt-5">
+              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5">
                 <div className="about-circle text-white d-flex me-5 mb-5">
-                  <div className="text-start ms-3">
-                    <div className="fs-1 fw-bold">“</div>
+                  <div className="text-start ms-4">
+                    <img src={Invert} alt="" />
                     <p className="mb-1 small">My City’s Residents Showed Commitment & Courage in this Crucial Situation.</p>
                     <p className="fw-bold mb-0">Jordon Cooper</p>
                     <small>City Mayor</small>
