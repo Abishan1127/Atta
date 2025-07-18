@@ -108,7 +108,7 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop sticky navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-0 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-1 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                             <img src={logo} alt="logo" style={{ height: '70px' }} />
@@ -135,7 +135,7 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show py-2 w-100" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-1 w-100" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" style={{ height: '70px' }} />
