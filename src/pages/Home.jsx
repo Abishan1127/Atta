@@ -100,7 +100,7 @@ function Home() {
               {slides.map((slide, idx) => (
                 <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
                   <div
-                    className="hero-slide d-flex align-items-center justify-content-center text-center text-white position-relative"
+                    className="hero-slide d-flex align-items-center justify-content-center text-center text-white position-relative bg-center overflow-hidden"
                     style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
                     {/* Bootstrap 5 overlay to reduce image opacity */}
@@ -196,7 +196,7 @@ function Home() {
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
               <div className="col-md-6 slide-container rounded">
-                <div className="overlay z-1 d-flex align-items-center justify-content-center border border-white rounded my-3 ">
+                <div className="overlay z-1 d-flex align-items-center justify-content-center border border-white rounded my-3 position-absolute ">
                   <div className="content-box my-5">
                     <h4 className='mt-5'><i className="bi bi-house me-2"></i> Services & Activities</h4>
                     <h2 className="mt-2 display-4">Township <br />of San Antonio</h2>
@@ -309,7 +309,7 @@ function Home() {
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
               <div className="col-md-6 slide-container">
-                <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4">
+                <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 position-absolute">
                   <div className="content-box slide-transition" key={current}>
                     <h4><i className="bi bi-house me-2"></i>{downloadSlides[current].smallText}</h4>
                     <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>

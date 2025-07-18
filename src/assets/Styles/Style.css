@@ -51,26 +51,6 @@
   border: 0 !important;
   overflow: hidden;
 }
-.header-link {
-  position: relative;
-  text-decoration: none;
-  color: white;
-}
-.header-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-.header-link:hover::after {
-  transform: scaleX(1);
-}
 .top-header {
     transition: transform 0.4s ease, opacity 0.4s ease;
 }
@@ -126,18 +106,14 @@
 }
 /* hero*/
 .hero-slide {
-    position: relative;
     min-height: 90vh;
     background-size: cover;
-    background-position: center;
-    overflow: hidden;
     transition: transform 5s ease;
 }
 .carousel-item.active .hero-slide {
     transform: scale(1.05);
 }
 .overlay {
-    position: absolute;
     inset: 0;
 }
 .overlays {
@@ -145,8 +121,6 @@
     background: rgba(0,0,0,0.4);
 }
 .hero-content {
-    position: relative;
-    z-index: 2;
     animation: slideUp 1s ease-out forwards;
     opacity: 0;
     transform: translateY(100px);
@@ -169,8 +143,7 @@
 }
 .about-circle {
   padding: 40px;
-  width: 300px;
-  height: 300px;
+  width: 300px; height: 300px;
 }
 .about-slider-wrapper {
   position: relative;
@@ -211,7 +184,6 @@
   font-size: 1rem;
   flex-shrink: 0;
 }
-/* service section */
 .service-section .slide-container {
     background: url('../images/service-bg-2.jpg') center/cover no-repeat;
     position: relative;
@@ -220,32 +192,15 @@
    background-color: #efeff4;
    min-height: 700px;
 }
-/* semi-transparent overlay */
-.service-section .overlay {
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-}
-.service-title {
-  font-weight: bold;
-}
 .service-icon-wrapper {
   width: 110px;
   height: 110px;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: 7.1px;
 }
 .service-card:hover .plus-icon{
   color: #d31c1c;
 }
-/* Create bottom-half ripple */
 .service-icon-wrapper::after {
   content: "";
   position: absolute;
@@ -309,8 +264,6 @@ body, html {
   margin-top: -50px;
   z-index: 2;
   max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
 }
 .team-carousel-wrapper {
   overflow-x: hidden;
@@ -515,7 +468,7 @@ body, html {
   top:200px;
 }
 .department-icon-overlays{
-   width: 80px;
+  width: 80px;
   height: 80px;
   background: rgba(255, 255, 255);
   border-radius: 50%;
@@ -524,7 +477,7 @@ body, html {
   justify-content: center;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  top:200px;
+  top:13px;
 }
 .department-carousel-bars .bar {
   width: 30px;
@@ -1032,7 +985,6 @@ body, html {
 .read-more {
   font-size: 14px;
 }
-
 #home, #service, #team, #news, #contact,#about {
   scroll-margin-top: 80px;
 }
@@ -1091,7 +1043,6 @@ body, html {
     .hero-content h1 {
         font-size: 2rem;
     }
-
     .hero-content h2 {
         font-size: 1.25rem;
     }

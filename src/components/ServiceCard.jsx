@@ -12,8 +12,8 @@ const ServiceCard = ({
     <Card className="service-card shadow-sm rounded border-0">
       <Card.Body className="text-center service-card-body" >
         <small className="service-category text-danger fw-bold text-uppercase">{category}</small>
-        <h5 className="service-title mt-3 ">{title}</h5>
-        <div className="service-icon-wrapper mx-auto position-relative ">
+        <h5 className="mt-3 fw-bold">{title}</h5>
+        <div className="service-icon-wrapper mx-auto position-relative rounded-circle d-flex align-items-center justify-content-center ">
           <div className="service-icon-wrappers bg-white rounded-circle d-flex align-items-center justify-content-center position-relative z-2">
           <i className={`bi ${icon}`} ></i>
           </div>
