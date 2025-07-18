@@ -132,7 +132,7 @@ function Home() {
     <div className="row">
       {/* Left: Fixed Background Image + Quote */}
       <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5">
-        <div className="about-circle text-white d-flex me-5 mb-5">
+        <div className="about-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center me-5 mb-5 bg-danger">
           <div className="text-start ms-4">
             <img src={Invert} alt="" className="img-fluid mb-2" />
             <p className="mb-1 small">
@@ -226,10 +226,10 @@ function Home() {
         <div className="department-section position-relative py-0 " id="departments">
 
           {/* Left background image */}
-          <div className="department-bg-left d-none d-md-block"></div>
+          <div className="department-bg-left d-none d-md-block position-absolute top-0 start-0 bottom-0"></div>
 
           {/* Right background image */}
-          <div className="department-bg-right d-none d-md-block"></div>
+          <div className="department-bg-right d-none d-md-block position-absolute top-0 end-0 bottom-0"></div>
 
           {/* Center container */}
           <div className="container text-center position-relative department-center-content">
@@ -340,7 +340,7 @@ function Home() {
                 <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3">
                   <button className="btn btn-outline-dark fs-5 mt-1 mt-md-0" onClick={() => scrollDownloads(-150)}><i className="bi bi-arrow-up"></i></button>
                   <div className="scrollbar-track-custom my-1 position-relative" style={{ width: '6px', background: '#eee' }}>
-                    <div ref={thumbRef} className="scrollbar-thumb-custom"></div>
+                    <div ref={thumbRef} className="scrollbar-thumb-custom bg-danger w-100"></div>
                   </div>
                   <button className="btn btn-outline-dark fs-5 my-download-btn" onClick={() => scrollDownloads(150)}>
                     <i className="bi bi-arrow-down"></i>
@@ -391,7 +391,7 @@ function Home() {
           </div>
           <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
             <Modal.Body className="p-0">
-              <div className="video-responsive">
+              <div className="video-responsive position-relative">
                 <iframe src="https://www.youtube.com/embed/-qfEOE4vtxE?autoplay=1" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen title="YouTube video"></iframe>
               </div>
             </Modal.Body>

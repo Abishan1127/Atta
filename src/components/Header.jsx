@@ -48,7 +48,7 @@ export default function Header() {
     };
 
     return (
-        <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar z-3">
+        <div className="container-fluid d-md-flex flex-column p-0 position-fixed transparent-navbar z-3 top-0 w-100">
             <header>
                 {/* Top header */}
                 <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between top-header-transition ${scrolled ? 'hide' : ''}`}>
@@ -107,7 +107,7 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop sticky navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-1 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex z-3 ${showStickyNavbar ? 'show' : ''}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-1 px-2 px-md-5 container-fluid top-0 start-0 end-0 position-fixed sticky-navbar-transition d-none d-lg-flex z-3 ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                             <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />

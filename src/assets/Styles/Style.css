@@ -33,13 +33,11 @@
 .footer .carousel-control-next-icon {
    height: 15px;
    width: 15px;
-  
 }
 .footer .carousel-inner {
     min-height: 120px;
     max-width: 300px;
     background-color: #2e2f43;
-  
 }
 /* Header */
 .transition-top-header {
@@ -58,7 +56,6 @@
   text-decoration: none;
   color: white;
 }
-
 .header-link::after {
   content: '';
   position: absolute;
@@ -93,17 +90,12 @@
   color: inherit; /* Keep default text color */
   transition: color 0.3s ease;
 }
-
 .navbar .nav-link:hover {
   color: #dc3545; /* Bootstrap's danger color */
 }
 .transparent-navbar {
   background-color: transparent;
   transition: background-color 0.4s ease, top 0.4s ease;
-  position: fixed;
-  width: 100%;
-  top: 0;
- 
 }
 .offcanvas .navbar-nav .nav-link {
     font-size: 1.1rem;
@@ -114,23 +106,16 @@
     transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.1s; /* delays by 0.4s */
     transform: translateY(-100%);
     opacity: 0;
- 
 }
 .navbar-animated.show-navbar {
     transform: translateY(0);
     opacity: 1;
 }
 .sticky-navbar-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.4s ease, opacity 0.4s ease;
-  
 }
-
 .sticky-navbar-transition.show {
     transform: translateY(0);
     opacity: 1;
@@ -147,7 +132,6 @@
     background-position: center;
     overflow: hidden;
     transition: transform 5s ease;
-    
 }
 .carousel-item.active .hero-slide {
     transform: scale(1.05);
@@ -167,7 +151,6 @@
     opacity: 0;
     transform: translateY(100px);
 }
-
 .carousel-item.active .hero-content {
     animation: slideUp 1s ease-out forwards;
 }
@@ -185,16 +168,9 @@
   position: relative;
 }
 .about-circle {
-  background-color: red;
-  border-radius: 50%;
   padding: 40px;
   width: 300px;
   height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 .about-slider-wrapper {
   position: relative;
@@ -226,34 +202,6 @@
 .about-right {
   min-height: 470px;
 }
-.about-circle {
-  background-color: red;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.about-slider-wrapper {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-.about-slide-content {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  opacity: 0;
-  width: 100%;
-  transition: all 0.8s ease-in-out;
-  z-index: 0;
-}
-.about-slide-content.active {
-  left: 0;
-  opacity: 1;
-  z-index: 2;
-}
 .about-slide-content.exiting {
   left: -100%;
   opacity: 0;
@@ -263,18 +211,14 @@
   font-size: 1rem;
   flex-shrink: 0;
 }
-
 /* service section */
 .service-section .slide-container {
     background: url('../images/service-bg-2.jpg') center/cover no-repeat;
     position: relative;
-   
 }
 .service-section{
-  
    background-color: #efeff4;
    min-height: 700px;
-  
 }
 /* semi-transparent overlay */
 .service-section .overlay {
@@ -284,12 +228,6 @@
     flex-direction: column;
     justify-content: center;
     padding: 3rem;
-}
-/* fixed arrows bottom right */
-.service-category {
-  color: #d6252c;
-  font-weight: bold;
-  text-transform: uppercase;
 }
 .service-title {
   font-weight: bold;
@@ -303,17 +241,11 @@
   align-items: center;
   justify-content: center;
   top: 7.1px;
- 
 }
-
 .service-card:hover .plus-icon{
   color: #d31c1c;
-  
 }
-
 /* Create bottom-half ripple */
-
-
 .service-icon-wrapper::after {
   content: "";
   position: absolute;
@@ -324,35 +256,17 @@
   transform: scale(0.8);
   opacity: 0;
   transition: transform 0.5s, opacity 0.5s;
-  
-  /* only show bottom half using clip-path */
   clip-path: inset(50% 0 0 0); /* top 50% hidden */
   z-index: 1;
 }
 .service-icon-wrappers {
   width: 80px;
   height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2; /* keep above ripple */
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
 /* Trigger on hover */
 .service-card:hover .service-icon-wrapper::after {
   transform: scale(1.4);
   opacity: 1;
-  
 }
 body, html {
   overflow-x: hidden;
@@ -362,7 +276,6 @@ body, html {
 }
 .service-image-container {
   height: 350px;
-
   overflow: hidden;
 }
 .service-image {
@@ -384,11 +297,9 @@ body, html {
   font-size: 34px;
   color: #bbb;
 }
-
 .service-icon-wrapper i {
   color: #d6252c;
   font-size: 36px;
- 
 }
 .service-card-body{
   height: 150px;
@@ -405,7 +316,6 @@ body, html {
   overflow-x: hidden;
   position: relative;
 }
-/*news*/
 /*contact*/
 .contact-card{
   padding: 20px;
@@ -467,7 +377,6 @@ body, html {
   position: relative;
   overflow: hidden;
 }
-
 .downloads-section::before {
   content: "";
   position: absolute;
@@ -478,11 +387,9 @@ body, html {
   background-image: url('../images/downbg.jpg'); /* replace with your correct path */
   background-size: cover;
   background-position: center;
-
   opacity: 0.2; /* controls your background transparency */
   z-index: 0;
 }
-
 /* Ensure your content stays above the background */
 .downloads-section > * {
   position: relative;
@@ -495,7 +402,6 @@ body, html {
   margin-bottom: 1rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
-
 .download-icon {
   width: 40px;
 }
@@ -548,7 +454,6 @@ body, html {
 .item-text.active {
   color: #444;
 }
-
 /* Optional: prettier scrollbar */
 .accordion-list::-webkit-scrollbar {
   width: 6px;
@@ -574,7 +479,6 @@ body, html {
 .department-title {
  width: 250px;
  bottom: 40px;
- 
 }
 .department-titles{
  width: 250px;
@@ -585,7 +489,6 @@ body, html {
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 .department-scroll-container .d-flex::-webkit-scrollbar {
   display: none; /* hide scrollbar on Chrome/Safari */
 }
@@ -599,7 +502,6 @@ body, html {
 .department-scroll-container .d-flex > div {
   scroll-snap-align: start;
 }
-
 .department-icon-overlay {
   width: 110px;
   height: 110px;
@@ -623,7 +525,6 @@ body, html {
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   top:200px;
-
 }
 .department-carousel-bars .bar {
   width: 30px;
@@ -633,11 +534,9 @@ body, html {
   cursor: pointer;
   transition: all 0.3s;
 }
-
 .department-carousel-bars .bar.active {
   background-color: #dc3545;
 }
-
 .department-carousel-bars .bar:hover {
   transform: scale(1.2);
   background-color: #dc3545;
@@ -698,7 +597,6 @@ body, html {
   justify-content: center;
  
 }
-
 /* Also fade icon + white title slightly */
 .department-card:hover .department-icon-overlay,
 .department-card:hover .department-title {
@@ -714,10 +612,6 @@ body, html {
 }
 /* Left background image for departments section */
 .department-bg-left {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
   width: 35%;
   height: 100%;
   background-image: url('../images/shape-8.png');
@@ -725,20 +619,14 @@ body, html {
   background-position: center;
   z-index: 0;
 }
-
 /* Right background image for departments section */
 .department-bg-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   width: 35%;
   background-image: url('../images/shape-9.png');
   background-size: cover;
   background-position: center;
   z-index: 0;
 }
-
 /* Make sure center content stacks above backgrounds */
 .department-center-content {
   position: relative;
@@ -750,7 +638,6 @@ body, html {
   opacity: 0;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
-
 .department-card:hover .department-hover-overlay {
   transform: translateY(0);
   opacity: 1;
@@ -775,7 +662,6 @@ body, html {
   height: 100%;
   right: 0.5rem;
 }
-
 .scrollbar-track-custom {
   flex-grow: 1;
   width: 4px;
@@ -784,19 +670,14 @@ body, html {
   position: relative;
   height: 80%;
 }
-
 .scrollbar-thumb-custom {
-  width: 100%;
   height: 30px;
-  background: red;
   border-radius: 2px;
   position: absolute;
-  top: 0;
 }
 .scrollbar-container-custom .btn {
   transition: background-color 0.3s, color 0.3s;
 }
-
 .scrollbar-container-custom .btn:hover {
   background-color: red;
   color: white;
@@ -821,7 +702,6 @@ body, html {
 .play-overlay:hover {
   opacity: 1;
 }
-
 /* Title & subtitle styling */
 #VideoAccordion .section-subtitle {
   color: #d31c1c;
@@ -835,7 +715,6 @@ body, html {
 #VideoAccordion .star {
   margin: 0 0.25rem;
 }
-
 /* Left video styles */
 .video-thumbnail-container {
   cursor: pointer;
@@ -864,14 +743,12 @@ body, html {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-
 .play-overlay i {
   color: white;
   font-size: 4rem;
   position: relative;
   z-index: 3;
 }
-
 /* same wave base for all three */
 .play-overlay::before,
 .play-overlay::after,
@@ -888,25 +765,20 @@ body, html {
   opacity: 0;
   z-index: 1;
 }
-
 /* first wave */
 .play-overlay::before {
   animation: wave 3s infinite;
 }
-
 /* second wave delayed */
 .play-overlay::after {
   animation: wave 3s infinite 1s;
 }
-
 /* third wave further delayed */
 .play-overlay .wave {
   animation: wave 3s infinite 2s;
 }
-
 /* Modal video responsiveness */
 .video-responsive {
-  position: relative;
   padding-bottom: 56.25%;
   height: 0;
 }
@@ -925,7 +797,6 @@ body, html {
   color: #dc3545;
   cursor: pointer;
 }
-
 .card-body h6 {
   transition: color 0.3s ease;
 }
@@ -975,17 +846,6 @@ body, html {
 .scroll-to-top:hover {
   color: #dc3545;
 }
-
-
-
-
-
-
-
-
-
-
-
 .custom-social-icon {
     width: 30px;
     height: 30px;
@@ -998,9 +858,6 @@ body, html {
     background-color: white !important;
     color:red  !important;
 }
-
-
-
 #eventCarousel {
   position: relative;
 }
@@ -1014,18 +871,12 @@ body, html {
   z-index: 5;
   border: none;
 }
-
 .carousel-control-prev.custom-control {
   left: 10px;
 }
-
 .carousel-control-next.custom-control {
   left: 60px; /* space between buttons */
 }
-
-
-
-
 /* Gradient overlay  card body */
 .overlay-gradient {
   background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
@@ -1034,11 +885,9 @@ body, html {
 .image-container img {
   transition: transform 0.5s ease-in-out;
 }
- 
 .image-container:hover img {
   transform: scale(1.1);
 }
-
 /* Pull announcement badge  outside */
 .overlay-badge {
   top: 10px; /* Adjust  */
@@ -1049,28 +898,23 @@ body, html {
   text-align: left;
   line-height: 35px;
 }
-
 /* Left  background */
 .slide-container {
   min-height: 500px;
   background-size: cover;
   background-position: center;
 }
-
 /* Dark overlay */
 .slide-overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  
   border-radius: 0.5rem;
 }
-
 /* Content above overlay */
 .slide-content {
   z-index: 2;
 }
-
 .hover-card .extra-contact {
     display: none;
 }
@@ -1088,11 +932,9 @@ body, html {
   transform: translateY(-50%);
   opacity: 1;
 }
-
 .carousel-control-prev {
   left: 20px;
 }
-
 .carousel-control-next {
   right: 20px;
 }
@@ -1108,14 +950,10 @@ body, html {
   background-color: white;
   border-radius: 3px;
 }
-
 /* Carousel container */
-
 .input-group{
     min-height: 70px;
 }
-
-
 .mobile-links {
     display: flex;
     justify-content: center;
@@ -1125,13 +963,11 @@ body, html {
     text-transform: uppercase;
     font-weight: 600;
 }
-
 .mobile-links a {
     text-decoration: none;
     color: #000;
     transition: color 0.3s;
 }
-
 .mobile-links a:hover {
     color: #d33; /* change to your theme color */
 }
@@ -1145,7 +981,6 @@ body, html {
   overflow: hidden;
   transition: transform 0.3s;
 }
-
 .mousehover-card:hover {
   transform: translateY(-5px);
 }
@@ -1284,7 +1119,6 @@ body, html {
       top: -25px;
       padding-top: 30px;
     }
-    
     .custom-social-icon {
     width: 30px;
     height: 30px;
