@@ -82,7 +82,7 @@ export default function Header() {
                         <img src={logo} alt="logo" style={{ height: '70px' }} />
                     </a>
                     <button
-                        className="navbar-toggler me-3"
+                        className="navbar-toggler border-0 me-3 fs-1"
                         type="button"
                         onClick={() => setShowOffcanvas(true)}
                     >
@@ -108,7 +108,7 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop sticky navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-0 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                             <img src={logo} alt="logo" style={{ height: '70px' }} />

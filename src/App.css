@@ -8,10 +8,6 @@
  html {
   scroll-behavior: smooth;
 }
-
-
-
-
 .custom-header-links:hover{
     color: red !important;
     text-underline-offset: 1px !important;
