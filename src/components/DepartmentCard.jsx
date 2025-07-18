@@ -11,7 +11,7 @@ const DepartmentCard = ({ image, iconUrl, title, para }) => {
           alt="department background"
         />
         <div className="department-icon-overlay position-absolute start-50 translate-middle " >
-          <div className='department-icon-overlays'>
+          <div className=' z-1 position-absolute department-icon-overlays'>
             <img src={iconUrl} alt="icon" className="h-100 department-icon-img" style={{ objectFit: "contain" }} />
           </div>
         </div>

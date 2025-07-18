@@ -48,7 +48,7 @@ export default function Header() {
     };
 
     return (
-        <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar">
+        <div className="container-fluid d-md-flex flex-column p-0 transparent-navbar z-3">
             <header>
                 {/* Top header */}
                 <div className={`container bg-danger d-none d-lg-flex py-3 text-white justify-content-between top-header-transition ${scrolled ? 'hide' : ''}`}>
@@ -72,14 +72,13 @@ export default function Header() {
                         <SocialIcon href="https://www.instagram.com/" icon={FaInstagram} />
                         <SocialIcon href="https://www.youtube.com/" icon={FaYoutube} />
                         <SocialIcon href="https://wa.me/1234567890" icon={FaWhatsapp} />
-
                     </div>
                 </div>
 
                 {/* Mobile fixed navbar */}
-                <nav className="navbar bg-white border-bottom py-3 px-3 px-md-5 container fixed-top d-lg-none  ">
+                <nav className="navbar bg-white border-bottom py-3 px-3 px-md-5 container fixed-top d-lg-none z-3">
                     <a className="navbar-brand fw-bold d-flex align-items-center mt-1" href="">
-                        <img src={logo} alt="logo" style={{ height: '70px' }} />
+                        <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
                     </a>
                     <button
                         className="navbar-toggler border-0 me-3 fs-1"
@@ -91,14 +90,14 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop normal navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition d-none d-lg-flex ${scrolled ? 'hide' : ''}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-3 px-2 px-md-5 container main-navbar-transition d-none d-lg-flex z-3 ${scrolled ? 'hide' : ''}`}>
                     <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                        <img src={logo} alt="logo" style={{ height: '70px' }} />
+                        <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
                     </a>
                     <div className="collapse navbar-collapse justify-content-end text-uppercase fw-semibold" id="navbarMenu">
                         <ul className="navbar-nav mb-2 mb-lg-0 gap-4 me-3">
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
-                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+                            <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'service')}>Service</a></li>
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'team')}>Team</a></li>
                             <li className="nav-item"><a className="nav-link" href="" onClick={(e) => handleNavClick(e, 'news')}>News</a></li>
@@ -108,10 +107,10 @@ export default function Header() {
                 </nav>
 
                 {/* Desktop sticky navbar */}
-                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-1 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex ${showStickyNavbar ? 'show' : ''}`}>
+                <nav className={`navbar navbar-expand-lg bg-white border-bottom py-1 px-2 px-md-5 container-fluid sticky-navbar-transition d-none d-lg-flex z-3 ${showStickyNavbar ? 'show' : ''}`}>
                     <div className='container'>
                         <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                            <img src={logo} alt="logo" style={{ height: '70px' }} />
+                            <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
                         </a>
                         <button
                             className="navbar-toggler me-3"
@@ -135,10 +134,10 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show py-1 w-100" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-1 w-100 z-3" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
-                                <img src={logo} alt="logo" style={{ height: '70px' }} />
+                                <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
                             </a>
                             <div className="border border-dark p-1 rounded me-2">
                                 <button
@@ -159,11 +158,10 @@ export default function Header() {
                                 <li className="nav-item"><a className="nav-link" href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact Us</a></li>
                             </ul>
                             <div className="d-flex justify-content-center gap-3 mt-4">
-                                  <SocialIcon href="https://www.facebook.com/" icon={FaFacebookF} />
-                                  <SocialIcon href="https://www.instagram.com/" icon={FaInstagram} />
-                                  <SocialIcon href="https://www.youtube.com/" icon={FaYoutube} />
-                                  <SocialIcon href="https://wa.me/1234567890" icon={FaWhatsapp} />
-
+                                <SocialIcon href="https://www.facebook.com/" icon={FaFacebookF} />
+                                <SocialIcon href="https://www.instagram.com/" icon={FaInstagram} />
+                                <SocialIcon href="https://www.youtube.com/" icon={FaYoutube} />
+                                <SocialIcon href="https://wa.me/1234567890" icon={FaWhatsapp} />
                             </div>
                         </div>
                     </div>
