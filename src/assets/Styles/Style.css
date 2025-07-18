@@ -1,17 +1,4 @@
-.custom-social-icon {
-    width: 30px;
-    height: 30px;
-    transition: all 0.3s ease;
-    background-color: #0000001A !important;
-    color:white  !important;
-    margin-left: 5px;
-
-}
-
-.custom-social-icon:hover {
-    background-color: white !important;
-    color:red  !important;
-}
+/* footer */
 .footer {
     background-color: #1c1b2a;
     color: #8e91a2;
@@ -21,7 +8,6 @@
    color: #8e91a2;
     text-decoration: none;
 }
-
 .footer-links a::after {
   content: '';
   position: absolute;
@@ -55,31 +41,105 @@
     background-color: #2e2f43;
   
 }
-
-
-
-#eventCarousel {
+/* Header */
+.transition-top-header {
+  transition: all 0.3s ease;
+  height: auto;
+}
+.transition-top-header.hidden {
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  overflow: hidden;
+}
+.header-link {
   position: relative;
+  text-decoration: none;
+  color: white;
 }
-.custom-control {
+
+.header-link::after {
+  content: '';
   position: absolute;
-  bottom: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5); /* Optional: dark background */
-  border-radius: 50%;
-  z-index: 5;
-  border: none;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  bottom: -2px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.header-link:hover::after {
+  transform: scaleX(1);
+}
+.top-header {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.top-header.hide-top {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.top-header-transition, .main-navbar-transition {
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.top-header-transition.hide,
+.main-navbar-transition.hide {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.navbar .nav-link {
+  color: inherit; /* Keep default text color */
+  transition: color 0.3s ease;
 }
 
-.carousel-control-prev.custom-control {
-  left: 10px;
+.navbar .nav-link:hover {
+  color: #dc3545; /* Bootstrap's danger color */
+}
+.transparent-navbar {
+  background-color: transparent;
+  transition: background-color 0.4s ease, top 0.4s ease;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+.offcanvas .navbar-nav .nav-link {
+    font-size: 1.1rem;
+}
+.navbar-animated {
+    position: sticky;
+    top: 0;
+    transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.1s; /* delays by 0.4s */
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 1030;
+}
+.navbar-animated.show-navbar {
+    transform: translateY(0);
+    opacity: 1;
+}
+.sticky-navbar-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: 1030;
 }
 
-.carousel-control-next.custom-control {
-  left: 60px; /* space between buttons */
+.sticky-navbar-transition.show {
+    transform: translateY(0);
+    opacity: 1;
 }
-
+.transparent-navbar,
+.sticky-navbar-transition {
+    transition: all 0.5s;
+}
+/* hero*/
 .hero-slide {
     position: relative;
     min-height: 90vh;
@@ -117,6 +177,159 @@
 .carousel-item.active .hero-content {
     animation: slideUp 1s ease-out forwards;
 }
+.hero-section {
+  height: 110vh; /* adjust as needed: try 80vh, 100vh, etc. */
+}
+.hero-slide{
+   height: 110vh;
+}
+/*about*/
+.about-left {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.about-circle {
+  background-color: red;
+  border-radius: 50%;
+  padding: 40px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-slider-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* base state: hidden and positioned off-screen right */
+.about-slide-content {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  z-index: 0;
+}
+
+/* active slide (visible) */
+.about-slide-content.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+/* exit animation (old slide moving out to left) */
+.about-slide-content.exiting {
+  left: -100%;
+  opacity: 0;
+  z-index: 1;
+}
+.about-left {
+  min-height: 470px;
+}
+.about-part {
+   background: url('../images/about.png') no-repeat;
+   background-size: 50% auto;
+  
+}
+.about-right {
+  min-height: 470px;
+}
+
+.about-circle {
+  background-color: red;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-slider-wrapper {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.about-slide-content {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  width: 100%;
+  transition: all 0.8s ease-in-out;
+  z-index: 0;
+}
+
+.about-slide-content.active {
+  left: 0;
+  opacity: 1;
+  z-index: 2;
+}
+
+.about-slide-content.exiting {
+  left: -100%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.about-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+
+
+
+
+.custom-social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    background-color: #0000001A !important;
+    color:white  !important;
+    margin-left: 5px;
+}
+.custom-social-icon:hover {
+    background-color: white !important;
+    color:red  !important;
+}
+
+
+
+#eventCarousel {
+  position: relative;
+}
+.custom-control {
+  position: absolute;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%;
+  z-index: 5;
+  border: none;
+}
+
+.carousel-control-prev.custom-control {
+  left: 10px;
+}
+
+.carousel-control-next.custom-control {
+  left: 60px; /* space between buttons */
+}
+
 
 .card-body h6 {
   transition: color 0.3s ease;
@@ -236,7 +449,7 @@
    
 }
 .service-section{
-   top: -70px;
+  
    background-color: #efeff4;
    min-height: 700px;
   
@@ -790,37 +1003,15 @@ body, html {
   }
 }
 
-.transparent-navbar {
-  background-color: transparent;
-  transition: background-color 0.4s ease, top 0.4s ease;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-}
 
 
-.transition-top-header {
-  transition: all 0.3s ease;
-  height: auto;
-}
 
-.transition-top-header.hidden {
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border: 0 !important;
-  overflow: hidden;
-}
+
+
 .my-download-btn {
   margin-bottom: -44px;
 }
-.hero-section {
-  height: 110vh; /* adjust as needed: try 80vh, 100vh, etc. */
-}
-.hero-slide{
-   height: 110vh;
-}
+
 /* fade + slide from right */
 @keyframes slideFade {
     0% {
@@ -884,36 +1075,7 @@ body, html {
 .input-group{
     min-height: 70px;
 }
-.header-link {
-  position: relative;
-  text-decoration: none;
-  color: white;
-}
 
-.header-link::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  bottom: -2px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.header-link:hover::after {
-  transform: scaleX(1);
-}
-.navbar .nav-link {
-  color: inherit; /* Keep default text color */
-  transition: color 0.3s ease;
-}
-
-.navbar .nav-link:hover {
-  color: #dc3545; /* Bootstrap's danger color */
-}
 .downloads-section {
   position: relative;
   overflow: hidden;
@@ -959,9 +1121,7 @@ body, html {
     color: #d33; /* change to your theme color */
 }
 
-.offcanvas .navbar-nav .nav-link {
-    font-size: 1.1rem;
-}
+
 .scrollbar-track {
   overflow: hidden;
 }
@@ -1112,162 +1272,12 @@ body, html {
 #home, #service, #team, #news, #contact {
   scroll-margin-top: 100px;
 }
-.top-header {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-.top-header.hide-top {
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-.navbar-animated {
-    position: sticky;
-    top: 0;
-    transition: transform 0.5s ease 0.4s, opacity 0.5s ease 0.1s; /* delays by 0.4s */
-    transform: translateY(-100%);
-    opacity: 0;
-    z-index: 1030;
-}
-.navbar-animated.show-navbar {
-    transform: translateY(0);
-    opacity: 1;
-}
-.top-header-transition, .main-navbar-transition {
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.top-header-transition.hide,
-.main-navbar-transition.hide {
-    transform: translateY(-100%);
-    opacity: 0;
-}
-
-.sticky-navbar-transition {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: translateY(-100%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    z-index: 1030;
-}
-
-.sticky-navbar-transition.show {
-    transform: translateY(0);
-    opacity: 1;
-}
-.transparent-navbar,
-.sticky-navbar-transition {
-    transition: all 0.5s;
-}
-.about-left {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.about-circle {
-  background-color: red;
-  border-radius: 50%;
-  padding: 40px;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.about-slider-wrapper {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* base state: hidden and positioned off-screen right */
-.about-slide-content {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  opacity: 0;
-  width: 100%;
-  transition: all 0.8s ease-in-out;
-  z-index: 0;
-}
-
-/* active slide (visible) */
-.about-slide-content.active {
-  left: 0;
-  opacity: 1;
-  z-index: 2;
-}
-
-/* exit animation (old slide moving out to left) */
-.about-slide-content.exiting {
-  left: -100%;
-  opacity: 0;
-  z-index: 1;
-}
-.about-left {
-  min-height: 470px;
-}
-.about-part {
-   background: url('../images/about.png') no-repeat;
-   background-size: 50% auto; 
-}
 
 
 
 
-.about-right {
-  min-height: 470px;
-}
 
-.about-circle {
-  background-color: red;
-  border-radius: 50%;
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.about-slider-wrapper {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-.about-slide-content {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  opacity: 0;
-  width: 100%;
-  transition: all 0.8s ease-in-out;
-  z-index: 0;
-}
-
-.about-slide-content.active {
-  left: 0;
-  opacity: 1;
-  z-index: 2;
-}
-
-.about-slide-content.exiting {
-  left: -100%;
-  opacity: 0;
-  z-index: 1;
-}
-
-.about-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
 
 
 
