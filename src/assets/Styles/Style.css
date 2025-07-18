@@ -288,160 +288,6 @@
   font-size: 1rem;
   flex-shrink: 0;
 }
-
-
-
-
-
-.custom-social-icon {
-    width: 30px;
-    height: 30px;
-    transition: all 0.3s ease;
-    background-color: #0000001A !important;
-    color:white  !important;
-    margin-left: 5px;
-}
-.custom-social-icon:hover {
-    background-color: white !important;
-    color:red  !important;
-}
-
-
-
-#eventCarousel {
-  position: relative;
-}
-.custom-control {
-  position: absolute;
-  bottom: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5); 
-  border-radius: 50%;
-  z-index: 5;
-  border: none;
-}
-
-.carousel-control-prev.custom-control {
-  left: 10px;
-}
-
-.carousel-control-next.custom-control {
-  left: 60px; /* space between buttons */
-}
-
-
-.card-body h6 {
-  transition: color 0.3s ease;
-}
-
-.contact-card{
-  padding: 20px;
-  transition: background 0.8s ease, color 0.8s ease;
-}
-
-.card-body h6:hover {
-  color: #dc3545;
-  cursor: pointer;
-}
-
-.card-body h6 {
-  transition: color 0.3s ease;
-}
-
-/* Gradient overlay  card body */
-.overlay-gradient {
-  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
-  z-index: 1;
-}
-.image-container img {
-  transition: transform 0.5s ease-in-out;
-}
- 
-.image-container:hover img {
-  transform: scale(1.1);
-}
-
-/* Pull announcement badge  outside */
-.overlay-badge {
-  top: 10px; /* Adjust  */
-  right: 10px; /*  needed */
-}
-.blog-title{
-  font-size: larger;
-  text-align: left;
-  line-height: 35px;
-}
-.downloads-scroll::-webkit-scrollbar {
-  height: 8px;
-}
-.downloads-scroll::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-.downloads-scroll::-webkit-scrollbar-thumb:hover {
-  background: #999;
-}
-.download-cards{
-  margin-top: 180px;
-}
-/* Left  background */
-.slide-container {
-  min-height: 500px;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Dark overlay */
-.slide-overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  
-  border-radius: 0.5rem;
-}
-
-/* Content above overlay */
-.slide-content {
-  z-index: 2;
-}
-
-/* Fixed height + vertical scroll on downloads card */
-.downloads-scroll {
-  max-height: 400px;
-  overflow-y: auto; 
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE & Edge */
-}
-/* Optional: smooth icon transitions */
-.slide-content i {
-  transition: all 0.5s ease;
-}
-.download-section .slide-container {
-    background: url('../images/bg2.jpg') center/cover no-repeat;
-    position: relative;
-    min-height: 500px;
-}
-/* semi-transparent overlay */
-.download-section .overlay {
-    position: absolute;
-    top:0; left:0; right:0; bottom:0;    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-}
-/* text smooth slide effect */
-.download-section .slide-transition {
-    animation: slideFade 1s ease-in-out;
-    color: #fff;
-}
-/* fixed arrows bottom right */
-.download-section .arrow-controls {
-    position: absolute;
-    bottom: 88px;
-    right: 210px;
-}
 /* service section */
 .service-section .slide-container {
     background: url('../images/service-bg-2.jpg') center/cover no-repeat;
@@ -571,7 +417,170 @@ body, html {
 .service-card-body{
   height: 150px;
 }
+/*team*/
+.team-cardbody{
+  margin-top: -50px;
+  z-index: 2;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.team-carousel-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+/*news*/
+/*contact*/
+.contact-card{
+  padding: 20px;
+  transition: background 0.8s ease, color 0.8s ease;
+}
+/*download*/
+.downloads-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.downloads-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.downloads-scroll::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+.download-cards{
+  margin-top: 180px;
+}
+.downloads-scroll {
+  max-height: 400px;
+  overflow-y: auto; 
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE & Edge */
+}
+/* Optional: smooth icon transitions */
+.slide-content i {
+  transition: all 0.5s ease;
+}
+.download-section .slide-container {
+    background: url('../images/bg2.jpg') center/cover no-repeat;
+    position: relative;
+    min-height: 500px;
+}
+/* semi-transparent overlay */
+.download-section .overlay {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+}
+/* text smooth slide effect */
+.download-section .slide-transition {
+    animation: slideFade 1s ease-in-out;
+    color: #fff;
+}
+/* fixed arrows bottom right */
+.download-section .arrow-controls {
+    position: absolute;
+    bottom: 88px;
+    right: 210px;
+}
+.my-download-btn {
+  margin-bottom: -44px;
+}
+.downloads-section {
+  position: relative;
+  overflow: hidden;
+}
 
+.downloads-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../images/downbg.jpg'); /* replace with your correct path */
+  background-size: cover;
+  background-position: center;
+
+  opacity: 0.2; /* controls your background transparency */
+  z-index: 0;
+}
+
+/* Ensure your content stays above the background */
+.downloads-section > * {
+  position: relative;
+  z-index: 1;
+}
+.download-item {
+  background: #f8f9fa; /* same as bg-light */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.download-icon {
+  width: 40px;
+}
+/* Accordion styles */
+.accordion-custom {
+  font-size: 20px;
+}
+.accordion-section .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dee2e6;
+  cursor: pointer;
+}
+.accordion-title {
+  font-weight: 700;
+}
+.accordion-icon.active {
+  color: #d31c1c;
+}
+.accordion-body {
+  padding-top: 0.5rem;
+}
+.accordion-subtitle {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+.accordion-list {
+  max-height: 160px;
+  overflow-y: auto;
+}
+.accordion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.check-icon {
+  margin-right: 8px;
+  color: #ccc;
+}
+.check-icon.active {
+  color: #d31c1c;
+}
+.item-text {
+  color: #777;
+  font-size: 15px;
+}
+.item-text.active {
+  color: #444;
+}
+
+/* Optional: prettier scrollbar */
+.accordion-list::-webkit-scrollbar {
+  width: 6px;
+}
+.accordion-list::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 0.4);
+  border-radius: 3px;
+}
 /*department card styles*/
 .department-icon-circle {
   width: 100px;
@@ -777,8 +786,50 @@ body, html {
   opacity: 0;
   transition: opacity 0.4s;
 }
+/*scrollbar*/
+.scrollbar-track {
+  overflow: hidden;
+}
 
+#scrollbar-thumb {
+  transition: top 0.2s ease;
+}
 
+.scrollbar-container-custom {
+  height: 100%;
+  right: 0.5rem;
+}
+
+.scrollbar-track-custom {
+  flex-grow: 1;
+  width: 4px;
+  background: #ccc;
+  border-radius: 2px;
+  position: relative;
+  height: 80%;
+}
+
+.scrollbar-thumb-custom {
+  width: 100%;
+  height: 30px;
+  background: red;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+}
+.scrollbar-container-custom .btn {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.scrollbar-container-custom .btn:hover {
+  background-color: red;
+  color: white;
+  outline: red; 
+}
+.scrollbar-container-custom .btn-down {
+  margin-bottom: -40px; /* adjust to your need */
+}
+/*video*/
 .video-container {
   cursor: pointer;
 }
@@ -794,13 +845,7 @@ body, html {
 .play-overlay:hover {
   opacity: 1;
 }
-::-webkit-scrollbar {
-  width: 5px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgba(150, 150, 150, 0.4);
-  border-radius: 3px;
-}
+
 /* Title & subtitle styling */
 #VideoAccordion .section-subtitle {
   color: #d31c1c;
@@ -836,114 +881,6 @@ body, html {
 .play-overlay:hover {
   opacity: 1;
 }
-
-/* Modal video responsiveness */
-.video-responsive {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* Accordion styles */
-.accordion-custom {
-  font-size: 20px;
-}
-.accordion-section .accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid #dee2e6;
-  cursor: pointer;
-}
-.accordion-title {
-  font-weight: 700;
-}
-.accordion-icon.active {
-  color: #d31c1c;
-}
-.accordion-body {
-  padding-top: 0.5rem;
-}
-.accordion-subtitle {
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  font-size: 14px;
-}
-.accordion-list {
-  max-height: 160px;
-  overflow-y: auto;
-}
-.accordion-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.check-icon {
-  margin-right: 8px;
-  color: #ccc;
-}
-.check-icon.active {
-  color: #d31c1c;
-}
-.item-text {
-  color: #777;
-  font-size: 15px;
-}
-.item-text.active {
-  color: #444;
-}
-
-/* Optional: prettier scrollbar */
-.accordion-list::-webkit-scrollbar {
-  width: 6px;
-}
-.accordion-list::-webkit-scrollbar-thumb {
-  background-color: rgba(150, 150, 150, 0.4);
-  border-radius: 3px;
-}
-.hover-card .extra-contact {
-    display: none;
-}
-
-.hover-card:hover .icon {
-    display: none;
-}
-
-.hover-card:hover .extra-contact {
-    display: block;
-}
-.hover-card {
-  transition: box-shadow 0.4s ease;
-}
-.hover-card .card-body {
-  transition: transform 0.4s ease;
-}
-
-.hover-card:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.hover-card:hover .card-body {
-  transform: translateY(-10px);
-}
-
-
-.team-cardbody{
-  margin-top: -50px;
-  z-index: 2;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .play-overlay {
   position: absolute;
   top: 50%;
@@ -991,16 +928,76 @@ body, html {
   animation: wave 3s infinite 2s;
 }
 
-/* keyframes same */
-@keyframes wave {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(2.5);
-    opacity: 0;
-  }
+/* Modal video responsiveness */
+.video-responsive {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/*card*/
+.card-body h6 {
+  transition: color 0.3s ease;
+}
+.card-body h6:hover {
+  color: #dc3545;
+  cursor: pointer;
+}
+
+.card-body h6 {
+  transition: color 0.3s ease;
+}
+.hover-card {
+  transition: box-shadow 0.4s ease;
+}
+.hover-card .card-body {
+  transition: transform 0.4s ease;
+}
+
+.hover-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hover-card:hover .card-body {
+  transform: translateY(-10px);
+}
+.hover-card:hover .icon {
+    display: none;
+}
+/* scroll topup*/
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  color: #2b2b2b;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-800px); /* move up off screen when hidden */
+  pointer-events: none;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+  z-index: 999;
+}
+.scroll-to-top.show {
+  opacity: 1;
+  transform: translateY(0); /* slide into its bottom-right position */
+  pointer-events: auto;
+}
+.scroll-to-top:hover {
+  color: #dc3545;
 }
 
 
@@ -1008,33 +1005,102 @@ body, html {
 
 
 
-.my-download-btn {
-  margin-bottom: -44px;
-}
 
-/* fade + slide from right */
-@keyframes slideFade {
-    0% {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+
+
+
+
+.custom-social-icon {
+    width: 30px;
+    height: 30px;
+    transition: all 0.3s ease;
+    background-color: #0000001A !important;
+    color:white  !important;
+    margin-left: 5px;
 }
-@keyframes slideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.custom-social-icon:hover {
+    background-color: white !important;
+    color:red  !important;
 }
 
 
+
+#eventCarousel {
+  position: relative;
+}
+.custom-control {
+  position: absolute;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5); 
+  border-radius: 50%;
+  z-index: 5;
+  border: none;
+}
+
+.carousel-control-prev.custom-control {
+  left: 10px;
+}
+
+.carousel-control-next.custom-control {
+  left: 60px; /* space between buttons */
+}
+
+
+
+
+/* Gradient overlay  card body */
+.overlay-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+  z-index: 1;
+}
+.image-container img {
+  transition: transform 0.5s ease-in-out;
+}
+ 
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+/* Pull announcement badge  outside */
+.overlay-badge {
+  top: 10px; /* Adjust  */
+  right: 10px; /*  needed */
+}
+.blog-title{
+  font-size: larger;
+  text-align: left;
+  line-height: 35px;
+}
+
+/* Left  background */
+.slide-container {
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark overlay */
+.slide-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  
+  border-radius: 0.5rem;
+}
+
+/* Content above overlay */
+.slide-content {
+  z-index: 2;
+}
+
+.hover-card .extra-contact {
+    display: none;
+}
+.hover-card:hover .extra-contact {
+    display: block;
+}
 /* Controls box at bottom */
 .custom-arrow {
   width: 65px;
@@ -1068,39 +1134,12 @@ body, html {
 }
 
 /* Carousel container */
-.team-carousel-wrapper {
-  overflow-x: hidden;
-  position: relative;
-}
+
 .input-group{
     min-height: 70px;
 }
 
-.downloads-section {
-  position: relative;
-  overflow: hidden;
-}
 
-.downloads-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('../images/downbg.jpg'); /* replace with your correct path */
-  background-size: cover;
-  background-position: center;
-
-  opacity: 0.2; /* controls your background transparency */
-  z-index: 0;
-}
-
-/* Ensure your content stays above the background */
-.downloads-section > * {
-  position: relative;
-  z-index: 1;
-}
 .mobile-links {
     display: flex;
     justify-content: center;
@@ -1119,63 +1158,6 @@ body, html {
 
 .mobile-links a:hover {
     color: #d33; /* change to your theme color */
-}
-
-
-.scrollbar-track {
-  overflow: hidden;
-}
-
-#scrollbar-thumb {
-  transition: top 0.2s ease;
-}
-/* Downloads section custom styles */
-.download-item {
-  background: #f8f9fa; /* same as bg-light */
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-.download-icon {
-  width: 40px;
-}
-
-/* Scrollbar styles */
-.scrollbar-container-custom {
-  height: 100%;
-  right: 0.5rem;
-}
-
-.scrollbar-track-custom {
-  flex-grow: 1;
-  width: 4px;
-  background: #ccc;
-  border-radius: 2px;
-  position: relative;
-  height: 80%;
-}
-
-.scrollbar-thumb-custom {
-  width: 100%;
-  height: 30px;
-  background: red;
-  border-radius: 2px;
-  position: absolute;
-  top: 0;
-}
-.scrollbar-container-custom .btn {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.scrollbar-container-custom .btn:hover {
-  background-color: red;
-  color: white;
-  outline: red; 
-}
-.scrollbar-container-custom .btn-down {
-  margin-bottom: -40px; /* adjust to your need */
 }
 /*mouse hover card*/
 .mousehover-card {
@@ -1239,50 +1221,42 @@ body, html {
 .read-more {
   font-size: 14px;
 }
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background: white;
-  color: #2b2b2b;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(-800px); /* move up off screen when hidden */
-  pointer-events: none;
-  transition: transform 0.9s ease, opacity 0.9s ease;
-  z-index: 999;
+
+#home, #service, #team, #news, #contact,#about {
+  scroll-margin-top: 80px;
 }
-
-.scroll-to-top.show {
-  opacity: 1;
-  transform: translateY(0); /* slide into its bottom-right position */
-  pointer-events: auto;
+/* keyframes same */
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
 }
-
-.scroll-to-top:hover {
-  color: #dc3545;
+/* fade + slide from right */
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
-#home, #service, #team, #news, #contact {
-  scroll-margin-top: 100px;
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
 /* Auto-scroll animation */
 @keyframes scroll {
   0% {
@@ -1350,9 +1324,6 @@ body, html {
     .about-part {
      background-size: 100% auto; 
     }
-   
-    
-
 }
 @media (min-width: 1024px) {
   .overlap-carousel {
