@@ -195,7 +195,7 @@ function Home() {
         <div className="service-section py-5 bg-transparent position-relative z-1 overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
-              <div className="col-md-6 slide-container rounded">
+              <div className="col-12 col-lg-6 slide-container rounded">
                 <div className="overlay z-1 d-flex align-items-center justify-content-center border border-white rounded my-3 position-absolute ">
                   <div className="content-box my-5">
                     <h4 className='mt-5'><i className="bi bi-house me-2"></i> Services & Activities</h4>
@@ -207,7 +207,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-             <div className="col-12 col-md-6 col-lg-7 pt-5 mt-md-5 position-relative overlap-carousel">
+             <div className="col-12 col-md-12 col-lg-7 pt-5 mt-md-5 position-relative overlap-carousel">
                 <Carousel
                   responsive={responsive}
                   autoPlay autoPlaySpeed={3000} infinite
@@ -308,7 +308,7 @@ function Home() {
         <div className="downloads-section py-5 bg-transparent position-relative z-1" id="downloads">
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
-              <div className="col-md-6 slide-container">
+              <div className=" col-12 col-lg-6   slide-container">
                 <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 position-absolute">
                   <div className="content-box slide-transition" key={current}>
                     <h4><i className="bi bi-house me-2"></i>{downloadSlides[current].smallText}</h4>
@@ -324,7 +324,7 @@ function Home() {
                   
                 </div>
               </div>
-              <div className="col-md-6 px-3 pt-5 mt-0 mt-md-5 position-relative">
+              <div className="col-12 col-lg-6  px-3 pt-5 mt-0 mt-md-5 position-relative">
                 <div className="card h-100 border-0 bg-transparent justify-content-between col-11">
                   <div className="card-body downloads-scroll p-0" ref={scrollContainerRef}>
                     {files.map((item, idx) => (
