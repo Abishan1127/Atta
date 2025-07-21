@@ -258,7 +258,6 @@ body, html {
 /*team*/
 .team-cardbody{
   margin-top: -50px;
-  z-index: 2;
   max-width: 90%;
 }
 .team-carousel-wrapper {
@@ -335,12 +334,7 @@ body, html {
   opacity: 0.2; /* controls your background transparency */
   z-index: 0;
 }
-.downloads-section > * {
-  position: relative;
-  z-index: 1;
-}
 .download-item {
-  background: #f8f9fa; /* same as bg-light */
   padding: 1rem;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
@@ -554,13 +548,11 @@ body, html {
   width: 4px;
   background: #ccc;
   border-radius: 2px;
-  position: relative;
   height: 80%;
 }
 .scrollbar-thumb-custom {
   height: 30px;
   border-radius: 2px;
-  position: absolute;
 }
 .scrollbar-container-custom .btn {
   transition: background-color 0.3s, color 0.3s;
@@ -585,6 +577,7 @@ body, html {
   color: white;
   opacity: 0.8;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 .play-overlay:hover {
   opacity: 1;
@@ -611,32 +604,12 @@ body, html {
   height: auto;
   display: block;
 }
-.play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-.play-overlay:hover {
-  opacity: 1;
-}
-.play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  cursor: pointer;
-}
 .play-overlay i {
   color: white;
   font-size: 4rem;
   position: relative;
   z-index: 3;
 }
-/* same wave base for all three */
 .play-overlay::before,
 .play-overlay::after,
 .play-overlay .wave {
@@ -703,7 +676,6 @@ body, html {
   right: 30px;
   width: 60px;
   height: 60px;
-  background: white;
   transition: transform 0.9s ease, opacity 0.9s ease;
   color: #2b2b2b;
   border-radius: 8px;
@@ -712,11 +684,6 @@ body, html {
   opacity: 0;
   transform: translateY(-800px); /* move up hidden */
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  position: fixed;
 }
 .scroll-to-top.show {
   opacity: 1;
@@ -810,23 +777,6 @@ body, html {
 }
 .input-group{
     min-height: 70px;
-}
-.mobile-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.mobile-links a {
-    text-decoration: none;
-    color: #000;
-    transition: color 0.3s;
-}
-.mobile-links a:hover {
-    color: #d33; /* change to your theme color */
 }
 .mousehover-card {
   position: relative;
