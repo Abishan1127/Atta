@@ -333,7 +333,7 @@ function Home() {
                           <img src={iconImage} alt="pdf" className="download-icon me-3" />
                           <div><h4 className="mb-1">{item.title}</h4><small className="text-small">{item.description}</small></div>
                         </div>
-                        <i className="bi bi-arrow-down-circle text-secondary fs-1 me-5"></i>
+                        <i className="bi bi-arrow-down-circle text-secondary fs-1 me-0 me-lg-3"></i>
                       </div>
                     ))}
                   </div>
@@ -358,15 +358,15 @@ function Home() {
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
           <div className="divider mx-auto mb-4"></div>
           <div className="row">
-            <div className="col-md-8 position-relative video-thumbnail-container p-0">
-              <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="video-thumbnail" onClick={() => setShowModal(true)} />
+            <div className="col-12 col-md-12 col-lg-8 position-relative video-thumbnail-container p-0">
+              <img src="https://fastwpdemo.com/newwp/whitehall-new/wp-content/uploads/2022/09/video-1.jpg" alt="Video" className="w-100 h-100 d-block" onClick={() => setShowModal(true)} />
               <div className="play-overlay" onClick={() => setShowModal(true)}>
                 <i className="bi bi-play-circle display-1 my-bold-icon"></i>
                 <span className="wave"></span>
               </div>
 
             </div>
-            <div className="col-md-4 text-start accordion-custom px-4 shadow">
+            <div className="col-12 col-md-12 col-lg-4 text-start accordion-custom px-4 shadow">
               {accordionData.map((sec) => (
                 <div key={sec.title} className="accordion-section">
                   <div className="accordion-header" onClick={() => setActiveSection(sec.title)}>

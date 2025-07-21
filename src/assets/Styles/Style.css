@@ -594,11 +594,6 @@ body, html {
 .video-thumbnail-container {
   cursor: pointer;
 }
-.video-thumbnail {
-  width: 100%;
-  height: auto;
-  display: block;
-}
 .play-overlay i {
   color: white;
   font-size: 4rem;

@@ -147,7 +147,7 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show py-1 w-100 z-3 " style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-1 w-100 z-3" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
