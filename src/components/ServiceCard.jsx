@@ -21,8 +21,8 @@ const ServiceCard = ({
       </Card.Body>
       <div className="service-image-container ">
         <img src={image} alt={title} className="service-image "/>
-        <div className="service-plus text-center position-relative rounded" > </div>
-        <span className="plus-icon text-center position-relative">+</span>
+        <div className="service-plus text-center position-relative rounded mx-auto position-relative  d-flex align-items-center justify-content-center " > </div>
+        <span className="plus-icon text-center mx-auto position-relative rounded-circle d-flex align-items-center justify-content-center ">+</span>
      
         
       </div>

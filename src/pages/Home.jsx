@@ -207,7 +207,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-             <div className="col-6 col-lg-7 pt-5 mt-md-5 position-relative overlap-carousel">
+             <div className="col-12 col-md-6 col-lg-7 pt-5 mt-md-5 position-relative overlap-carousel">
                 <Carousel
                   responsive={responsive}
                   autoPlay autoPlaySpeed={3000} infinite

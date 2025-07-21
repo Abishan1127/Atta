@@ -198,7 +198,7 @@ export const newsData = [
 
 export const services = [
   {
-    title: "Garbage & Recycling",
+    title: "Recycling",
     category: "Request",
     icon: "bi-building",
     image: service1,
@@ -210,13 +210,13 @@ export const services = [
     image: service2,
   },
   {
-    title: "Water & Sewer",
+    title: "Water supply",
     category: "Manage",
     icon: "bi-building",
     image: service3,
   },
   {
-    title: "Building Permits",
+    title: "Buildings",
     category: "Apply",
     icon: "bi-building",
     image: service4,

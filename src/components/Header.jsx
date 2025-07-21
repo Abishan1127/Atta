@@ -29,12 +29,25 @@ export default function Header() {
     }, []);
 
     useEffect(() => {
-        if (showOffcanvas) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-    }, [showOffcanvas]);
+    if (showOffcanvas) {
+        const scrollY = window.scrollY;
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = '0';
+        document.body.style.right = '0';
+        document.body.style.overflow = 'hidden';
+        document.body.dataset.scrollY = scrollY; // Save scroll position
+    } else {
+        const scrollY = document.body.dataset.scrollY || '0';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.left = '';
+        document.body.style.right = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, parseInt(scrollY)); // Restore scroll
+    }
+}, [showOffcanvas]);
+
 
     const handleNavClick = (e, sectionId) => {
         e.preventDefault();
@@ -134,7 +147,7 @@ export default function Header() {
 
                 {/* Offcanvas */}
                 {showOffcanvas && (
-                    <div className="offcanvas offcanvas-end show py-1 w-100 z-3" style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
+                    <div className="offcanvas offcanvas-end show py-1 w-100 z-3 " style={{ visibility: 'visible', transform: 'translateX(0%)', overflow: 'hidden' }}>
                         <div className="offcanvas-header justify-content-between">
                             <a className="navbar-brand fw-bold d-flex align-items-center" href="">
                                 <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
