@@ -718,19 +718,15 @@ body, html {
   opacity: 0;
   z-index: 1;
 }
-/* first wave */
 .play-overlay::before {
   animation: wave 3s infinite;
 }
-/* second wave delayed */
 .play-overlay::after {
   animation: wave 3s infinite 1s;
 }
-/* third wave further delayed */
 .play-overlay .wave {
   animation: wave 3s infinite 2s;
 }
-/* Modal video responsiveness */
 .video-responsive {
   padding-bottom: 56.25%;
   height: 0;
@@ -778,6 +774,7 @@ body, html {
   width: 60px;
   height: 60px;
   background: white;
+  transition: transform 0.9s ease, opacity 0.9s ease;
   color: #2b2b2b;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -786,14 +783,13 @@ body, html {
   justify-content: center;
   cursor: pointer;
   opacity: 0;
-  transform: translateY(-800px); /* move up off screen when hidden */
+  transform: translateY(-800px); /* move up hidden */
   pointer-events: none;
-  transition: transform 0.9s ease, opacity 0.9s ease;
   z-index: 999;
 }
 .scroll-to-top.show {
   opacity: 1;
-  transform: translateY(0); /* slide into its bottom-right position */
+  transform: translateY(0); 
   pointer-events: auto;
 }
 .scroll-to-top:hover {
@@ -841,7 +837,7 @@ body, html {
 .image-container:hover img {
   transform: scale(1.1);
 }
-/* Pull announcement badge  outside */
+/* Pull  badge  outside */
 .overlay-badge {
   top: 10px; /* Adjust  */
   right: 10px; /*  needed */
@@ -903,7 +899,7 @@ body, html {
   background-color: white;
   border-radius: 3px;
 }
-/* Carousel container */
+/* Carousels container */
 .input-group{
     min-height: 70px;
 }
