@@ -10,15 +10,15 @@ const DepartmentCard = ({ image, iconUrl, title, para }) => {
           className="card-img department-card-img"
           alt="department background"
         />
-        <div className="department-icon-overlay position-absolute start-50 translate-middle " >
-          <div className=' z-1 position-absolute department-icon-overlays'>
+        <div className="department-icon-overlay position-absolute start-50 translate-middle d-flex align-items-center justify-content-center rounded-circle" >
+          <div className=' z-1 position-absolute department-icon-overlays d-flex align-items-center justify-content-center rounded-circle'>
             <img src={iconUrl} alt="icon" className="h-100 department-icon-img" style={{ objectFit: "contain" }} />
           </div>
         </div>
         {/* NEW hover overlay */}
-        <div className="department-hover-overlay position-absolute  text-center p-4 rounded">
-          <div className="department-hover-icon mb-3 ">
-            <div className='department-hover-icons'>
+        <div className="department-hover-overlay top-0 start-0 end-0 bottom-0  position-absolute  text-center p-4 rounded bg-white">
+          <div className="department-hover-icon mb-3 rounded-circle d-flex align-items-center justify-content-center">
+            <div className='department-hover-icons rounded-circle d-flex align-items-center justify-content-center'>
               <img src={iconUrl} alt="icon" className="department-hover-icon-img " />
             </div>
           </div>

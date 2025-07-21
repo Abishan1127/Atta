@@ -226,13 +226,13 @@ function Home() {
         <div className="department-section position-relative py-0 " id="departments">
 
           {/* Left background image */}
-          <div className="department-bg-left d-none d-md-block position-absolute top-0 start-0 bottom-0"></div>
+          <div className="department-bg-left bg-cover bg-center position-relative z-0 d-none d-md-block position-absolute top-0 start-0 bottom-0"></div>
 
           {/* Right background image */}
-          <div className="department-bg-right d-none d-md-block position-absolute top-0 end-0 bottom-0"></div>
+          <div className="department-bg-right bg-cover bg-center position-relative z-0 d-none d-md-block position-absolute top-0 end-0 bottom-0"></div>
 
           {/* Center container */}
-          <div className="container text-center position-relative department-center-content">
+          <div className="container text-center position-relative department-center-content z-1">
             <h6 className="text-danger fw-bold mb-2">
               <span className="me-1">★</span> Departments<span className="ms-1">★</span>
             </h6>

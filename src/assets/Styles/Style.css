@@ -150,7 +150,6 @@
   height: 100%;
   overflow: hidden;
 }
-/* base state: hidden and positioned off-screen right */
 .about-slide-content {
   position: absolute;
   top: 0;
@@ -160,13 +159,11 @@
   transition: all 0.8s ease-in-out;
   z-index: 0;
 }
-/* active slide (visible) */
 .about-slide-content.active {
   left: 0;
   opacity: 1;
   z-index: 2;
 }
-/* exit animation (old slide moving out to left) */
 .about-part {
   background: url('../images/about.png') no-repeat;
   background-size: 50% auto;
@@ -218,7 +215,6 @@
   width: 80px;
   height: 80px;
 }
-/* Trigger on hover */
 .service-card:hover .service-icon-wrapper::after {
   transform: scale(1.4);
   opacity: 1;
@@ -294,7 +290,6 @@ body, html {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;  /* IE & Edge */
 }
-/* Optional: smooth icon transitions */
 .slide-content i {
   transition: all 0.5s ease;
 }
@@ -303,7 +298,6 @@ body, html {
     position: relative;
     min-height: 500px;
 }
-/* semi-transparent overlay */
 .download-section .overlay {
     position: absolute;
     top:0; left:0; right:0; bottom:0;    
@@ -312,12 +306,10 @@ body, html {
     justify-content: center;
     padding: 3rem;
 }
-/* text smooth slide effect */
 .download-section .slide-transition {
     animation: slideFade 1s ease-in-out;
     color: #fff;
 }
-/* fixed arrows bottom right */
 .download-section .arrow-controls {
     position: absolute;
     bottom: 88px;
@@ -343,7 +335,6 @@ body, html {
   opacity: 0.2; /* controls your background transparency */
   z-index: 0;
 }
-/* Ensure your content stays above the background */
 .downloads-section > * {
   position: relative;
   z-index: 1;
@@ -358,7 +349,6 @@ body, html {
 .download-icon {
   width: 40px;
 }
-/* Accordion styles */
 .accordion-custom {
   font-size: 20px;
 }
@@ -407,24 +397,12 @@ body, html {
 .item-text.active {
   color: #444;
 }
-/* Optional: prettier scrollbar */
 .accordion-list::-webkit-scrollbar {
   width: 6px;
 }
 .accordion-list::-webkit-scrollbar-thumb {
   background-color: rgba(150, 150, 150, 0.4);
   border-radius: 3px;
-}
-/*department card styles*/
-.department-icon-circle {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .department-icon-img {
   width: 50px;
@@ -459,10 +437,6 @@ body, html {
   width: 110px;
   height: 110px;
   background: rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   top:200px;
@@ -471,10 +445,6 @@ body, html {
   width: 80px;
   height: 80px;
   background: rgba(255, 255, 255);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   top:13px;
@@ -503,16 +473,10 @@ body, html {
 .department-section{
   height: 750px;
 }
-/* Hover overlay starts hidden at bottom */
 .department-hover-overlay {
-  background:white;
   transform: translateY(30px);
   transition: transform 0.8s ease, opacity 0.8s ease;
   transition: transform 0.8s;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -523,7 +487,6 @@ body, html {
   transform: translateY(0);
   opacity: 1;
 }
-/* Ensure text and icon scale nicely */
 .department-hover-icon-img {
   height: 50px;
   width: 50px;
@@ -533,10 +496,6 @@ body, html {
   width: 110px;
   height: 110px;
    background: rgba(203, 6, 6, 0.7);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-left: 33%;
   margin-top: 20px;
 }
@@ -544,13 +503,7 @@ body, html {
   width: 80px;
   height: 80px;
   background: red;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-}
-/* Also fade icon + white title slightly */
+ }
 .department-card:hover .department-icon-overlay,
 .department-card:hover .department-title {
   opacity: 0;
@@ -563,29 +516,15 @@ body, html {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
-/* Left background image for departments section */
 .department-bg-left {
   width: 35%;
   height: 100%;
   background-image: url('../images/shape-8.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
 }
-/* Right background image for departments section */
 .department-bg-right {
   width: 35%;
   background-image: url('../images/shape-9.png');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
 }
-/* Make sure center content stacks above backgrounds */
-.department-center-content {
-  position: relative;
-  z-index: 1;
-}
-/* Refine hover overlay movement to be smoother */
 .department-hover-overlay {
   transform: translateY(50px);
   opacity: 0;
@@ -595,22 +534,17 @@ body, html {
   transform: translateY(0);
   opacity: 1;
 }
-
-/* Keep the existing icon overlay + title fade intact */
 .department-card:hover .department-icon-overlay,
 .department-card:hover .department-title {
   opacity: 0;
   transition: opacity 0.4s;
 }
-/*scrollbar*/
 .scrollbar-track {
   overflow: hidden;
 }
-
 #scrollbar-thumb {
   transition: top 0.2s ease;
 }
-
 .scrollbar-container-custom {
   height: 100%;
   right: 0.5rem;
@@ -738,7 +672,6 @@ body, html {
   width: 100%;
   height: 100%;
 }
-/*card*/
 .card-body h6 {
   transition: color 0.3s ease;
 }
@@ -755,11 +688,9 @@ body, html {
 .hover-card .card-body {
   transition: transform 0.4s ease;
 }
-
 .hover-card:hover {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-
 .hover-card:hover .card-body {
   transform: translateY(-10px);
 }
@@ -768,7 +699,6 @@ body, html {
 }
 /* scroll topup*/
 .scroll-to-top {
-  position: fixed;
   bottom: 30px;
   right: 30px;
   width: 60px;
@@ -778,14 +708,15 @@ body, html {
   color: #2b2b2b;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   opacity: 0;
   transform: translateY(-800px); /* move up hidden */
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 999;
+  position: fixed;
 }
 .scroll-to-top.show {
   opacity: 1;
@@ -810,23 +741,6 @@ body, html {
 #eventCarousel {
   position: relative;
 }
-.custom-control {
-  position: absolute;
-  bottom: 10px;
-  width: 40px;
-  height: 40px;
-  background-color: rgba(0, 0, 0, 0.5); 
-  border-radius: 50%;
-  z-index: 5;
-  border: none;
-}
-.carousel-control-prev.custom-control {
-  left: 10px;
-}
-.carousel-control-next.custom-control {
-  left: 60px; /* space between buttons */
-}
-/* Gradient overlay  card body */
 .overlay-gradient {
   background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
   z-index: 1;
@@ -837,7 +751,6 @@ body, html {
 .image-container:hover img {
   transform: scale(1.1);
 }
-/* Pull  badge  outside */
 .overlay-badge {
   top: 10px; /* Adjust  */
   right: 10px; /*  needed */
@@ -847,20 +760,17 @@ body, html {
   text-align: left;
   line-height: 35px;
 }
-/* Left  background */
 .slide-container {
   min-height: 500px;
   background-size: cover;
   background-position: center;
 }
-/* Dark overlay */
 .slide-overlay {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
   border-radius: 0.5rem;
 }
-/* Content above overlay */
 .slide-content {
   z-index: 2;
 }
@@ -870,7 +780,6 @@ body, html {
 .hover-card:hover .extra-contact {
     display: block;
 }
-/* Controls box at bottom */
 .custom-arrow {
   width: 65px;
   height: 65px;
@@ -899,7 +808,6 @@ body, html {
   background-color: white;
   border-radius: 3px;
 }
-/* Carousels container */
 .input-group{
     min-height: 70px;
 }
@@ -920,7 +828,6 @@ body, html {
 .mobile-links a:hover {
     color: #d33; /* change to your theme color */
 }
-/*mouse hover card*/
 .mousehover-card {
   position: relative;
   background: white;
@@ -933,28 +840,15 @@ body, html {
 .mousehover-card:hover {
   transform: translateY(-5px);
 }
-/* Icon Circle */
-.icon-circle {
-  background: #dc3545;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 8px solid rgba(220, 53, 69, 0.3);
-}
 .icon-img {
   width: 50px;
   height: 50px;
 }
-/* Description */
 .description {
   color: #6c757d;
   font-size: 16px;
   min-height: 50px;
 }
-/* Bottom Hover Effect */
 .bottom-hover {
   position: absolute;
   bottom: -100%;
@@ -984,7 +878,6 @@ body, html {
 #home, #service, #team, #news, #contact,#about {
   scroll-margin-top: 80px;
 }
-/* keyframes same */
 @keyframes wave {
   0% {
     transform: translate(-50%, -50%) scale(1);
@@ -995,7 +888,6 @@ body, html {
     opacity: 0;
   }
 }
-/* fade + slide from right */
 @keyframes slideFade {
     0% {
         opacity: 0;
@@ -1016,7 +908,6 @@ body, html {
         transform: translateY(0);
     }
 }
-/* Auto-scroll animation */
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -1025,7 +916,6 @@ body, html {
     transform: translateX(-50%);
   }
 }
-/* Responsive tweak for mobile */
 @media (max-width: 576px) {
   .team-card {
     flex: 0 0 80%;
