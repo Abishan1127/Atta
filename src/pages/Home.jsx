@@ -127,69 +127,69 @@ function Home() {
             </button>
           </div>
         </div>
-       <section className="about-section py-5 about-part" id="about">
-  <div className="container py-5">
-    <div className="row">
-      {/* Left: Fixed Background Image + Quote */}
-      <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5">
-        <div className="about-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center me-5 mb-5 bg-danger">
-          <div className="text-start ms-4">
-            <img src={Invert} alt="" className="img-fluid mb-2" />
-            <p className="mb-1 small">
-              My City’s Residents Showed Commitment & Courage in this Crucial Situation.
-            </p>
-            <p className="fw-bold mb-0">Jordon Cooper</p>
-            <small>City Mayor</small>
-          </div>
-        </div>
-      </div>
-
-      {/* Right: Animated Text Content */}
-      <div className="col-md-6 position-relative overflow-hidden about-right mt-5">
-        <p className="text-danger small fw-bold ms-5">★ About Us ★</p>
-        <div className="ms-3">
-          <div className="divider ms-5 mb-4"></div>
-        </div>
-
-        <div className="about-slider-wrapper position-relative ms-5">
-          {aboutData.map((item, i) => {
-            const isActive = i === aboutIndex;
-            const isExiting = i === exitingIndex;
-
-            return (
-              <div
-                key={item.id}
-                className={`about-slide-content ${isActive ? 'active' : isExiting ? 'exiting' : ''}`}
-              >
-                <h3 className="fw-bold">{item.heading}</h3>
-                <h6 className="fw-semibold mt-4">{item.subheading}</h6>
-                <p className="text-muted mt-4">{item.description}</p>
-                <ul className="list-unstyled">
-                  {item.points.map((point, j) => (
-                    <li key={j} className="d-flex align-items-start gap-2 mb-2">
-                      <FaDove className="text-secondary mt-1 about-icon" />
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+        <section className="about-section py-5 about-part" id="about">
+          <div className="container py-5">
+            <div className="row">
+              {/* Left: Fixed Background Image + Quote */}
+              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5">
+                <div className="about-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center me-5 mb-5 bg-danger">
+                  <div className="text-start ms-4">
+                    <img src={Invert} alt="" className="img-fluid mb-2" />
+                    <p className="mb-1 small">
+                      My City’s Residents Showed Commitment & Courage in this Crucial Situation.
+                    </p>
+                    <p className="fw-bold mb-0">Jordon Cooper</p>
+                    <small>City Mayor</small>
+                  </div>
+                </div>
               </div>
-            );
-          })}
-        </div>
 
-        {/* Arrows */}
-        <div className="position-absolute bottom-0 start-0 pt-3 px-3 ms-5 d-flex gap-2 about-arrow">
-          <button className="btn btn-outline-dark" onClick={prevAbout}>
-            <FaChevronLeft />
-          </button>
-          <button className="btn btn-outline-dark" onClick={nextAbout}>
-            <FaChevronRight />
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+              {/* Right: Animated Text Content */}
+              <div className="col-md-6 position-relative overflow-hidden about-right mt-5">
+                <p className="text-danger small fw-bold ms-5">★ About Us ★</p>
+                <div className="ms-3">
+                  <div className="divider ms-5 mb-4"></div>
+                </div>
+
+                <div className="about-slider-wrapper position-relative ms-5">
+                  {aboutData.map((item, i) => {
+                    const isActive = i === aboutIndex;
+                    const isExiting = i === exitingIndex;
+
+                    return (
+                      <div
+                        key={item.id}
+                        className={`about-slide-content ${isActive ? 'active' : isExiting ? 'exiting' : ''}`}
+                      >
+                        <h3 className="fw-bold">{item.heading}</h3>
+                        <h6 className="fw-semibold mt-4">{item.subheading}</h6>
+                        <p className="text-muted mt-4">{item.description}</p>
+                        <ul className="list-unstyled">
+                          {item.points.map((point, j) => (
+                            <li key={j} className="d-flex align-items-start gap-2 mb-2">
+                              <FaDove className="text-secondary mt-1 about-icon" />
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Arrows */}
+                <div className="position-absolute bottom-0 start-0 pt-3 px-3 ms-5 d-flex gap-2 about-arrow">
+                  <button className="btn btn-outline-dark" onClick={prevAbout}>
+                    <FaChevronLeft />
+                  </button>
+                  <button className="btn btn-outline-dark" onClick={nextAbout}>
+                    <FaChevronRight />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Services section */}
         <div className="service-section py-5 bg-transparent position-relative z-1 overlay " id="service" >
@@ -207,7 +207,7 @@ function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-7 pt-5 mt-md-5 position-relative overlap-carousel">
+             <div className="col-6 col-lg-7 pt-5 mt-md-5 position-relative overlap-carousel">
                 <Carousel
                   responsive={responsive}
                   autoPlay autoPlaySpeed={3000} infinite
@@ -313,14 +313,15 @@ function Home() {
                   <div className="content-box slide-transition" key={current}>
                     <h4><i className="bi bi-house me-2"></i>{downloadSlides[current].smallText}</h4>
                     <h2 className="mt-5">{splitBigText(downloadSlides[current].bigText)}</h2>
-                    <div className="btn-box mt-3">
+                    <div className="btn-box mt-3 d-flex">
                       <a href="#" className="btn btn-light p-3 mt-5 text-danger">READ MORE</a>
+                      <div className="mt-5 ms-0 ms-lg-5 ">
+                    <button className="btn btn-outline-light p-3 ms-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
+                    <button className="btn btn-outline-light p-3 ms-2" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
+                  </div>
                     </div>
                   </div>
-                  <div className="arrow-controls">
-                    <button className="btn btn-outline-light p-3 me-2" onClick={prevSlide}><i className="bi bi-chevron-left"></i></button>
-                    <button className="btn btn-outline-light p-3" onClick={nextSlide}><i className="bi bi-chevron-right"></i></button>
-                  </div>
+                  
                 </div>
               </div>
               <div className="col-md-6 px-3 pt-5 mt-0 mt-md-5 position-relative">

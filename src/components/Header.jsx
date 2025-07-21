@@ -76,7 +76,7 @@ export default function Header() {
                 </div>
 
                 {/* Mobile fixed navbar */}
-                <nav className="navbar bg-white border-bottom py-3 px-3 px-md-5 container fixed-top d-lg-none z-3">
+                <nav className="navbar bg-white border-bottom py-3 px-3 px-md-5  fixed-top d-lg-none z-3">
                     <a className="navbar-brand fw-bold d-flex align-items-center mt-1" href="">
                         <img src={logo} alt="logo" className="img-fluid" style={{ maxHeight: '70px' }} />
                     </a>

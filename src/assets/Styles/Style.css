@@ -309,11 +309,6 @@ body, html {
     animation: slideFade 1s ease-in-out;
     color: #fff;
 }
-.download-section .arrow-controls {
-    position: absolute;
-    bottom: 88px;
-    right: 210px;
-}
 .my-download-btn {
   margin-bottom: -44px;
 }
@@ -873,8 +868,11 @@ body, html {
   .scrollbar-container-custom {
     margin-left: 40px;
   }
+
 }
+
 /* Responsive text */
+
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2rem;
@@ -888,11 +886,6 @@ body, html {
     .custom-arrow {
     top: 60%;
     }
-    .download-section .arrow-controls {
-    position: absolute;
-    bottom: 84px;
-    right: 100px;
-   }
    .input-group{
     max-width: 320px;
    }

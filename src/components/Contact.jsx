@@ -207,7 +207,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="btn btn-danger px-3 py-2 position-absolute "
-                  style={{ bottom: '10px', right: '10px', height: '80px' }}
+                  style={{ top: '15px', right: '10px', height: '80px' }}
                 >
                   SEND
                 </button>
