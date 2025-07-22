@@ -27,9 +27,9 @@ function Footer() {
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
                         <img src={logo2} alt="logo" className="" height={70}  />
                         <p className="mt-3">
-                            Righteous indignation and like <br />men who 
-                            are so beguiled and <br /> demoralized by the
-                            charm of<br /> pleasure of the moment so <br />
+                            Righteous indignation and like men who <br />
+                            are so beguiled and demoralized by the <br />
+                            charm of pleasure of the moment so of <br />
                              Righteous indignation 
                         </p>
                         
@@ -37,10 +37,10 @@ function Footer() {
 
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                       <h5 className="fw-bold mb-3 mt-3 text-white ms-lg-5">Subscribe Us</h5>
+                       <h5 className="fw-bold mb-3 mt-3 text-white ">Subscribe Us</h5>
                             <div className='mt-4'>
                             <p className='mt-0 '>Subscribe us & Get Updates in Your Inbox</p>
-                            <div className="input-group">
+                            <div className="input-group" style={{ minWidth: '300px' }}>
                                 <input
                                     type="email"
                                     className="form-control"
@@ -72,8 +72,8 @@ function Footer() {
                     </div>
 
                     {/* Column 3: Recent News & Subscribe */}
-                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start  ">
-                        <h5 className="fw-bold  mt-2 lh-lg text-white ms-lg-5 ps-lg-4 ">Recent News</h5>
+                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
+                        <h5 className="fw-bold  mt-2 lh-lg text-white  ">Recent News</h5>
                         <div className="d-flex mb-3 mt-0 pt-3">
                            {/* Carousel */}
                         <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">
