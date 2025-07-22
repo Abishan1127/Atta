@@ -37,13 +37,13 @@ function Footer() {
 
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                       <h5 className="fw-bold mb-3 mt-3 text-white ">Subscribe Us</h5>
-                            <div className='mt-4'>
+                       <h5 className="fw-bold mb-3 mt-3 text-white  ">Subscribe Us</h5>
+                            <div className='mt-4 w-100'>
                             <p className='mt-0 '>Subscribe us & Get Updates in Your Inbox</p>
-                            <div className="input-group" style={{ minWidth: '300px' }}>
+                            <div className="input-group" >
                                 <input
                                     type="email"
-                                    className="form-control"
+                                    className="form-control "
                                     placeholder="Your email ..."
                                     value={subscribeEmail}
                                     onChange={(e) => {
@@ -72,7 +72,7 @@ function Footer() {
                     </div>
 
                     {/* Column 3: Recent News & Subscribe */}
-                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
+                    <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ps-0 ps-lg-5 ">
                         <h5 className="fw-bold  mt-2 lh-lg text-white  ">Recent News</h5>
                         <div className="d-flex mb-3 mt-0 pt-3">
                            {/* Carousel */}
