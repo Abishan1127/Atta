@@ -8,7 +8,7 @@ import { recentNews } from '../constants/data';
 
 function Footer() {
 
-   
+
     const [subscribeEmail, setSubscribeEmail] = useState('');
     const [subscribeError, setSubscribeError] = useState('');
 
@@ -25,22 +25,22 @@ function Footer() {
                 <div className="row gy-4 ">
                     {/* Column 1 */}
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                        <img src={logo2} alt="logo" className="" height={70}  />
+                        <img src={logo2} alt="logo" className="" height={70} />
                         <p className="mt-3">
                             Righteous indignation and like men who <br />
                             are so beguiled and demoralized by the <br />
                             charm of pleasure of the moment so of <br />
-                             Righteous indignation 
+                            Righteous indignation
                         </p>
-                        
+
                     </div>
 
                     {/* Column 2: Useful Links */}
                     <div className=" col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
-                       <h5 className="fw-bold mb-3 mt-3 text-white  ">Subscribe Us</h5>
-                            <div className='mt-4 w-100'>
-                            <p className='mt-0 '>Subscribe us & Get Updates in Your Inbox</p>
-                            <div className="input-group" >
+                        <h5 className="fw-bold mb-3 mt-3 text-white  ">Subscribe Us</h5>
+                        <div className='mt-4 subscribe-form'>
+                            <p className='mt-0 text-center text-sm-start '>Subscribe us & Get Updates in Your Inbox</p>
+                            <div className="input-group   " >
                                 <input
                                     type="email"
                                     className="form-control "
@@ -52,7 +52,7 @@ function Footer() {
                                     }}
                                 />
                                 <button
-                                    className="btn btn-danger"
+                                    className="btn btn-danger "
                                     onClick={() => {
                                         if (!validateEmail(subscribeEmail)) {
                                             setSubscribeError("Please enter a valid email address.");
@@ -75,38 +75,38 @@ function Footer() {
                     <div className="col-lg-4 d-flex flex-column align-items-center align-items-lg-start ps-0 ps-lg-5 ">
                         <h5 className="fw-bold  mt-2 lh-lg text-white  ">Recent News</h5>
                         <div className="d-flex mb-3 mt-0 pt-3">
-                           {/* Carousel */}
-                        <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">
-                            <div className="carousel-inner p-3 rounded mt-2">
-                                <div className="carousel-item active">
-                                    <p className="mb-1 d-flex align-items-center gap-2">
-                                        <FaRegCalendarAlt /> September 11, 2022
-                                    </p>
-                                    <p className="mb-5 lh-lg">
-                                        New year celebration by the charm pleasure of the moment and trouble are bound to pleasure of the moment
-                                    </p>
+                            {/* Carousel */}
+                            <div id="eventCarousel" className="carousel slide" data-bs-ride="carousel">
+                                <div className="carousel-inner p-3 rounded mt-2">
+                                    <div className="carousel-item active">
+                                        <p className="mb-1 d-flex align-items-center gap-2">
+                                            <FaRegCalendarAlt /> September 11, 2022
+                                        </p>
+                                        <p className="mb-5 lh-lg">
+                                            New year celebration by the charm pleasure of the moment and trouble are bound to pleasure of the moment
+                                        </p>
+                                    </div>
+                                    <div className="carousel-item">
+                                        <p className="mb-1 d-flex align-items-center gap-2">
+                                            <FaRegCalendarAlt /> September 12, 2022
+                                        </p>
+                                        <p className="mb-5 lh-lg">
+                                            Outdoor concert series continues with local jazz pleasure of the moment and trouble are pleasure of the
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="carousel-item">
-                                    <p className="mb-1 d-flex align-items-center gap-2">
-                                        <FaRegCalendarAlt /> September 12, 2022
-                                    </p>
-                                    <p className="mb-5 lh-lg">
-                                        Outdoor concert series continues with local jazz pleasure of the moment and trouble are pleasure of the
-                                    </p>
+                                <div className="d-flex gap-0 position-absolute bottom-0 start-0 ms-3 mb-3">
+                                    <button className="btn btn-sm rounded-circle" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+                                        <span className="carousel-control-prev-icon" style={{ filter: 'invert(0)' }}></span>
+                                    </button>
+                                    <button className="btn btn-sm rounded-circle" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+                                        <span className="carousel-control-next-icon" style={{ filter: 'invert(0)' }}></span>
+                                    </button>
                                 </div>
                             </div>
-                            <div className="d-flex gap-0 position-absolute bottom-0 start-0 ms-3 mb-3">
-                                <button className="btn btn-sm rounded-circle" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
-                                    <span className="carousel-control-prev-icon" style={{ filter: 'invert(0)' }}></span>
-                                </button>
-                                <button className="btn btn-sm rounded-circle" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
-                                    <span className="carousel-control-next-icon" style={{ filter: 'invert(0)' }}></span>
-                                </button>
-                            </div>
-                        </div>
                         </div>
 
-                        
+
                     </div>
                 </div>
             </div>

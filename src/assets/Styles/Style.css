@@ -916,6 +916,9 @@ body, html {
     margin-left: -140px; /* adjust this value to control how much overlap */
     z-index: 2;
   }
+  .subscribe-form{
+    width: 100%;
+  }
 }
 @media (min-width: 1650px) {
   .overlap-carousel {
