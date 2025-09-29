@@ -1,5 +1,5 @@
-import React from 'react';
-import { FaUser, FaComment } from 'react-icons/fa';
+import React from "react";
+import { FaUser, FaComment } from "react-icons/fa";
 
 const NewsCard = ({ item }) => {
   return (
@@ -19,8 +19,12 @@ const NewsCard = ({ item }) => {
         <h5 className="card-title fw-bold text-start">{item.title}</h5>
         <div className="border-bottom border-danger w-25 my-3 border-4"></div>
         <div className="d-flex gap-4 text-white-50">
-          <div><FaUser className="me-1" /> admin</div>
-          <div><FaComment className="me-1" /> {item.comments} Comments</div>
+          <div>
+            <FaUser className="me-1" /> admin
+          </div>
+          <div>
+            <FaComment className="me-1" /> {item.comments} Comments
+          </div>
         </div>
       </div>
     </div>

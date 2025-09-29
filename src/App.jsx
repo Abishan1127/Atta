@@ -3,13 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
-
 import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
 import Home from './pages/Home';
-import ScrollToTop from './components/ScrollToTop'; // Make sure your file is named ScrollToTop.jsx
+import ScrollToTop from './Components/ScrollToTop'; 
 
 function App() {
 
