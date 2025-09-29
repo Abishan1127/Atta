@@ -138,7 +138,7 @@ function Home() {
                     <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
 
                     {/* Text content above the overlay */}
-                    <div className="hero-content animate-slide-up position-relative">
+                    <div className="hero-content animate-slide-up position-relative ">
                       <h1 className="display-1 fw-bold">{slide.title}</h1>
                       <h2 className="fs-2 mb-3">{slide.subtitle}</h2>
                       <p className="mb-4 px-3 px-md-0">{slide.description}</p>
@@ -172,8 +172,8 @@ function Home() {
           <div className="container py-5">
             <div className="row">
               {/* Left: Fixed Background Image + Quote */}
-              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5">
-                <div className="about-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center me-5 mb-5 bg-danger">
+              <div className="col-md-6 about-left d-flex align-items-center justify-content-end mb-5 position-relative">
+                <div className="about-circle text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center me-5 mb-5 bg-danger p-5">
                   <div className="text-start ms-4">
                     <img src={Invert} alt="" className="img-fluid mb-2" />
                     <p className="mb-1 small">
@@ -193,7 +193,7 @@ function Home() {
                   <div className="divider ms-5 mb-4"></div>
                 </div>
 
-                <div className="about-slider-wrapper position-relative ms-5">
+                <div className="about-slider-wrapper position-relative ms-5 h-100 overflow-hidden">
                   {aboutData.map((item, i) => {
                     const isActive = i === aboutIndex;
                     const isExiting = i === exitingIndex;
@@ -201,7 +201,7 @@ function Home() {
                     return (
                       <div
                         key={item.id}
-                        className={`about-slide-content ${
+                        className={`about-slide-content w-100  ${
                           isActive ? "active" : isExiting ? "exiting" : ""
                         }`}
                       >
@@ -446,7 +446,7 @@ function Home() {
                     {files.map((item, idx) => (
                       <div
                         key={idx}
-                        className={`download-item bg-white d-flex align-items-center justify-content-between ${
+                        className={`download-item bg-white d-flex align-items-center justify-content-between rounded-4  ${
                           idx === files.length - 1 ? "mb-0" : ""
                         }`}
                       >

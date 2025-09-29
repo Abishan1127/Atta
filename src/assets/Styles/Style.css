@@ -73,7 +73,6 @@
 }
 .hero-content {
   animation: slideUp 1s ease-out forwards;
-  opacity: 0;
   transform: translateY(100px);
 }
 .carousel-item.active .hero-content {
@@ -90,26 +89,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 .about-circle {
-  padding: 40px;
   width: 300px;
   height: 300px;
 }
-.about-slider-wrapper {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
 .about-slide-content {
   position: absolute;
-  top: 0;
   left: 100%;
   opacity: 0;
-  width: 100%;
   transition: all 0.8s ease-in-out;
-  z-index: 0;
+
 }
 .about-slide-content.active {
   left: 0;
@@ -180,12 +170,6 @@ html {
 }
 .service-image-container {
   height: 350px;
-  overflow: hidden;
-}
-.service-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 .service-plus {
   background-color: #efeff4;
@@ -213,13 +197,8 @@ html {
   margin-top: -50px;
   max-width: 90%;
 }
-.team-carousel-wrapper {
-  overflow-x: hidden;
-  position: relative;
-}
 /*contact*/
 .contact-card {
-  padding: 20px;
   transition: background 0.8s ease, color 0.8s ease;
 }
 /*download*/
@@ -287,7 +266,6 @@ html {
 }
 .download-item {
   padding: 1rem;
-  border-radius: 0.5rem;
   margin-bottom: 1rem;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
