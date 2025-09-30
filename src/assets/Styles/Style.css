@@ -440,7 +440,7 @@ html {
   outline: var(--primary);
 }
 .scrollbar-container-custom .btn-down {
-  margin-bottom: -40px; /* adjust to your need */
+  margin-bottom: -40px; 
 }
 /*video*/
 .video-container {
@@ -546,7 +546,7 @@ html {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   opacity: 0;
-  transform: translateY(-800px); /* move up hidden */
+  transform: translateY(-800px); 
   pointer-events: none;
 }
 .scroll-to-top.show {

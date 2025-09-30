@@ -1,11 +1,10 @@
 // Components/CustomButton.jsx
 import React from "react";
 
-function CustomButton({ label, bgColor = "#dc3545" }) {
+function CustomButton({ label}) {
   return (
     <button
-      className="text-white border-0 px-4 py-2 fw-semibold"
-      style={{ backgroundColor: bgColor, borderRadius: "4px" }}
+      className="text-white border-0 px-4 py-2 fs-4 fw-semibold bg-danger rounded-2 "
     >
       {label}
     </button>
