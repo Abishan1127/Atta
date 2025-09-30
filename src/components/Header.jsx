@@ -12,7 +12,7 @@ import logo from "../assets/Images/logo1.png";
 const SocialIcon = ({ href, icon: Icon }) => (
   <a
     href={href}
-    className="d-inline-flex align-items-center justify-content-center bg-secondary text-white rounded-circle custom-social-icon me-2"
+    className="d-inline-flex align-items-center justify-content-center bg-secondary text-white rounded-circle custom-social-icon text-white me-2"
   >
     <Icon />
   </a>

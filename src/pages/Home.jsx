@@ -146,7 +146,7 @@ function Home() {
             </div>
 
             <button
-              className="carousel-control-prev custom-arrow d-none d-sm-block"
+              className="carousel-control-prev custom-arrow border border-2 rounded-3 pt-1  d-none d-sm-block"
               type="button"
               data-bs-target="#heroCarousel"
               data-bs-slide="prev"
@@ -154,7 +154,7 @@ function Home() {
               <span className="carousel-control-prev-icon "></span>
             </button>
             <button
-              className="carousel-control-next custom-arrow d-none d-sm-block"
+              className="carousel-control-next custom-arrow border border-2 rounded-3 pt-1  d-none d-sm-block"
               type="button"
               data-bs-target="#heroCarousel"
               data-bs-slide="next"
@@ -210,7 +210,7 @@ function Home() {
                               key={j}
                               className="d-flex align-items-start gap-2 mb-2"
                             >
-                              <FaDove className="text-secondary mt-1 about-icon" />
+                              <FaDove className="text-secondary mt-1 " />
                               <span>{point}</span>
                             </li>
                           ))}
@@ -239,7 +239,7 @@ function Home() {
         <div className="service-section py-5 bg-transparent position-relative z-1 overlay " id="service" >
           <div className="service-section text-white">
             <div className="col-md-12 row no-gutters">
-              <div className="col-12 col-lg-6 slide-container rounded">
+              <div className="col-12 col-lg-6 slide-container position-relative rounded">
                 <div className="overlay z-1 d-flex align-items-center justify-content-center border border-white rounded my-3 position-absolute ">
                   <div className="content-box my-5">
                     <h4 className="mt-5">
@@ -398,9 +398,9 @@ function Home() {
         <div className="downloads-section py-5 bg-transparent position-relative z-1" id="downloads">
           <div className="download-section">
             <div className="col-md-12 row no-gutters">
-              <div className=" col-12 col-lg-6   slide-container">
-                <div className="overlay d-flex align-items-end justify-content-center border border-white rounded m-4 position-absolute">
-                  <div className="content-box slide-transition" key={current}>
+              <div className=" col-12 col-lg-6   slide-container position-relative">
+                <div className="position-absolute top-0 start-0 end-0 bottom-0 d-flex flex-column justify-content-center align-items-end  border border-white rounded m-4 p-5">
+                  <div className="content-box slide-transition text-white" key={current}>
                     <h4>
                       <i className="bi bi-house me-2"></i>
                       {downloadSlides[current].smallText}
@@ -464,21 +464,21 @@ function Home() {
                     ))}
                   </div>
                 </div>
-                <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3">
+                <div className="scrollbar-container-custom position-absolute top-0 end-0 d-flex flex-column align-items-center me-3 h-100">
                   <button
                     className="btn btn-outline-dark fs-5 mt-1 mt-md-0"
                     onClick={() => scrollDownloads(-150)}
                   >
                     <i className="bi bi-arrow-up"></i>
                   </button>
-                  <div className="scrollbar-track-custom my-1 position-relative">
+                  <div className="scrollbar-track-custom my-1 position-relative rounded-5">
                     <div
                       ref={thumbRef}
-                      className="scrollbar-thumb-custom bg-danger w-100 position-absolute"
+                      className="scrollbar-thumb-custom rounded-5 bg-danger w-100 position-absolute"
                     ></div>
                   </div>
                   <button
-                    className="btn btn-outline-dark fs-5 my-download-btn"
+                    className="btn btn-outline-dark fs-5  download-btn"
                     onClick={() => scrollDownloads(150)}
                   >
                     <i className="bi bi-arrow-down"></i>
@@ -527,7 +527,7 @@ function Home() {
                     )}
                   </div>
                   {activeSection === sec.title && (
-                    <div className="accordion-body m-1">
+                    <div className="accordion-body pt-3 m-1">
                       <div className="fw-semibold ms-2">
                         Must Visited Parks & Natural Areas;
                       </div>
@@ -569,6 +569,7 @@ function Home() {
                   allow="autoplay; encrypted-media"
                   allowFullScreen
                   title="YouTube video"
+                  className="w-100 h-100 position-absolute top-0 start-0"
                 ></iframe>
               </div>
             </Modal.Body>

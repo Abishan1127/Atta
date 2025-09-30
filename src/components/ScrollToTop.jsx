@@ -27,7 +27,7 @@ const ScrollToTop = () => {
 
   return (
     <div
-      className={`scroll-to-top ${
+      className={`scroll-to-top rounded-3 ${
         visible ? "show" : ""
       } d-none d-md-flex align-items-center justify-content-center position-fixed bg-white z-3`}
       onClick={scrollToTop}

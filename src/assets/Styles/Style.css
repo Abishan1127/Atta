@@ -33,6 +33,7 @@
   transform: translateY(-100%);
   opacity: 0;
 }
+
 .navbar .nav-link:hover {
   color: var(--primary); 
 }
@@ -40,6 +41,7 @@
   background-color: transparent;
   transition: background-color 0.4s ease, top 0.4s ease;
 }
+
 .sticky-navbar-transition {
   transform: translateY(-100%);
   opacity: 0;
@@ -93,6 +95,7 @@
   height: 300px;
 }
 .about-slide-content {
+  position: absolute;
   left: 100%;
   opacity: 0;
   transition: all 0.8s ease-in-out;
@@ -116,13 +119,9 @@
   opacity: 0;
   z-index: 1;
 }
-.about-icon {
-  font-size: 1rem;
-  flex-shrink: 0;
-}
+/*service*/
 .service-section .slide-container {
   background: url("../Images/service-bg-2.jpg") center/cover no-repeat;
-  position: relative;
 }
 .service-section {
   background-color: #efeff4;
@@ -184,7 +183,6 @@ html {
 }
 .service-icon-wrapper i {
   color: var(--primary);
-  font-size: 36px;
 }
 .service-card-body {
   height: 150px;
@@ -215,33 +213,17 @@ html {
 .downloads-scroll {
   max-height: 400px;
   overflow-y: auto;
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
-}
-.slide-content i {
-  transition: all 0.5s ease;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
 }
 .download-section .slide-container {
   background: url("../Images/bg2.jpg") center/cover no-repeat;
-  position: relative;
   min-height: 500px;
-}
-.download-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3rem;
 }
 .download-section .slide-transition {
   animation: slideFade 1s ease-in-out;
-  color: #fff;
 }
-.my-download-btn {
+.download-btn {
   margin-bottom: -44px;
 }
 .downloads-section {
@@ -255,18 +237,16 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../Images/downbg.jpg"); 
+  background-image: url("../Images/downbg.jpg"); /* replace with your correct path */
   background-size: cover;
   background-position: center;
-  opacity: 0.2; 
+  opacity: 0.2; /* controls your background transparency */
   z-index: 0;
-}
-.download-item {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 .download-icon {
   width: 40px;
 }
+/*accordion*/
 .accordion-section .accordion-header {
   border-bottom: 1px solid #dee2e6;
   cursor: pointer;
@@ -287,6 +267,7 @@ html {
 }
 .item-text {
   color: #777;
+  font-size: 15px;
 }
 .item-text.active {
   color: #444;
@@ -304,6 +285,11 @@ html {
 .department-title {
   width: 250px;
   bottom: 40px;
+}
+.department-titles {
+  width: 250px;
+  bottom: -90px;
+  height: 120px;
 }
 .department-card:hover + .department-title {
   opacity: 0;
@@ -342,7 +328,6 @@ html {
   width: 30px;
   height: 4px;
   background-color: #ddd;
-  border-radius: 2px;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -353,42 +338,6 @@ html {
   transform: scale(1.2);
   background-color: var(--primary);
   box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
-}
-
-/* Auto-scrolling carousels */
-.services-carousel-container,
-.departments-carousel-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.services-carousel-track,
-.departments-carousel-track {
-  display: flex;
-  gap: 20px;
-  will-change: transform;
-}
-
-.service-carousel-item,
-.department-carousel-item {
-  flex: 0 0 auto;
-  width: 300px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .service-carousel-item,
-  .department-carousel-item {
-    width: 250px;
-  }
-}
-
-@media (max-width: 576px) {
-  .service-carousel-item,
-  .department-carousel-item {
-    width: 220px;
-  }
 }
 .department-icon-img {
   width: 40px;
@@ -471,19 +420,16 @@ html {
   transition: top 0.2s ease;
 }
 .scrollbar-container-custom {
-  height: 100%;
   right: 0.5rem;
 }
 .scrollbar-track-custom {
   flex-grow: 1;
-  width: 6px;
-  background: #eee;
-  border-radius: 2px;
+  width: 4px;
+  background: #ccc;
   height: 80%;
 }
 .scrollbar-thumb-custom {
   height: 30px;
-  border-radius: 2px;
 }
 .scrollbar-container-custom .btn {
   transition: background-color 0.3s, color 0.3s;
@@ -564,13 +510,6 @@ html {
   padding-bottom: 56.25%;
   height: 0;
 }
-.video-responsive iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 .card-body h6 {
   transition: color 0.3s ease;
 }
@@ -604,7 +543,6 @@ html {
   height: 60px;
   transition: transform 0.9s ease, opacity 0.9s ease;
   color: var(--text-color);
-  border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   opacity: 0;
@@ -624,7 +562,6 @@ html {
   height: 30px;
   transition: all 0.3s ease;
   background-color: #0000001a !important;
-  color: white !important;
   margin-left: 5px;
 }
 .custom-social-icon:hover {
@@ -636,7 +573,6 @@ html {
 }
 .overlay-gradient {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
-  z-index: 1;
 }
 .image-container img {
   transition: transform 0.5s ease-in-out;
@@ -645,26 +581,13 @@ html {
   transform: scale(1.1);
 }
 .overlay-badge {
-  top: 10px; 
+  top: 10px;
   right: 10px; 
-}
-.blog-title {
-  font-size: larger;
-  text-align: left;
-  line-height: 35px;
 }
 .slide-container {
   min-height: 500px;
   background-size: cover;
   background-position: center;
-}
-.slide-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
 }
 
 .hover-card .extra-contact {
@@ -677,8 +600,6 @@ html {
   width: 65px;
   height: 65px;
   background-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 5px;
   top: 50%;
   transform: translateY(-50%);
   opacity: 1;
@@ -693,11 +614,11 @@ html {
   width: 60px;
   height: 3px;
   background-color: var(--primary);
-  
 }
 .dividerr {
   width: 60px;
   height: 3px;
+  background-color: white;
 }
 .input-group {
   min-height: 70px;
@@ -706,7 +627,20 @@ html {
   width: 50px;
   height: 50px;
 }
-
+.description {
+  color: #6c757d;
+  font-size: 16px;
+  min-height: 50px;
+}
+.line {
+  width: 30px;
+  height: 2px;
+  background: white;
+  margin: 0.5rem auto;
+}
+.read-more {
+  font-size: 14px;
+}
 #home,
 #service,
 #team,
@@ -808,7 +742,7 @@ html {
 }
 @media (min-width: 1024px) {
   .overlap-carousel {
-    margin-left: -140px; 
+    margin-left: -140px; /* adjust this value to control how much overlap */
     z-index: 2;
   }
   .subscribe-form {
@@ -817,7 +751,7 @@ html {
 }
 @media (min-width: 1650px) {
   .overlap-carousel {
-    flex: 0 0 55%; 
+    flex: 0 0 55%; /* like col-xl-9 */
     max-width: 45%;
   }
 }

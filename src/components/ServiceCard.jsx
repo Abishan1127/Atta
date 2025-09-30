@@ -17,7 +17,7 @@ const ServiceCard = ({
         <h5 className="mt-3 fw-bold">{title}</h5>
         <div className="service-icon-wrapper mx-auto position-relative rounded-circle d-flex align-items-center justify-content-center ">
           <div className="service-icon-wrappers bg-white rounded-circle d-flex align-items-center justify-content-center position-relative z-2">
-            <i className={`bi ${icon}`}></i>
+            <i className={`bi ${icon} fs-2`}></i>
           </div>
         </div>
       </Card.Body>
