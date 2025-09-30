@@ -128,11 +128,7 @@ function Home() {
                 >
                   <div
                     className="hero-slide d-flex align-items-center justify-content-center text-center text-white position-relative bg-center overflow-hidden"
-                    style={{
-                      backgroundImage: `url(${slide.image})`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
+                    style={{ backgroundImage: `url(${slide.image})` }}
                   >
                     {/* Bootstrap 5 overlay to reduce image opacity */}
                     <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
@@ -475,10 +471,7 @@ function Home() {
                   >
                     <i className="bi bi-arrow-up"></i>
                   </button>
-                  <div
-                    className="scrollbar-track-custom my-1 position-relative"
-                    style={{ width: "6px", background: "#eee" }}
-                  >
+                  <div className="scrollbar-track-custom my-1 position-relative">
                     <div
                       ref={thumbRef}
                       className="scrollbar-thumb-custom bg-danger w-100 position-absolute"
@@ -523,10 +516,10 @@ function Home() {
               {accordionData.map((sec) => (
                 <div key={sec.title} className="accordion-section">
                   <div
-                    className="accordion-header"
+                    className="accordion-header d-flex align-items-center justify-content-between p-3"
                     onClick={() => setActiveSection(sec.title)}
                   >
-                    <span className="accordion-title m-2">{sec.title}</span>
+                    <span className=" fw-bold m-2">{sec.title}</span>
                     {activeSection === sec.title ? (
                       <FaMinus className="accordion-icon active" />
                     ) : (
@@ -535,7 +528,7 @@ function Home() {
                   </div>
                   {activeSection === sec.title && (
                     <div className="accordion-body m-1">
-                      <div className="fw-semibold ">
+                      <div className="fw-semibold ms-2">
                         Must Visited Parks & Natural Areas;
                       </div>
                       <div className="accordion-list m-2 my-3">
@@ -547,7 +540,7 @@ function Home() {
                               }`}
                             />
                             <span
-                              className={`item-text ${
+                              className={`item-text fs-6 ${
                                 item.active ? "active" : ""
                               }`}
                             >
