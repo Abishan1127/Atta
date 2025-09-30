@@ -79,7 +79,7 @@
   animation: slideUp 1s ease-out forwards;
 }
 .hero-section {
-  height: 110vh; /* adjust as needed: try 80vh, 100vh, etc. */
+  height: 110vh; 
 }
 .hero-slide {
   height: 110vh;
@@ -334,11 +334,7 @@ html {
   width: 250px;
   bottom: 40px;
 }
-.department-titles {
-  width: 250px;
-  bottom: -90px;
-  height: 120px;
-}
+
 .department-card:hover + .department-title {
   opacity: 0;
   transition: opacity 0.3s;
@@ -387,6 +383,42 @@ html {
   transform: scale(1.2);
   background-color: var(--primary);
   box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+}
+
+/* Auto-scrolling carousels */
+.services-carousel-container,
+.departments-carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.services-carousel-track,
+.departments-carousel-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+.service-carousel-item,
+.department-carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-carousel-item,
+  .department-carousel-item {
+    width: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-carousel-item,
+  .department-carousel-item {
+    width: 220px;
+  }
 }
 .department-icon-img {
   width: 40px;
