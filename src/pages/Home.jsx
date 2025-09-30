@@ -201,7 +201,7 @@ function Home() {
                     return (
                       <div
                         key={item.id}
-                        className={`about-slide-content w-100  ${
+                        className={`about-slide-content position-absolute z-2 w-100  ${
                           isActive ? "active" : isExiting ? "exiting" : ""
                         }`}
                       >
@@ -446,7 +446,7 @@ function Home() {
                     {files.map((item, idx) => (
                       <div
                         key={idx}
-                        className={`download-item bg-white d-flex align-items-center justify-content-between rounded-4  ${
+                        className={`download-item p-3 mb-3 bg-white d-flex align-items-center justify-content-between rounded-4  ${
                           idx === files.length - 1 ? "mb-0" : ""
                         }`}
                       >
@@ -519,7 +519,7 @@ function Home() {
                 <span className="wave"></span>
               </div>
             </div>
-            <div className="col-12 col-md-12 col-lg-4 text-start accordion-custom px-4 shadow">
+            <div className="col-12 col-md-12 col-lg-4 text-start  fs-5 px-4 shadow">
               {accordionData.map((sec) => (
                 <div key={sec.title} className="accordion-section">
                   <div
@@ -535,12 +535,12 @@ function Home() {
                   </div>
                   {activeSection === sec.title && (
                     <div className="accordion-body m-1">
-                      <div className="accordion-subtitle">
+                      <div className="fw-semibold ">
                         Must Visited Parks & Natural Areas;
                       </div>
                       <div className="accordion-list m-2 my-3">
                         {sec.content.map((item) => (
-                          <div key={item.name} className="accordion-item">
+                          <div key={item.name} className="mb-2diflex align-items-center ">
                             <FaCheckCircle
                               className={`check-icon ${
                                 item.active ? "active" : ""
