@@ -725,18 +725,16 @@ html {
   width: 60px;
   height: 3px;
   background-color: var(--primary);
-  border-radius: 3px;
+  
 }
 .dividerr {
   width: 60px;
   height: 3px;
-  background-color: white;
-  border-radius: 3px;
 }
 .input-group {
   min-height: 70px;
 }
-.mousehover-card {
+/* .mousehover-card {
   position: relative;
   background: white;
   padding: 2rem 1rem;
@@ -747,17 +745,17 @@ html {
 }
 .mousehover-card:hover {
   transform: translateY(-5px);
-}
+} */
 .icon-img {
   width: 50px;
   height: 50px;
 }
-.description {
+/* .description {
   color: #6c757d;
   font-size: 16px;
   min-height: 50px;
-}
-.bottom-hover {
+} */
+/* .bottom-hover {
   position: absolute;
   bottom: -100%;
   left: 0;
@@ -769,20 +767,15 @@ html {
 }
 .mousehover-card:hover .bottom-hover {
   bottom: 0;
-}
-.card-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-.line {
+} */
+
+/* .line {
   width: 30px;
   height: 2px;
   background: white;
   margin: 0.5rem auto;
-}
-.read-more {
-  font-size: 14px;
-}
+} */
+
 #home,
 #service,
 #team,

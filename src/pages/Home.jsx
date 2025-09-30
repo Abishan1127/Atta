@@ -190,7 +190,7 @@ function Home() {
               <div className="col-md-6 position-relative overflow-hidden about-right mt-5">
                 <p className="text-danger small fw-bold ms-5">★ About Us ★</p>
                 <div className="ms-3">
-                  <div className="divider ms-5 mb-4"></div>
+                  <div className="divider ms-5 mb-4 rounded-5"></div>
                 </div>
 
                 <div className="about-slider-wrapper position-relative ms-5 h-100 overflow-hidden">
@@ -305,7 +305,7 @@ function Home() {
               <span className="ms-1">★</span>
             </h6>
             <h2 className="fw-bold mb-3 pt-2">Explore Our Departments</h2>
-            <div className="divider mx-auto mb-4"></div>
+            <div className="divider mx-auto mb-4 rounded-5"></div>
 
             {/* Large screen carousel */}
             <div className="d-none d-md-block ">
@@ -386,7 +386,7 @@ function Home() {
               <span className="ms-1">★</span>
             </h6>
             <h2 className="fw-bold mb-3 pt-2">Meet Council Members</h2>
-            <div className="divider mx-auto mb-4"></div>
+            <div className="divider mx-auto mb-4 rounded-5"></div>
             <div className="row justify-content-center g-4 pt-3">
               {teamMembers.map((m, i) => (
                 <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-2">
@@ -505,7 +505,7 @@ function Home() {
             <span className="star">★</span>
           </h6>
           <h2 className="section-title">Inspiration for Your Next Trip</h2>
-          <div className="divider mx-auto mb-4"></div>
+          <div className="divider mx-auto mb-4 rounded-5"></div>
           <div className="row">
             <div className="col-12 col-md-12 col-lg-8 position-relative video-thumbnail-container p-0">
               <img
@@ -591,7 +591,7 @@ function Home() {
             <span className="ms-1">★</span>
           </h6>
           <h2 className="fw-bold mb-4 pt-2">Latest From Our Newsroom</h2>
-          <div className="divider mx-auto mb-4"></div>
+          <div className="divider mx-auto mb-4 rounded-5"></div>
           <div className="row justify-content-center">
             {newsData.map((item, idx) => (
               <div key={idx} className="col-12 col-md-6 col-lg-4 mb-4">

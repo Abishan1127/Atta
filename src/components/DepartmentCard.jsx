@@ -41,7 +41,7 @@ const DepartmentCard = ({ image, iconUrl, title, para }) => {
                 <div key={index}>{line}</div>
               ))}
             </h5>
-            <div className="dividerr mx-auto m-2 "></div>
+            <div className="dividerr mx-auto m-2 bg-white "></div>
             <p>READ MORE</p>
           </div>
         </div>
