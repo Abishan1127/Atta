@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
-import Footer from './Components/Footer';
 import Header from './Components/Header';
+import Footer from './Components/Footer';
 import Home from './pages/Home';
 import ScrollToTop from './Components/ScrollToTop'; 
 
